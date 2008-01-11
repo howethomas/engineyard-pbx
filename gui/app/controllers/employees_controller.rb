@@ -2,7 +2,7 @@ class EmployeesController < ApplicationController
   # GET /employees
   # GET /employees.xml
   def index
-    @employees = Employee.find(:all)
+    @employees = Employee.find(:all, :order => :extension)
 
     respond_to do |format|
       format.html # index.html.erb

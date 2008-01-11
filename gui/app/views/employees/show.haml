@@ -1,0 +1,9 @@
+%h1= h @employee.name
+
+%p
+  %b Extension:
+  =h @employee.extension
+
+= link_to 'Edit', edit_employee_path(@employee)
+|
+= link_to 'Back', employees_path

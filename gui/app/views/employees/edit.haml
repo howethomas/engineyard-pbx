@@ -1,0 +1,29 @@
+%h1 Editing employee
+
+= error_messages_for :employee
+
+- form_for(@employee) do |f|
+%p
+  %b Name
+  %br
+  = f.text_field :name
+
+%p
+  %b Time zone
+  %br
+  = f.text_field :time_zone
+
+%p
+  %b Extension
+  %br
+  = f.text_field :extension
+
+%p
+  = f.submit "Update"
+- end
+
+= link_to 'Show', @employee
+|
+= link_to 'Back', employees_path
+|
+= link_to 'Delete', @employee, :confirm => "Are you sure you wish to delete employee #{h(@employee.name)} permanently?", :method => :delete

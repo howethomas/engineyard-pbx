@@ -1,0 +1,16 @@
+%h1 Listing Employees
+
+%p
+  You can choose to
+  = link_to 'add someone', new_employee_path
+  , edit someone by clicking their name below, or delete an employee by clicking the "X" next to their name
+
+%ul
+  - for employee in @employees
+  %li
+    =h(employee.extension) + ": "
+    = link_to h(employee.name), edit_employee_path(employee)
+    = "(#{link_to 'X', employee, :confirm => "Are you sure you wish to delete employee #{h(employee.name)} permanently?", :method => :delete})"
+  - end
+
+%br
