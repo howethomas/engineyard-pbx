@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  time_zone: 1
+  extension: MyString
+
+two:
+  name: MyString
+  time_zone: 1
+  extension: MyString

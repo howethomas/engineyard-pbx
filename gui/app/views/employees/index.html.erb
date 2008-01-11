@@ -1,0 +1,24 @@
+<h1>Listing employees</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Time zone</th>
+    <th>Extension</th>
+  </tr>
+
+<% for employee in @employees %>
+  <tr>
+    <td><%=h employee.name %></td>
+    <td><%=h employee.time_zone %></td>
+    <td><%=h employee.extension %></td>
+    <td><%= link_to 'Show', employee %></td>
+    <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+    <td><%= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New employee', new_employee_path %>

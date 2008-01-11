@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @employee.name %>
+</p>
+
+<p>
+  <b>Time zone:</b>
+  <%=h @employee.time_zone %>
+</p>
+
+<p>
+  <b>Extension:</b>
+  <%=h @employee.extension %>
+</p>
+
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>
