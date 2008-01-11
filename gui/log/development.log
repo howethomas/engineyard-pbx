@@ -3649,3 +3649,1616 @@ Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 11:26:42) [GET
 Rendering template within layouts/application
 Rendering employees/index
 Completed in 0.01276 (78 reqs/sec) | Rendering: 0.00589 (46%) | DB: 0.00102 (7%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 11:27:25) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000331)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+
+
+ActionView::TemplateError (undefined method `in_place_editor' for #<ActionView::Base:0x2371cf0>) on line #26 of employees/edit.haml:
+23: - end
+24: 
+25: = in_place_editor "ohai"
+26: 
+27: = link_to 'Show', @employee
+28: |
+29: = link_to 'Back', employees_path
+
+    app/views/employees/edit.haml:26:in `_run_template_47app47views47employees47edit46haml'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `sass_old_process'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/sass/plugin/rails.rb:14:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:155:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 11:31:29) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00960 (104 reqs/sec) | Rendering: 0.00519 (54%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 11:34:59) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00559 (178 reqs/sec) | Rendering: 0.00281 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 11:35:11) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00560 (178 reqs/sec) | Rendering: 0.00284 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 11:35:14) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00578 (172 reqs/sec) | Rendering: 0.00295 (51%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 11:35:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00593 (168 reqs/sec) | Rendering: 0.00295 (49%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 11:35:51) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00657 (152 reqs/sec) | Rendering: 0.00365 (55%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 11:35:52) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.001022)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01226 (81 reqs/sec) | Rendering: 0.00495 (40%) | DB: 0.00102 (8%) | 200 OK [http://localhost/employees]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 11:36:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00651 (153 reqs/sec) | Rendering: 0.00370 (56%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 11:36:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.001002)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01172 (85 reqs/sec) | Rendering: 0.00487 (41%) | DB: 0.00100 (8%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 11:36:21) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000470)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+
+
+ActionView::TemplateError (undefined method `in_place_editor' for #<ActionView::Base:0x21f5ae8>) on line #26 of employees/edit.haml:
+23: - end
+24: 
+25: = in_place_editor "ohai"
+26: 
+27: = link_to 'Show', @employee
+28: |
+29: = link_to 'Back', employees_path
+
+    app/views/employees/edit.haml:26:in `_run_template_47app47views47employees47edit46haml'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `sass_old_process'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/sass/plugin/rails.rb:14:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:155:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 11:36:36) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000359)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.01591 (62 reqs/sec) | Rendering: 0.00769 (48%) | DB: 0.00036 (2%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 12:01:46) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000421)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::TZInfo) on line #16 of employees/edit.haml:
+13:   %br
+14:   = f.text_field :time_zone
+15:   = time_zone_select 'employee', 'time_zone', TZInfo::Timezone.all.sort, :model => TZInfo::Timezone
+16: 
+17: %p
+18:   %b Extension
+19:   %br
+
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:263:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:453:in `const_missing'
+    app/views/employees/edit.haml:16:in `_run_template_47app47views47employees47edit46haml'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers/action_view_mods.rb:72:in `call'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers/action_view_mods.rb:72:in `form_for'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers.rb:327:in `call'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers.rb:327:in `bind_proc'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/helpers/form_helper.rb:248:in `fields_for'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/helpers/form_helper.rb:184:in `form_for_without_haml'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers/action_view_mods.rb:76:in `form_for'
+    app/views/employees/edit.haml:5:in `_run_template_47app47views47employees47edit46haml'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `sass_old_process'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/sass/plugin/rails.rb:14:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:155:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 12:03:28) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000317)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::TZInfo) on line #16 of employees/edit.haml:
+13:   %br
+14:   = f.text_field :time_zone
+15:   = time_zone_select 'employee', 'time_zone', TZInfo::Timezone.all.sort, :model => TZInfo::Timezone
+16: 
+17: %p
+18:   %b Extension
+19:   %br
+
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:263:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:453:in `const_missing'
+    app/views/employees/edit.haml:16:in `_run_template_47app47views47employees47edit46haml'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers/action_view_mods.rb:72:in `call'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers/action_view_mods.rb:72:in `form_for'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers.rb:327:in `call'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers.rb:327:in `bind_proc'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/helpers/form_helper.rb:248:in `fields_for'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/helpers/form_helper.rb:184:in `form_for_without_haml'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers/action_view_mods.rb:76:in `form_for'
+    app/views/employees/edit.haml:5:in `_run_template_47app47views47employees47edit46haml'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `sass_old_process'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/sass/plugin/rails.rb:14:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:155:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 20:11:52) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000324)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.38682 (2 reqs/sec) | Rendering: 0.37746 (97%) | DB: 0.00032 (0%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 20:14:47) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000328)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.37911 (2 reqs/sec) | Rendering: 0.37051 (97%) | DB: 0.00033 (0%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 20:15:19) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000309)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.38139 (2 reqs/sec) | Rendering: 0.37315 (97%) | DB: 0.00031 (0%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 20:17:34) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000321)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.37720 (2 reqs/sec) | Rendering: 0.36900 (97%) | DB: 0.00032 (0%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 20:17:40) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000385)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.37907 (2 reqs/sec) | Rendering: 0.37033 (97%) | DB: 0.00039 (0%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 20:18:13) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000310)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.38769 (2 reqs/sec) | Rendering: 0.37939 (97%) | DB: 0.00031 (0%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing EmployeesController#update (for 127.0.0.1 at 2008-01-11 20:18:56) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"commit"=>"Update", "employee"=>{"name"=>"Jay Phillips", "extension"=>"1337", "time_zone"=>"US/Pacific"}, "authenticity_token"=>"2f80204384b09f637fbd8c97dc715b4c0ea7bc72", "_method"=>"put", "action"=>"update", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000324)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+  [4;35;1mEmployee Update (0.000493)[0m   [0mUPDATE employees SET "created_at" = '2008-01-11 10:34:44', "name" = 'Jay Phillips', "extension" = '1337', "time_zone" = 0, "updated_at" = '2008-01-11 20:18:56' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/employees/1
+Completed in 0.01606 (62 reqs/sec) | DB: 0.00082 (5%) | 302 Found [http://localhost/employees/1]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2008-01-11 20:18:56) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIidFbXBsb3llZSB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0%0AZWQuBjoKQHVzZWR7BjsHVA%3D%3D--55eb5714068bec1392b290e3cc988f2b664b9c7c
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000319)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/show
+Completed in 0.01360 (73 reqs/sec) | Rendering: 0.00474 (34%) | DB: 0.00032 (2%) | 200 OK [http://localhost/employees/1]
+  [4;36;1mSQL (0.000295)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000264)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000201)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to ConvertTimeZoneIntoString (2)
+  [4;36;1mSQL (0.000281)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000256)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000202)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to ConvertTimeZoneIntoString (2)
+  [4;36;1mSQL (0.000283)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000262)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000216)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to ConvertTimeZoneIntoString (2)
+  [4;35;1mSQL (0.001081)[0m   [0mCREATE TEMPORARY TABLE altered_employees ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "time_zone" integer DEFAULT NULL, "extension" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000068)[0m   [0;1mPRAGMA index_list(employees)[0m
+  [4;35;1mSQL (0.000358)[0m   [0mDROP TABLE employees[0m
+  [4;36;1mSQL (0.000220)[0m   [0;1mCREATE TABLE employees ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "extension" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000064)[0m   [0mPRAGMA index_list(altered_employees)[0m
+  [4;36;1mSQL (0.000143)[0m   [0;1mDROP TABLE altered_employees[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: employee: ALTER TABLE employee ADD "time_zone" varchar(255)[0m
+  [4;36;1mSQL (0.000285)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000261)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000202)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to ConvertTimeZoneIntoString (2)
+  [4;35;1mSQL (0.001371)[0m   [0mCREATE TEMPORARY TABLE altered_employees ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "extension" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mPRAGMA index_list(employees)[0m
+  [4;35;1mSQL (0.000354)[0m   [0mDROP TABLE employees[0m
+  [4;36;1mSQL (0.000224)[0m   [0;1mCREATE TABLE employees ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "extension" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000072)[0m   [0mPRAGMA index_list(altered_employees)[0m
+  [4;36;1mSQL (0.000151)[0m   [0;1mDROP TABLE altered_employees[0m
+  [4;35;1mSQL (0.001896)[0m   [0mALTER TABLE employees ADD "time_zone" varchar(255)[0m
+  [4;36;1mSQL (0.058722)[0m   [0;1mVACUUM[0m
+  [4;35;1mSQL (0.003866)[0m   [0mUPDATE schema_info SET version = 2[0m
+  [4;36;1mSQL (0.000378)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000361)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000092)[0m   [0;1mPRAGMA index_list(employees)[0m
+  [4;36;1mSQL (0.000285)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000260)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000201)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000251)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000282)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000080)[0m   [0mPRAGMA index_list(employees)[0m
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 20:21:39) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.001029)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01474 (67 reqs/sec) | Rendering: 0.00674 (45%) | DB: 0.00103 (6%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 20:21:39) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000987)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01290 (77 reqs/sec) | Rendering: 0.00508 (39%) | DB: 0.00099 (7%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 20:21:41) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000311)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.39360 (2 reqs/sec) | Rendering: 0.38522 (97%) | DB: 0.00031 (0%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing EmployeesController#update (for 127.0.0.1 at 2008-01-11 20:21:44) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"commit"=>"Update", "employee"=>{"name"=>"Jay Phillips", "extension"=>"1337", "time_zone"=>"America/Los_Angeles"}, "authenticity_token"=>"2f80204384b09f637fbd8c97dc715b4c0ea7bc72", "_method"=>"put", "action"=>"update", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000315)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+  [4;35;1mEmployee Update (0.000375)[0m   [0mUPDATE employees SET "created_at" = '2008-01-11 10:34:44', "name" = 'Jay Phillips', "extension" = '1337', "time_zone" = 'America/Los_Angeles', "updated_at" = '2008-01-11 20:21:44' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/employees/1
+Completed in 0.01399 (71 reqs/sec) | DB: 0.00069 (4%) | 302 Found [http://localhost/employees/1]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2008-01-11 20:21:44) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIidFbXBsb3llZSB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0%0AZWQuBjoKQHVzZWR7BjsHVA%3D%3D--55eb5714068bec1392b290e3cc988f2b664b9c7c
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000341)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/show
+Completed in 0.01297 (77 reqs/sec) | Rendering: 0.00409 (31%) | DB: 0.00034 (2%) | 200 OK [http://localhost/employees/1]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 20:22:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.001013)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01332 (75 reqs/sec) | Rendering: 0.00518 (38%) | DB: 0.00101 (7%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 20:22:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+ERROR: compiling _run_template_47app47views47employees47new46haml RAISED compile error
+/Users/jicksta/Desktop/ey/gui/app/views/employees/new.haml:28: syntax error, unexpected kEND, expecting $end
+Function body: def _run_template_47app47views47employees47new46haml(local_assigns)
+extend Haml::Helpers;@haml_stack ||= Array.new;@haml_stack.push(Haml::Buffer.new({:attr_wrapper=>"'"}));@haml_is_haml = true;_hamlout = @haml_stack[-1];_erbout = _hamlout.buffer;;
+
+
+
+_hamlout.push_text("<h2>New employee</h2>\n");haml_temp =  error_messages_for :employee;
+haml_temp = _hamlout.push_script(haml_temp, false, nil); form_for(@employee) do |f|;
+
+
+
+
+_hamlout.push_text("<p>\n  <b>Name</b>\n  <br />\n", 1);haml_temp =  f.text_field :name;
+haml_temp = _hamlout.push_script(haml_temp, false, nil);
+
+
+
+_hamlout.push_text("</p>\n<p>\n  <b>Time zone</b>\n  <br />\n");haml_temp =  f.text_field :time_zone;
+haml_temp = _hamlout.push_script(haml_temp, false, nil);
+
+
+
+_hamlout.push_text("</p>\n<p>\n  <b>Extension</b>\n  <br />\n");haml_temp =  f.text_field :extension;
+haml_temp = _hamlout.push_script(haml_temp, false, nil);
+
+_hamlout.push_text("</p>\n<p>\n");haml_temp =  f.submit "Create";
+haml_temp = _hamlout.push_script(haml_temp, false, nil);
+_hamlout.push_text("</p>\n", -1);end; end;
+haml_temp =  link_to 'Back', employees_path;
+haml_temp = _hamlout.push_script(haml_temp, false, nil);@haml_is_haml = false;@haml_stack.pop.buffer;
+end
+Backtrace: /Users/jicksta/Desktop/ey/gui/app/views/employees/new.haml:28:in `compile_template'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/base.rb:638:in `compile_and_render_template'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:1100:in `render_for_file'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:858:in `render_with_no_layout'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:872:in `render_with_no_layout'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/layout.rb:261:in `render_without_benchmark'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `send'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `custom'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:156:in `call'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:156:in `respond'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:150:in `each'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:150:in `respond'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/jicksta/Desktop/ey/gui/app/controllers/employees_controller.rb:30:in `new'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:1158:in `send'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/filters.rb:699:in `call_filters'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/filters.rb:691:in `perform_action_without_benchmark'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/filters.rb:687:in `process_without_session_management_support'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `sass_old_process'
+/Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/sass/plugin/rails.rb:14:in `process'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/../lib/mongrel/rails.rb:76:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/../lib/mongrel/rails.rb:74:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:155:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:282:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:128:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/command.rb:212:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:281
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/railties/lib/commands/server.rb:39
+./script/server:3:in `require'
+./script/server:3
+
+
+ActionView::TemplateError (compile error
+/Users/jicksta/Desktop/ey/gui/app/views/employees/new.haml:28: syntax error, unexpected kEND, expecting $end) on line #28 of employees/new.haml:
+25: 
+26: = link_to 'Back', employees_path
+
+    app/views/employees/new.haml:28:in `compile_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:638:in `compile_and_render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1100:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:858:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/base.rb:872:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:261:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `send'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `custom'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:156:in `call'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:156:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:150:in `each'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:150:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/employees_controller.rb:30:in `new'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1158:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:699:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:691:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:687:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `sass_old_process'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/sass/plugin/rails.rb:14:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:155:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 20:23:57) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.001896)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01887 (53 reqs/sec) | Rendering: 0.00858 (45%) | DB: 0.00190 (10%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 20:23:58) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+ERROR: compiling _run_template_47app47views47employees47_new_employee_form46haml RAISED compile error
+/Users/jicksta/Desktop/ey/gui/app/views/employees/_new_employee_form.haml:22: syntax error, unexpected kEND, expecting $end
+Function body: def _run_template_47app47views47employees47_new_employee_form46haml(local_assigns)
+object = local_assigns[:object]
+new_employee_form = local_assigns[:new_employee_form]
+new_employee_form_counter = local_assigns[:new_employee_form_counter]
+extend Haml::Helpers;@haml_stack ||= Array.new;@haml_stack.push(Haml::Buffer.new({:attr_wrapper=>"'"}));@haml_is_haml = true;_hamlout = @haml_stack[-1];_erbout = _hamlout.buffer;;
+ form_for(@employee) do |f|;
+
+
+
+
+_hamlout.push_text("<p>\n  <b>Name</b>\n  <br />\n", 1);haml_temp =  f.text_field :name;
+haml_temp = _hamlout.push_script(haml_temp, false, nil);
+
+
+
+_hamlout.push_text("</p>\n<p>\n  <b>Time zone</b>\n  <br />\n");haml_temp =  f.text_field :time_zone;
+haml_temp = _hamlout.push_script(haml_temp, false, nil);
+
+
+
+_hamlout.push_text("</p>\n<p>\n  <b>Extension</b>\n  <br />\n");haml_temp =  f.text_field :extension;
+haml_temp = _hamlout.push_script(haml_temp, false, nil);
+
+_hamlout.push_text("</p>\n<p>\n");haml_temp =  f.submit "Create";
+haml_temp = _hamlout.push_script(haml_temp, false, nil);_hamlout.push_text("</p>\n", -1);end; end;
+@haml_is_haml = false;@haml_stack.pop.buffer;
+end
+Backtrace: /Users/jicksta/Desktop/ey/gui/app/views/employees/_new_employee_form.haml:22:in `compile_template'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/base.rb:638:in `compile_and_render_template'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/base.rb:331:in `render_without_haml'
+/Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers/action_view_mods.rb:7:in `render'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/partials.rb:117:in `render_partial'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:307:in `realtime'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/partials.rb:116:in `render_partial'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/base.rb:354:in `render_without_haml'
+/Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers/action_view_mods.rb:7:in `render'
+/Users/jicksta/Desktop/ey/gui/app/views/employees/new.haml:6:in `_run_template_47app47views47employees47new46haml'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/base.rb:645:in `send'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/base.rb:645:in `compile_and_render_template'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:1100:in `render_for_file'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:858:in `render_with_no_layout'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:872:in `render_with_no_layout'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/layout.rb:261:in `render_without_benchmark'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `send'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `custom'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:156:in `call'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:156:in `respond'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:150:in `each'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:150:in `respond'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/jicksta/Desktop/ey/gui/app/controllers/employees_controller.rb:30:in `new'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:1158:in `send'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/filters.rb:699:in `call_filters'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/filters.rb:691:in `perform_action_without_benchmark'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/filters.rb:687:in `process_without_session_management_support'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `sass_old_process'
+/Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/sass/plugin/rails.rb:14:in `process'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/../lib/mongrel/rails.rb:76:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/../lib/mongrel/rails.rb:74:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:155:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:282:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:128:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/command.rb:212:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:281
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/railties/lib/commands/server.rb:39
+./script/server:3:in `require'
+./script/server:3
+
+
+ActionView::TemplateError (compile error
+/Users/jicksta/Desktop/ey/gui/app/views/employees/_new_employee_form.haml:22: syntax error, unexpected kEND, expecting $end) on line #22 of employees/_new_employee_form.haml:
+19: 
+20: - end
+    app/views/employees/_new_employee_form.haml:22:in `compile_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:638:in `compile_and_render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+    vendor/rails/actionpack/lib/action_view/base.rb:331:in `render_without_haml'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers/action_view_mods.rb:7:in `render'
+    vendor/rails/actionpack/lib/action_view/partials.rb:117:in `render_partial'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:307:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    vendor/rails/actionpack/lib/action_view/partials.rb:116:in `render_partial'
+    vendor/rails/actionpack/lib/action_view/base.rb:354:in `render_without_haml'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers/action_view_mods.rb:7:in `render'
+    app/views/employees/new.haml:6:in `_run_template_47app47views47employees47new46haml'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `send'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `compile_and_render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1100:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:858:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/base.rb:872:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:261:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `send'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `custom'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:156:in `call'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:156:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:150:in `each'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:150:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/employees_controller.rb:30:in `new'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1158:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:699:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:691:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:687:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `sass_old_process'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/sass/plugin/rails.rb:14:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:155:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 20:24:17) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.09366)
+Completed in 0.10576 (9 reqs/sec) | Rendering: 0.09750 (92%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 20:25:49) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.001033)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of employees/_new_employee_form.haml:
+1: - form_for(@employee) do |f|
+2: %p
+3:   %b Name
+4:   %br
+
+    vendor/rails/actionpack/lib/action_controller/record_identifier.rb:66:in `dom_id'
+    vendor/rails/actionpack/lib/action_view/helpers/record_identification_helper.rb:16:in `dom_id'
+    vendor/rails/actionpack/lib/action_view/helpers/form_helper.rb:196:in `apply_form_for_options!'
+    vendor/rails/actionpack/lib/action_view/helpers/form_helper.rb:180:in `form_for_without_haml'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers/action_view_mods.rb:76:in `form_for'
+    app/views/employees/_new_employee_form.haml:1:in `_run_template_47app47views47employees47_new_employee_form46haml'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `send'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `compile_and_render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+    vendor/rails/actionpack/lib/action_view/base.rb:331:in `render_without_haml'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers/action_view_mods.rb:7:in `render'
+    vendor/rails/actionpack/lib/action_view/partials.rb:117:in `render_partial'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:307:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    vendor/rails/actionpack/lib/action_view/partials.rb:116:in `render_partial'
+    vendor/rails/actionpack/lib/action_view/base.rb:354:in `render_without_haml'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers/action_view_mods.rb:7:in `render'
+    app/views/employees/index.haml:10:in `_run_template_47app47views47employees47index46haml'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `send'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `compile_and_render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1100:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:858:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/base.rb:872:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:261:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `send'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `custom'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:156:in `call'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:156:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:150:in `each'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:150:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/employees_controller.rb:8:in `index'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1158:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:699:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:691:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:687:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `sass_old_process'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/sass/plugin/rails.rb:14:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:155:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 21:36:01) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000324)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.39233 (2 reqs/sec) | Rendering: 0.38284 (97%) | DB: 0.00032 (0%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:41:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.00264)
+Completed in 0.01344 (74 reqs/sec) | Rendering: 0.00555 (41%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 21:41:09) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.001045)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of employees/_new_employee_form.haml:
+1: - form_for(@employee) do |f|
+2: %p
+3:   %b Name
+4:   %br
+
+    vendor/rails/actionpack/lib/action_controller/record_identifier.rb:66:in `dom_id'
+    vendor/rails/actionpack/lib/action_view/helpers/record_identification_helper.rb:16:in `dom_id'
+    vendor/rails/actionpack/lib/action_view/helpers/form_helper.rb:196:in `apply_form_for_options!'
+    vendor/rails/actionpack/lib/action_view/helpers/form_helper.rb:180:in `form_for_without_haml'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers/action_view_mods.rb:76:in `form_for'
+    app/views/employees/_new_employee_form.haml:1:in `_run_template_47app47views47employees47_new_employee_form46haml'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `send'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `compile_and_render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+    vendor/rails/actionpack/lib/action_view/base.rb:331:in `render_without_haml'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers/action_view_mods.rb:7:in `render'
+    vendor/rails/actionpack/lib/action_view/partials.rb:117:in `render_partial'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:307:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    vendor/rails/actionpack/lib/action_view/partials.rb:116:in `render_partial'
+    vendor/rails/actionpack/lib/action_view/base.rb:354:in `render_without_haml'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/haml/helpers/action_view_mods.rb:7:in `render'
+    app/views/employees/index.haml:10:in `_run_template_47app47views47employees47index46haml'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `send'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `compile_and_render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1100:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:858:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/base.rb:872:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:261:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `send'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `custom'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:156:in `call'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:156:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:150:in `each'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:150:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/employees_controller.rb:8:in `index'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1158:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:699:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:691:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:687:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `sass_old_process'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/sass/plugin/rails.rb:14:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:155:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 21:41:53) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.001037)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01424 (70 reqs/sec) | Rendering: 0.00631 (44%) | DB: 0.00104 (7%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:41:57) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.00282)
+Completed in 0.01676 (59 reqs/sec) | Rendering: 0.00584 (34%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 21:42:20) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.001086)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01502 (66 reqs/sec) | Rendering: 0.00687 (45%) | DB: 0.00109 (7%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:42:21) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.00287)
+Completed in 0.01507 (66 reqs/sec) | Rendering: 0.00666 (44%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:42:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.00572)
+Completed in 0.01680 (59 reqs/sec) | Rendering: 0.00885 (52%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:43:04) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.00408)
+Completed in 0.01580 (63 reqs/sec) | Rendering: 0.00771 (48%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 21:43:53) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.001269)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01314 (76 reqs/sec) | Rendering: 0.00501 (38%) | DB: 0.00127 (9%) | 200 OK [http://localhost/employees]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 21:44:00) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.01008 (99 reqs/sec) | Rendering: 0.00691 (68%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 21:44:10) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000311)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.38043 (2 reqs/sec) | Rendering: 0.37226 (97%) | DB: 0.00031 (0%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:44:13) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.00268)
+Completed in 0.01402 (71 reqs/sec) | Rendering: 0.00569 (40%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:44:23) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.00417)
+Completed in 0.01523 (65 reqs/sec) | Rendering: 0.00710 (46%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:44:24) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.00265)
+Completed in 0.01364 (73 reqs/sec) | Rendering: 0.00567 (41%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:44:35) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.10155)
+Completed in 0.11280 (8 reqs/sec) | Rendering: 0.10464 (92%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:46:02) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.00491)
+Completed in 0.01680 (59 reqs/sec) | Rendering: 0.00804 (47%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:46:28) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.00286)
+Completed in 0.01399 (71 reqs/sec) | Rendering: 0.00598 (42%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 21:46:29) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.001037)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01427 (70 reqs/sec) | Rendering: 0.00618 (43%) | DB: 0.00104 (7%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:46:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.00347)
+Completed in 0.09728 (10 reqs/sec) | Rendering: 0.08764 (90%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:47:19) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.00449)
+Completed in 0.01582 (63 reqs/sec) | Rendering: 0.00751 (47%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:47:56) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.00274)
+Completed in 0.01383 (72 reqs/sec) | Rendering: 0.00582 (42%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:51:27) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.00422)
+Completed in 0.01531 (65 reqs/sec) | Rendering: 0.00721 (47%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:53:00) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.45496)
+Completed in 0.46871 (2 reqs/sec) | Rendering: 0.45998 (98%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:53:14) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.36588)
+Completed in 0.37927 (2 reqs/sec) | Rendering: 0.37080 (97%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 21:53:30) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.001000)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01358 (73 reqs/sec) | Rendering: 0.00559 (41%) | DB: 0.00100 (7%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 21:54:49) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000312)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.38680 (2 reqs/sec) | Rendering: 0.37858 (97%) | DB: 0.00031 (0%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2008-01-11 21:54:56) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000311)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/show
+Completed in 0.01244 (80 reqs/sec) | Rendering: 0.00378 (30%) | DB: 0.00031 (2%) | 200 OK [http://localhost/employees/1]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 21:54:58) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.001015)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01298 (77 reqs/sec) | Rendering: 0.00508 (39%) | DB: 0.00101 (7%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 21:55:00) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000312)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.39596 (2 reqs/sec) | Rendering: 0.38706 (97%) | DB: 0.00031 (0%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 21:57:35) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000327)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.48029 (2 reqs/sec) | Rendering: 0.47172 (98%) | DB: 0.00033 (0%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 21:57:51) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000335)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.37460 (2 reqs/sec) | Rendering: 0.36607 (97%) | DB: 0.00033 (0%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2008-01-11 21:58:13) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000311)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/show
+Completed in 0.01222 (81 reqs/sec) | Rendering: 0.00354 (28%) | DB: 0.00031 (2%) | 200 OK [http://localhost/employees/1]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 21:58:15) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.001055)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01303 (76 reqs/sec) | Rendering: 0.00503 (38%) | DB: 0.00106 (8%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 21:59:24) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.37952)
+Completed in 0.39396 (2 reqs/sec) | Rendering: 0.38600 (97%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 22:01:27) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.001057)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.35972 (2 reqs/sec) | Rendering: 0.35168 (97%) | DB: 0.00106 (0%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 22:01:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000321)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.47510 (2 reqs/sec) | Rendering: 0.46668 (98%) | DB: 0.00032 (0%) | 200 OK [http://localhost/employees/1/edit]

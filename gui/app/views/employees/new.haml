@@ -2,25 +2,6 @@
 
 = error_messages_for :employee
 
-- form_for(@employee) do |f|
-  %p
-    %b Name
-    %br
-    = f.text_field :name
-
-  %p
-    %b Time zone
-    %br
-    = f.text_field :time_zone
-
-  %p
-    %b Extension
-    %br
-    = f.text_field :extension
-
-  %p
-    = f.submit "Create"
-
-- end
+= render :partial => "new_employee_form", :locals => {:employee => @employee}
 
 = link_to 'Back', employees_path

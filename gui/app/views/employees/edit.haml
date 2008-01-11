@@ -9,20 +9,18 @@
   = f.text_field :name, :options => {:id => "ohai", }
 
 %p
-  %b Time zone
-  %br
-  = f.text_field :time_zone
-
-%p
   %b Extension
   %br
   = f.text_field :extension
 
+  %p
+    %b Time zone
+    %br
+    = time_zone_select 'employee', 'time_zone', TZInfo::Timezone.all.sort, :model => TZInfo::Timezone, :default => "America/Los_Angeles"
+
 %p
   = f.submit "Update"
 - end
-
-= in_place_editor "ohai"
 
 = link_to 'Show', @employee
 |

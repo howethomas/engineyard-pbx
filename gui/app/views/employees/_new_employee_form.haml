@@ -1,0 +1,20 @@
+- form_for employee do |f|
+%p
+  %label{:for => "employee_name"} Name
+  %br
+  = f.text_field :name
+
+%p
+  %label{:for => "employee_extension"} Extension
+  %br
+  = f.text_field :extension
+
+%p
+  %label{:for => "employee_time_zone"} Time zone
+  %br
+  = time_zone_select 'employee', 'time_zone', TZInfo::Timezone.all.sort, :model => TZInfo::Timezone, :default => "America/Los_Angeles"
+
+%p
+  = f.submit "Create"
+
+- end

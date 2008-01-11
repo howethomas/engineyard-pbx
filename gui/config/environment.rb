@@ -55,5 +55,12 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector
 
   # Make Active Record use UTC-base instead of local time
-  # config.active_record.default_timezone = :utc
+  config.active_record.default_timezone = :utc
+  require 'rubygems'
+  require 'tzinfo' # Use tzinfo library to convert to and from the users timezone
+  ENV['TZ'] = 'UTC' # This makes Time.now return time in UTC
+
 end
+
+# FROM ADVICE ON: http://www.marklunds.com/articles/one/311
+
