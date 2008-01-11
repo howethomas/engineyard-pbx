@@ -1,4 +1,4 @@
-%h1 Editing employee
+%h2 Editing employee
 
 = error_messages_for :employee
 
@@ -6,7 +6,7 @@
 %p
   %b Name
   %br
-  = f.text_field :name
+  = f.text_field :name, :options => {:id => "ohai", }
 
 %p
   %b Time zone
@@ -21,6 +21,8 @@
 %p
   = f.submit "Update"
 - end
+
+= in_place_editor "ohai"
 
 = link_to 'Show', @employee
 |

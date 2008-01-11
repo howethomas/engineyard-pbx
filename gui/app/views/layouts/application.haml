@@ -1,9 +1,18 @@
+!!! XML
+!!! Strict
 %html
   %head
-    %title EngineYard Phone System
+    %meta{"http-equiv" => "content-type", :content => "text/html;charset=UTF-8"}
+    %title
+      EngineYard Phone System:
+      = controller.action_name
     = stylesheet_link_tag "ey"
   %body
   
     %h1 Phone System
 
     #container
+    
+      %p{:style => "color: green"}= flash[:notice]
+      
+      = yield
