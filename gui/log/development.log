@@ -5262,3 +5262,275 @@ Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 22:01:31) [GET]
 Rendering template within layouts/application
 Rendering employees/edit
 Completed in 0.47510 (2 reqs/sec) | Rendering: 0.46668 (98%) | DB: 0.00032 (0%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 22:06:41) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000322)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.41593 (2 reqs/sec) | Rendering: 0.40697 (97%) | DB: 0.00032 (0%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-11 22:06:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000312)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 1) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Completed in 0.37743 (2 reqs/sec) | Rendering: 0.36909 (97%) | DB: 0.00031 (0%) | 200 OK [http://localhost/employees/1/edit]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 22:06:44) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00717 (139 reqs/sec) | Rendering: 0.00414 (57%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 22:12:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.001212)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01697 (58 reqs/sec) | Rendering: 0.00697 (41%) | DB: 0.00121 (7%) | 200 OK [http://localhost/employees]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 22:41:01) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00554 (180 reqs/sec) | Rendering: 0.00277 (49%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 22:41:30) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00571 (175 reqs/sec) | Rendering: 0.00292 (51%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 22:42:34) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00578 (173 reqs/sec) | Rendering: 0.00292 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 22:42:44) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00571 (175 reqs/sec) | Rendering: 0.00285 (49%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 22:42:47) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00564 (177 reqs/sec) | Rendering: 0.00281 (49%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 22:42:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00566 (176 reqs/sec) | Rendering: 0.00290 (51%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 22:42:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00566 (176 reqs/sec) | Rendering: 0.00280 (49%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 22:43:14) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00551 (181 reqs/sec) | Rendering: 0.00277 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 22:43:20) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00573 (174 reqs/sec) | Rendering: 0.00289 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 22:43:22) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00580 (172 reqs/sec) | Rendering: 0.00286 (49%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-11 22:43:23) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00570 (175 reqs/sec) | Rendering: 0.00281 (49%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 22:43:24) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000981)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01309 (76 reqs/sec) | Rendering: 0.00515 (39%) | DB: 0.00098 (7%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 22:43:32) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.41481)
+Completed in 0.42886 (2 reqs/sec) | Rendering: 0.42082 (98%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#create (for 127.0.0.1 at 2008-01-11 22:43:44) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"commit"=>"Create", "employee"=>{"name"=>"Josh Susser", "extension"=>"2223", "time_zone"=>"America/Los_Angeles"}, "authenticity_token"=>"2f80204384b09f637fbd8c97dc715b4c0ea7bc72", "action"=>"create", "controller"=>"employees"}
+  [4;36;1mEmployee Create (0.000416)[0m   [0;1mINSERT INTO employees ("name", "updated_at", "extension", "time_zone", "created_at") VALUES('Josh Susser', '2008-01-11 22:43:44', '2223', 'America/Los_Angeles', '2008-01-11 22:43:44')[0m
+Redirected to http://localhost:3000/employees/2
+Completed in 0.01335 (74 reqs/sec) | DB: 0.00042 (3%) | 302 Found [http://localhost/employees]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2008-01-11 22:43:44) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIidFbXBsb3llZSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0%0AZWQuBjoKQHVzZWR7BjsHVA%3D%3D--7fb688640432bdf55894c84b679d8674678cf6d7
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000366)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 2) [0m
+Rendering template within layouts/application
+Rendering employees/show
+Completed in 0.03049 (32 reqs/sec) | Rendering: 0.02068 (67%) | DB: 0.00037 (1%) | 200 OK [http://localhost/employees/2]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 22:43:45) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.084414)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.09858 (10 reqs/sec) | Rendering: 0.00703 (7%) | DB: 0.08441 (85%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 22:43:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.37502)
+Completed in 0.38930 (2 reqs/sec) | Rendering: 0.38044 (97%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#create (for 127.0.0.1 at 2008-01-11 22:44:03) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"commit"=>"Create", "employee"=>{"name"=>"Ezra Zygmuntowicz", "extension"=>"2224", "time_zone"=>"America/Los_Angeles"}, "authenticity_token"=>"2f80204384b09f637fbd8c97dc715b4c0ea7bc72", "action"=>"create", "controller"=>"employees"}
+  [4;35;1mEmployee Create (0.000442)[0m   [0mINSERT INTO employees ("name", "updated_at", "extension", "time_zone", "created_at") VALUES('Ezra Zygmuntowicz', '2008-01-11 22:44:03', '2224', 'America/Los_Angeles', '2008-01-11 22:44:03')[0m
+Redirected to http://localhost:3000/employees/3
+Completed in 0.01369 (73 reqs/sec) | DB: 0.00044 (3%) | 302 Found [http://localhost/employees]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2008-01-11 22:44:03) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIidFbXBsb3llZSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0%0AZWQuBjoKQHVzZWR7BjsHVA%3D%3D--7fb688640432bdf55894c84b679d8674678cf6d7
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000310)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 3) [0m
+Rendering template within layouts/application
+Rendering employees/show
+Completed in 0.01234 (81 reqs/sec) | Rendering: 0.00361 (29%) | DB: 0.00031 (2%) | 200 OK [http://localhost/employees/3]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 22:44:04) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.001231)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01382 (72 reqs/sec) | Rendering: 0.00561 (40%) | DB: 0.00123 (8%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 22:44:06) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.36124)
+Completed in 0.37411 (2 reqs/sec) | Rendering: 0.36628 (97%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#create (for 127.0.0.1 at 2008-01-11 22:44:16) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"commit"=>"Create", "employee"=>{"name"=>"Loren Hale", "extension"=>"3000", "time_zone"=>"America/Los_Angeles"}, "authenticity_token"=>"2f80204384b09f637fbd8c97dc715b4c0ea7bc72", "action"=>"create", "controller"=>"employees"}
+  [4;36;1mEmployee Create (0.000423)[0m   [0;1mINSERT INTO employees ("name", "updated_at", "extension", "time_zone", "created_at") VALUES('Loren Hale', '2008-01-11 22:44:16', '3000', 'America/Los_Angeles', '2008-01-11 22:44:16')[0m
+Redirected to http://localhost:3000/employees/4
+Completed in 0.01426 (70 reqs/sec) | DB: 0.00042 (2%) | 302 Found [http://localhost/employees]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2008-01-11 22:44:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIidFbXBsb3llZSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0%0AZWQuBjoKQHVzZWR7BjsHVA%3D%3D--7fb688640432bdf55894c84b679d8674678cf6d7
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000336)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 4) [0m
+Rendering template within layouts/application
+Rendering employees/show
+Completed in 0.11818 (8 reqs/sec) | Rendering: 0.10834 (91%) | DB: 0.00034 (0%) | 200 OK [http://localhost/employees/4]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 22:44:18) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.001398)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01465 (68 reqs/sec) | Rendering: 0.00592 (40%) | DB: 0.00140 (9%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#new (for 127.0.0.1 at 2008-01-11 22:44:19) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"new", "controller"=>"employees"}
+Rendering template within layouts/application
+Rendering employees/new
+Rendered employees/_new_employee_form (0.38073)
+Completed in 0.39364 (2 reqs/sec) | Rendering: 0.38564 (97%) | DB: 0.00000 (0%) | 200 OK [http://localhost/employees/new]
+
+
+Processing EmployeesController#create (for 127.0.0.1 at 2008-01-11 22:44:59) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"commit"=>"Create", "employee"=>{"name"=>"Tom Mornini", "extension"=>"3001", "time_zone"=>"America/Los_Angeles"}, "authenticity_token"=>"2f80204384b09f637fbd8c97dc715b4c0ea7bc72", "action"=>"create", "controller"=>"employees"}
+  [4;35;1mEmployee Create (0.000672)[0m   [0mINSERT INTO employees ("name", "updated_at", "extension", "time_zone", "created_at") VALUES('Tom Mornini', '2008-01-11 22:44:59', '3001', 'America/Los_Angeles', '2008-01-11 22:44:59')[0m
+Redirected to http://localhost:3000/employees/5
+Completed in 0.01340 (74 reqs/sec) | DB: 0.00067 (5%) | 302 Found [http://localhost/employees]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2008-01-11 22:44:59) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIidFbXBsb3llZSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0%0AZWQuBjoKQHVzZWR7BjsHVA%3D%3D--7fb688640432bdf55894c84b679d8674678cf6d7
+  Parameters: {"action"=>"show", "id"=>"5", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000335)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 5) [0m
+Rendering template within layouts/application
+Rendering employees/show
+Completed in 0.01220 (81 reqs/sec) | Rendering: 0.00361 (29%) | DB: 0.00033 (2%) | 200 OK [http://localhost/employees/5]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-11 22:45:01) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlODFmYTFiMzUzZDVjNWUwYWI3ZDBjODhmZjkxMWY5%0AOGYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--a1844c60c2bf17472716417916da307c938ecb7e
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.002748)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.01584 (63 reqs/sec) | Rendering: 0.00601 (37%) | DB: 0.00275 (17%) | 200 OK [http://localhost/employees]
