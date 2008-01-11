@@ -1,0 +1,35 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: white url(http://www.engineyard.com/images/topbg.gif) repeat-x;
+}
+h1 {
+	background: url(http://www.engineyard.com/images/logo.gif) top left no-repeat;
+	height: 102px;
+	width: 500px;
+	line-height: 102px;
+	font-size: 40px;
+	text-align: center;
+	margin: 0 auto 10px auto;
+	padding-top: 80px;
+}
+
+#container {
+	font-size: 17px;
+	font-family: Tahoma, "Trebuchet MS", Arial;
+	margin: 0 auto;
+	padding: 10px;
+	width: 480px;
+	background: #f2f2d5;
+}
+
+a {
+	color: black;
+	font-weight: bold;
+	padding: 1px;
+}
+
+a:hover {
+	color: #f2f2d5;
+	background-color: black;
+}
