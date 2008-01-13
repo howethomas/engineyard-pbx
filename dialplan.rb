@@ -1,4 +1,9 @@
 ahn {
-  # play 'hello, welcome to Engine Yard'
-  Employee.find(:all)
+  
+  %w[1-ey-greet 2-sales 3-techsupport
+     4-finance 5-everything-else].each do |sound_file|
+    play "engineyard/#{sound_file}"
+  end
+  
+  # Employee.find(:all)
 }
