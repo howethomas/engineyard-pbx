@@ -1,4 +1,4 @@
-adhearsion {
-  simon = new_simon_game
-  simon.start
+ahn {
+  # play 'hello, welcome to Engine Yard'
+  Employee.find(:all)
 }

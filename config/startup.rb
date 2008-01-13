@@ -20,17 +20,5 @@ Adhearsion::Configuration.configure do |config|
   # config.enable_freeswitch :listening_port => 4572
   
   # Configure a database to use ActiveRecord-backed models.
-  # config.enable_database :adapter  => 'mysql',
-  #                        :username => 'joe', 
-  #                        :password => 'secret',
-  #                        :host     => 'db.example.org'
+  config.enable_database :adapter => "sqlite3", :dbfile => "gui/db/development.sqlite3"
 end
-
-# If you want another applications to read your database settings
-# programatically, you can enable the database like this:
-#
-#  config.enable_database YAML.load_file("config/active_record.yml")
-#
-# You may want to name the file database.yml but this may conflict
-# when you're doing Rails app integration since Rails separates database
-# settings into environments (development, test, production).

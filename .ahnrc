@@ -19,7 +19,7 @@ paths:
 
   # Models
   models:
-    directory: models
+    directory: gui/app/models
     pattern: *.rb
   migrations:
     directory: db/migrations
