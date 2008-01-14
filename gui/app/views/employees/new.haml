@@ -2,6 +2,7 @@
 
 = error_messages_for :employee
 
-= render :partial => "new_employee_form", :locals => {:employee => @employee}
+
+= render :partial => "employee_editor", :locals => {:button_text => "Create", :employee => @employee}
 
 = link_to 'Back', employees_path

@@ -1,9 +1,17 @@
 ahn {
   
-  %w[1-ey-greet 2-sales 3-techsupport
-     4-finance 5-everything-else].each do |sound_file|
-    play "engineyard/#{sound_file}"
-  end
+  choice = input 4, :timeout => 5.seconds, :play => 'engineyard/prompt'
   
-  # Employee.find(:all)
+  if (1..3).include? choice.to_i
+    play 'hello-world'
+  elsif employee = Employee.find_by_extension(choice)
+    mobile_number = employee.mobile_number
+    if mobile_number
+      dial "SIP/trunk/#{mobile_number}", :callerid => callerid
+    else
+      # Say: Sorry, the person you're calling cannot be reached.
+    end
+  elsif (1_000...10_000).include? choice.to_i
+    join choice
+  end
 }

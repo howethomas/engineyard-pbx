@@ -2,25 +2,7 @@
 
 = error_messages_for :employee
 
-- form_for(@employee) do |f|
-%p
-  %b Name
-  %br
-  = f.text_field :name, :options => {:id => "ohai", }
-
-%p
-  %b Extension
-  %br
-  = f.text_field :extension
-
-  %p
-    %b Time zone
-    %br
-    = time_zone_select 'employee', 'time_zone', TZInfo::Timezone.all.sort, :model => TZInfo::Timezone, :default => "America/Los_Angeles"
-
-%p
-  = f.submit "Update"
-- end
+= render :partial => "employee_editor", :locals => {:button_text => "Update", :employee => @employee}
 
 = link_to 'Show', @employee
 |

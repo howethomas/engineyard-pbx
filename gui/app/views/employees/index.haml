@@ -9,6 +9,7 @@
   - for employee in @employees
   %li
     =h(employee.extension) + ": "
+    = alert! unless employee.mobile_number
     = link_to h(employee.name), edit_employee_path(employee)
     = "(#{link_to 'X', employee, :confirm => "Are you sure you wish to delete employee #{h(employee.name)} permanently?", :method => :delete})"
   - end

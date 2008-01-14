@@ -10,11 +10,16 @@
   = f.text_field :extension
 
 %p
-  %label{:for => "employee_time_zone"} Time zone
+  %label{:for => "employee_mobile_number"} Mobile number
   %br
-  = time_zone_select 'employee', 'time_zone', TZInfo::Timezone.all.sort, :model => TZInfo::Timezone, :default => "America/Los_Angeles"
+  = f.text_field :mobile_number
 
 %p
-  = f.submit "Create"
+  %label{:for => "employee_time_zone"} Time zone
+  %br
+  = select_timezone
+
+%p
+  = f.submit button_text
 
 - end
