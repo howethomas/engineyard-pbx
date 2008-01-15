@@ -1,4 +1,10 @@
 - form_for employee do |f|
+
+%p
+  %span.on-vacation
+    = f.check_box :on_vacation
+    %label{:for => 'employee_on_vacation'} This person is on vacation right now.
+
 %p
   %label{:for => "employee_name"} Name
   %br
@@ -13,6 +19,7 @@
   %label{:for => "employee_mobile_number"} Mobile number
   %br
   = f.text_field :mobile_number
+
 
 %p
   %label{:for => "employee_time_zone"} Time zone

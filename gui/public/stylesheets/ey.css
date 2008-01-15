@@ -65,3 +65,60 @@ label {
 .powered-by a {
 	color: #d0cfbe;
 }
+
+a.on-vacation-list {
+	text-decoration: line-through;
+}
+
+.on-vacation {
+	display: block;
+}
+
+.on-vacation label {
+	font-weight: normal;
+	padding: 3px;
+}
+
+.on-vacation label:active {
+	color: #f2f2d5;
+	background-color: black;
+}
+
+h2 span.on-vacation {
+	display: block;
+	font-size: 13px;
+	color: #a50000;
+}
+
+ul.editor-users {
+	list-style: none;
+	padding: 0;
+}
+ul.editor-users li {
+	float: left;
+	margin: 3px;
+	padding: 1px 3px;
+	background-color: white;
+	border: 1px black dotted;
+	font-size: 12px;
+	cursor: move;
+}
+
+ul.editor-users li:hover {
+	background-color: black;
+	color: #f2f2d5;
+	border-color: #f2f2d5;
+}
+
+br.clear {
+	clear: left;
+}
+
+div.editor-group {
+	background-color: white ;
+	min-height: 100px;
+}
+
+div.editor-group p.name {
+	text-align: center;
+}

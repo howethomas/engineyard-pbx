@@ -3,3 +3,5 @@ Pick two trunk services online. VoIP.ms and who else?
 With the two trunks, work on simple load balancing thing between them.
 
 Generate a test call when viewing a person? Helps ensure the system can call them.
+
+Get some rails unit tests in there!

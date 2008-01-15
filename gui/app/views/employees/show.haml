@@ -1,9 +1,12 @@
-%h2= h @employee.name
+%h2
+  = h @employee.name
+  %span.on-vacation= " is on vacation right now!" if @employee.on_vacation
+%p
 
 %p
   %b Extension:
   =h @employee.extension
-
+  
 = link_to 'Edit', edit_employee_path(@employee)
 |
 = link_to 'Back', employees_path

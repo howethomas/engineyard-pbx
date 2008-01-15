@@ -1,0 +1,24 @@
+%h2 Listing groups
+
+%p Drag the following users into groups below.
+
+%h3 Available users
+
+%ul.editor-users
+  - for employee in @employees
+  %li=h employee.name
+  - end
+  
+%br.clear
+
+%h3 Available groups
+
+- for group in @groups
+.editor-group
+  %p.name=h group.name
+
+- end
+
+%br
+
+/= link_to 'New group', new_group_path
