@@ -6213,3 +6213,80 @@ Rendering template within layouts/application
 Rendering employees/edit
 Rendered employees/_employee_editor (0.36609)
 Completed in 0.38051 (2 reqs/sec) | Rendering: 0.37187 (97%) | DB: 0.00036 (0%) | 200 OK [http://localhost/employees/21/edit]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-15 01:40:12) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMGUyM2U2Y2RjZDZiMGQwZmZmNWU0NWZiZGE5OTYz%0AMWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--bdde68272a89238cbe74018dea632f95ca95ab92
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.05328 (18 reqs/sec) | Rendering: 0.04859 (91%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-15 01:40:15) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMGUyM2U2Y2RjZDZiMGQwZmZmNWU0NWZiZGE5OTYz%0AMWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--bdde68272a89238cbe74018dea632f95ca95ab92
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00596 (167 reqs/sec) | Rendering: 0.00316 (52%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-15 01:40:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMGUyM2U2Y2RjZDZiMGQwZmZmNWU0NWZiZGE5OTYz%0AMWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--bdde68272a89238cbe74018dea632f95ca95ab92
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00578 (173 reqs/sec) | Rendering: 0.00296 (51%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-15 01:40:17) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMGUyM2U2Y2RjZDZiMGQwZmZmNWU0NWZiZGE5OTYz%0AMWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--bdde68272a89238cbe74018dea632f95ca95ab92
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00636 (157 reqs/sec) | Rendering: 0.00334 (52%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-15 01:40:36) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMGUyM2U2Y2RjZDZiMGQwZmZmNWU0NWZiZGE5OTYz%0AMWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--bdde68272a89238cbe74018dea632f95ca95ab92
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00563 (177 reqs/sec) | Rendering: 0.00283 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.000270)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000374)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000241)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000225)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000236)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateGroups (4)
+  [4;35;1mSQL (0.003371)[0m   [0mCREATE TABLE groups ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.003643)[0m   [0;1mUPDATE schema_info SET version = 4[0m
+  [4;35;1mSQL (0.000521)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddGroupForeignKeyToUsers (5)
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: users: ALTER TABLE users ADD "group_id" integer[0m
+  [4;36;1mSQL (0.000272)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000304)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000200)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000198)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000194)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000195)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddGroupForeignKeyToUsers (5)
+  [4;36;1mSQL (0.002915)[0m   [0;1mALTER TABLE employees ADD "group_id" integer[0m
+  [4;35;1mSQL (0.005477)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.004888)[0m   [0;1mUPDATE schema_info SET version = 5[0m
+  [4;35;1mSQL (0.000505)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddVactionFlagToUsers (6)
+  [4;36;1mSQL (0.002755)[0m   [0;1mALTER TABLE employees ADD "on_vacation" boolean[0m
+  [4;35;1mSQL (0.006023)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.002980)[0m   [0;1mUPDATE schema_info SET version = 6[0m
+  [4;35;1mSQL (0.000413)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000451)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000138)[0m   [0mPRAGMA index_list(employees)[0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mPRAGMA index_list(groups)[0m
