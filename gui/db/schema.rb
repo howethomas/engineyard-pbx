@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 6) do
+ActiveRecord::Schema.define(:version => 7) do
 
   create_table "employees", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 6) do
     t.string   "mobile_number"
     t.integer  "group_id"
     t.boolean  "on_vacation"
+    t.string   "email"
   end
 
   create_table "groups", :force => true do |t|

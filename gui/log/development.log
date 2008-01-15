@@ -9274,3 +9274,126 @@ Processing GroupsController#editor (for 127.0.0.1 at 2008-01-15 23:37:47) [GET]
 Rendering template within layouts/application
 Rendering groups/editor
 Completed in 0.09231 (10 reqs/sec) | Rendering: 0.07018 (76%) | DB: 0.00579 (6%) | 200 OK [http://localhost/groups/editor]
+  [4;36;1mSQL (0.036880)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000427)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000382)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000267)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000275)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000332)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000266)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000273)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddEmailsToUsers (7)
+  [4;36;1mSQL (0.023758)[0m   [0;1mALTER TABLE employees ADD "email" varchar(255)[0m
+  [4;35;1mSQL (0.020411)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.002796)[0m   [0;1mUPDATE schema_info SET version = 7[0m
+  [4;35;1mSQL (0.000424)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000504)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000111)[0m   [0mPRAGMA index_list(employees)[0m
+  [4;36;1mSQL (0.000098)[0m   [0;1mPRAGMA index_list(groups)[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-15 23:52:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00615 (162 reqs/sec) | Rendering: 0.00313 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-15 23:52:49) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.006372)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.03286 (30 reqs/sec) | Rendering: 0.01737 (52%) | DB: 0.00637 (19%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-15 23:52:50) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"edit", "id"=>"36", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000383)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 36) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Rendered employees/_employee_editor (0.37042)
+Completed in 0.38479 (2 reqs/sec) | Rendering: 0.37596 (97%) | DB: 0.00038 (0%) | 200 OK [http://localhost/employees/36/edit]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-15 23:52:57) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000387)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Rendered employees/_employee_editor (0.37204)
+Completed in 0.38632 (2 reqs/sec) | Rendering: 0.37745 (97%) | DB: 0.00039 (0%) | 200 OK [http://localhost/employees/22/edit]
+
+
+Processing EmployeesController#update (for 127.0.0.1 at 2008-01-15 23:53:07) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"commit"=>"Update", "employee"=>{"on_vacation"=>"0", "name"=>"Jay Phillips", "extension"=>"250", "mobile_number"=>"+14097672813", "time_zone"=>"America/Los_Angeles", "email"=>"Jay@Codemecca.com"}, "authenticity_token"=>"41c15a2d7e5495625a1ded59344f46893e50144a", "_method"=>"put", "action"=>"update", "id"=>"22", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000379)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+  [4;36;1mEmployee Update (0.000434)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "email" = 'Jay@Codemecca.com', "mobile_number" = '+14097672813', "name" = 'Jay Phillips', "group_id" = NULL, "extension" = '250', "time_zone" = 'America/Los_Angeles', "on_vacation" = 'f', "updated_at" = '2008-01-15 23:53:07' WHERE "id" = 22[0m
+Redirected to http://localhost:3000/employees/22
+Completed in 0.01519 (65 reqs/sec) | DB: 0.00081 (5%) | 302 Found [http://localhost/employees/22]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2008-01-15 23:53:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIidFbXBsb3llZSB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0%0AZWQuBjoKQHVzZWR7BjsHVA%3D%3D--4a4ca5059f7821c80bbb5da1c7d396d043fa7b44
+  Parameters: {"action"=>"show", "id"=>"22", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000388)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+Rendering template within layouts/application
+Rendering employees/show
+Completed in 0.01390 (71 reqs/sec) | Rendering: 0.00441 (31%) | DB: 0.00039 (2%) | 200 OK [http://localhost/employees/22]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-15 23:53:14) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.110396)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.13734 (7 reqs/sec) | Rendering: 0.01748 (12%) | DB: 0.11040 (80%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-15 23:53:56) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000390)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Rendered employees/_employee_editor (0.36376)
+Completed in 0.37839 (2 reqs/sec) | Rendering: 0.36927 (97%) | DB: 0.00039 (0%) | 200 OK [http://localhost/employees/22/edit]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2008-01-15 23:53:59) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"show", "id"=>"22", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000383)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+Rendering template within layouts/application
+Rendering employees/show
+Completed in 0.01458 (68 reqs/sec) | Rendering: 0.00550 (37%) | DB: 0.00038 (2%) | 200 OK [http://localhost/employees/22]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-15 23:54:10) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.006126)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.03146 (31 reqs/sec) | Rendering: 0.01664 (52%) | DB: 0.00613 (19%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-15 23:54:28) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000379)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Rendered employees/_employee_editor (0.36189)
+Completed in 0.37633 (2 reqs/sec) | Rendering: 0.36721 (97%) | DB: 0.00038 (0%) | 200 OK [http://localhost/employees/22/edit]
