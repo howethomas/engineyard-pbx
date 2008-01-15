@@ -9009,3 +9009,268 @@ Processing GroupsController#editor (for 127.0.0.1 at 2008-01-15 02:56:59) [GET]
 Rendering template within layouts/application
 Rendering groups/editor
 Completed in 0.02471 (40 reqs/sec) | Rendering: 0.00484 (19%) | DB: 0.00519 (21%) | 200 OK [http://localhost/groups/editor]
+  [4;36;1mEmployee Load (0.021721)[0m   [0;1mSELECT * FROM employees WHERE (extension LIKE "2%") [0m
+  [4;35;1mEmployee Load (0.005972)[0m   [0mSELECT * FROM employees WHERE (extension LIKE "2%") [0m
+  [4;36;1mEmployee Load (0.002142)[0m   [0;1mSELECT * FROM employees WHERE (extension LIKE "22%") [0m
+  [4;35;1mEmployee Load (0.000639)[0m   [0mSELECT * FROM employees WHERE (extension LIKE "221%") [0m
+  [4;36;1mEmployee Load (0.005135)[0m   [0;1mSELECT * FROM employees [0m
+  [4;35;1mEmployee Load (0.000653)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Tom Mornini') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000485)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Lance Walley') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000466)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Ezra Zygmuntowicz') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000482)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Jayson Vantuyl') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000445)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Loren Hale') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000425)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Riki Crusha') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000420)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Corey Donohoe') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000399)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Jamie van Dyke') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000391)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Edward Muller') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000374)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Evan Phoenix') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000386)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Lee Jensen') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000357)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Ronelly Taborite') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000357)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Taylor Weibley') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000347)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Joshua Sierles') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000344)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Dylan Egan') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000357)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Tim Rea') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000357)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'John Hornbeck') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000348)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Galin Vassilev') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000358)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Jeromy Darling') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000351)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Max Mohun') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000350)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Randall Thomas') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000372)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Eric Hodel') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000348)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Ryan Davis') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000356)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Brie McMahon') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000359)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Zac Roetemeyer') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000359)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Yehuda Katz') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000353)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Leah Silber') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000360)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Brian Ford') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000356)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Wayne Seguin') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000359)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Michael Ivey') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000342)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Jason Fesler') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000351)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Wilson Bilkovich') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000174)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Lance Carlson') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000151)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Ryan Dahl') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000151)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Caleb Tennis') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000617)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Tom Mornini') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000465)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Lance Walley') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000420)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Ezra Zygmuntowicz') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000432)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Jayson Vantuyl') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000385)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Loren Hale') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000384)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Riki Crusha') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000388)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Corey Donohoe') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000351)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Jamie van Dyke') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000348)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Edward Muller') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000351)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Evan Phoenix') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000365)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Lee Jensen') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000706)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Ronelly Taborite') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000711)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Taylor Weibley') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000363)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Joshua Sierles') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000348)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Dylan Egan') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000343)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Tim Rea') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000354)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'John Hornbeck') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000353)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Galin Vassilev') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000361)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Jeromy Darling') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000350)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Max Mohun') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000390)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Randall Thomas') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000346)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Eric Hodel') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000353)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Ryan Davis') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000359)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Brie McMahon') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000346)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Zac Roetemeyer') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000355)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Yehuda Katz') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000342)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Leah Silber') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000369)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Brian Ford') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000357)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Wayne Seguin') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000348)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Michael Ivey') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000356)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Jason Fesler') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000369)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Wilson Bilkovich') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000163)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Lance Carlson') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000160)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Ryan Dahl') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000159)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Caleb Tennis') LIMIT 1[0m
+  [4;35;1mEmployee Create (0.000669)[0m   [0mINSERT INTO employees ("name", "on_vacation", "updated_at", "extension", "group_id", "mobile_number", "time_zone", "created_at") VALUES('Lance Carlson', NULL, '2008-01-15 23:05:28', 233, NULL, '+17347099512', NULL, '2008-01-15 23:05:28')[0m
+  [4;36;1mEmployee Create (0.000363)[0m   [0;1mINSERT INTO employees ("name", "on_vacation", "updated_at", "extension", "group_id", "mobile_number", "time_zone", "created_at") VALUES('Ryan Dahl', NULL, '2008-01-15 23:05:28', 234, NULL, '+4915772393252', NULL, '2008-01-15 23:05:28')[0m
+  [4;35;1mEmployee Create (0.000321)[0m   [0mINSERT INTO employees ("name", "on_vacation", "updated_at", "extension", "group_id", "mobile_number", "time_zone", "created_at") VALUES('Caleb Tennis', NULL, '2008-01-15 23:05:28', 235, NULL, '+18123435338', NULL, '2008-01-15 23:05:28')[0m
+  [4;36;1mEmployee Load (0.000671)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Tom Mornini') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000446)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Lance Walley') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000410)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Ezra Zygmuntowicz') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000439)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Jayson Vantuyl') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000424)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Loren Hale') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000423)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Riki Crusha') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000424)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Corey Donohoe') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000438)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Jamie van Dyke') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000386)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Edward Muller') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000385)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Evan Phoenix') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000376)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Lee Jensen') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000354)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Ronelly Taborite') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000360)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Taylor Weibley') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000339)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Joshua Sierles') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000376)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Dylan Egan') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000722)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Tim Rea') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000357)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'John Hornbeck') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000355)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Galin Vassilev') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000358)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Jeromy Darling') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000353)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Max Mohun') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000352)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Randall Thomas') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000346)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Eric Hodel') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000356)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Ryan Davis') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000360)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Brie McMahon') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000346)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Zac Roetemeyer') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000357)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Yehuda Katz') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000353)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Leah Silber') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000373)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Brian Ford') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000357)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Wayne Seguin') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000351)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Michael Ivey') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000364)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Jason Fesler') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000354)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Wilson Bilkovich') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000365)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Lance Carlson') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000377)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Ryan Dahl') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.000367)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Caleb Tennis') LIMIT 1[0m
+  [4;35;1mEmployee Load (0.000600)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Tom Mornini') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000800)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+19166000768', "name" = 'Tom Mornini', "group_id" = NULL, "extension" = '201', "time_zone" = 'America/Los_Angeles', "on_vacation" = 'f', "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 30[0m
+  [4;35;1mEmployee Load (0.000806)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Lance Walley') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000430)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+14152440349', "name" = 'Lance Walley', "group_id" = NULL, "extension" = '202', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 36[0m
+  [4;35;1mEmployee Load (0.000762)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Ezra Zygmuntowicz') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000551)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+15309177815', "name" = 'Ezra Zygmuntowicz', "group_id" = NULL, "extension" = '203', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 9[0m
+  [4;35;1mEmployee Load (0.000538)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Jayson Vantuyl') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000383)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+14172076962', "name" = 'Jayson Vantuyl', "group_id" = NULL, "extension" = '204', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 15[0m
+  [4;35;1mEmployee Load (0.000368)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Loren Hale') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000282)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+15303638902', "name" = 'Loren Hale', "group_id" = NULL, "extension" = '205', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 21[0m
+  [4;35;1mEmployee Load (0.000494)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Riki Crusha') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000322)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+15303632902', "name" = 'Riki Crusha', "group_id" = NULL, "extension" = '206', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 27[0m
+  [4;35;1mEmployee Load (0.000442)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Corey Donohoe') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000455)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+19012185522', "name" = 'Corey Donohoe', "group_id" = NULL, "extension" = '207', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 33[0m
+  [4;35;1mEmployee Load (0.000477)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Jamie van Dyke') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000341)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+447816519649', "name" = 'Jamie van Dyke', "group_id" = NULL, "extension" = '208', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 39[0m
+  [4;35;1mEmployee Load (0.000439)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Edward Muller') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000312)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+14178442435', "name" = 'Edward Muller', "group_id" = NULL, "extension" = '209', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 12[0m
+  [4;35;1mEmployee Load (0.000421)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Evan Phoenix') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000306)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+13238737139', "name" = 'Evan Phoenix', "group_id" = NULL, "extension" = '210', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 18[0m
+  [4;35;1mEmployee Load (0.000437)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Lee Jensen') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000318)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+18017871602', "name" = 'Lee Jensen', "group_id" = NULL, "extension" = '211', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 24[0m
+  [4;35;1mEmployee Load (0.000449)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Ronelly Taborite') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000312)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+19163036842', "name" = 'Ronelly Taborite', "group_id" = NULL, "extension" = '212', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 29[0m
+  [4;35;1mEmployee Load (0.000441)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Taylor Weibley') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000318)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+19163376987', "name" = 'Taylor Weibley', "group_id" = NULL, "extension" = '213', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 35[0m
+  [4;35;1mEmployee Load (0.000405)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Joshua Sierles') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000312)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+34626971353', "name" = 'Joshua Sierles', "group_id" = NULL, "extension" = '214', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 8[0m
+  [4;35;1mEmployee Load (0.000445)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Dylan Egan') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000365)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+61412460974', "name" = 'Dylan Egan', "group_id" = NULL, "extension" = '215', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 14[0m
+  [4;35;1mEmployee Load (0.000443)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Tim Rea') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000391)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+19162516230', "name" = 'Tim Rea', "group_id" = NULL, "extension" = '216', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 20[0m
+  [4;35;1mEmployee Load (0.000607)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'John Hornbeck') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.406321)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+15809171549', "name" = 'John Hornbeck', "group_id" = NULL, "extension" = '217', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:07' WHERE "id" = 26[0m
+  [4;35;1mEmployee Load (0.000816)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Galin Vassilev') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000432)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+14172076457', "name" = 'Galin Vassilev', "group_id" = NULL, "extension" = '218', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 32[0m
+  [4;35;1mEmployee Load (0.000784)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Jeromy Darling') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000433)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+19524841188', "name" = 'Jeromy Darling', "group_id" = NULL, "extension" = '219', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 38[0m
+  [4;35;1mEmployee Load (0.104995)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Max Mohun') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000543)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+17076429963', "name" = 'Max Mohun', "group_id" = NULL, "extension" = '220', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 11[0m
+  [4;35;1mEmployee Load (0.000748)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Randall Thomas') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000424)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+13143234246', "name" = 'Randall Thomas', "group_id" = NULL, "extension" = '221', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 17[0m
+  [4;35;1mEmployee Load (0.000793)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Eric Hodel') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000434)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = NULL, "name" = 'Eric Hodel', "group_id" = NULL, "extension" = '222', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 23[0m
+  [4;35;1mEmployee Load (0.000846)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Ryan Davis') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000434)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = NULL, "name" = 'Ryan Davis', "group_id" = NULL, "extension" = '223', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 28[0m
+  [4;35;1mEmployee Load (0.000853)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Brie McMahon') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000435)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+15304153638', "name" = 'Brie McMahon', "group_id" = NULL, "extension" = '224', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 34[0m
+  [4;35;1mEmployee Load (0.000732)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Zac Roetemeyer') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000415)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+14172346408', "name" = 'Zac Roetemeyer', "group_id" = NULL, "extension" = '225', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 7[0m
+  [4;35;1mEmployee Load (0.000763)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Yehuda Katz') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000419)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+17188771325', "name" = 'Yehuda Katz', "group_id" = NULL, "extension" = '226', "time_zone" = 'America/Los_Angeles', "on_vacation" = 'f', "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 13[0m
+  [4;35;1mEmployee Load (0.000778)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Leah Silber') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000472)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+19177144953', "name" = 'Leah Silber', "group_id" = NULL, "extension" = '227', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 19[0m
+  [4;35;1mEmployee Load (0.000811)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Brian Ford') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000412)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '15037505378', "name" = 'Brian Ford', "group_id" = NULL, "extension" = '228', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 25[0m
+  [4;35;1mEmployee Load (0.000862)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Wayne Seguin') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000458)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+17164714618', "name" = 'Wayne Seguin', "group_id" = NULL, "extension" = '229', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 31[0m
+  [4;35;1mEmployee Load (0.000791)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Michael Ivey') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000403)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+12517514650', "name" = 'Michael Ivey', "group_id" = NULL, "extension" = '230', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 37[0m
+  [4;35;1mEmployee Load (0.000909)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Jason Fesler') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000441)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = NULL, "name" = 'Jason Fesler', "group_id" = NULL, "extension" = '231', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 10[0m
+  [4;35;1mEmployee Load (0.000771)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Wilson Bilkovich') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000406)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = NULL, "name" = 'Wilson Bilkovich', "group_id" = NULL, "extension" = '232', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 16[0m
+  [4;35;1mEmployee Load (0.000920)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Lance Carlson') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000432)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-15 23:05:28', "mobile_number" = '+17347099512', "name" = 'Lance Carlson', "group_id" = NULL, "extension" = '233', "time_zone" = NULL, "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 40[0m
+  [4;35;1mEmployee Load (0.000781)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Ryan Dahl') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000403)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-15 23:05:28', "mobile_number" = '+4915772393252', "name" = 'Ryan Dahl', "group_id" = NULL, "extension" = '234', "time_zone" = NULL, "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 41[0m
+  [4;35;1mEmployee Load (0.000889)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Caleb Tennis') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000425)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-15 23:05:28', "mobile_number" = '+18123435338', "name" = 'Caleb Tennis', "group_id" = NULL, "extension" = '235', "time_zone" = NULL, "on_vacation" = NULL, "updated_at" = '2008-01-15 23:07:08' WHERE "id" = 42[0m
+  [4;36;1mEmployee Load (0.005184)[0m   [0;1mSELECT * FROM employees [0m
+  [4;35;1mEmployee Load (0.006736)[0m   [0mSELECT * FROM employees [0m
+  [4;36;1mEmployee Load (0.006374)[0m   [0;1mSELECT * FROM employees [0m
+  [4;35;1mEmployee Load (0.000597)[0m   [0mSELECT * FROM employees WHERE (employees."name" = 'Brian Ford') LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000597)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+15037505378', "name" = 'Brian Ford', "group_id" = NULL, "extension" = '228', "time_zone" = 'America/Los_Angeles', "on_vacation" = NULL, "updated_at" = '2008-01-15 23:09:35' WHERE "id" = 25[0m
+  [4;35;1mEmployee Load (0.006404)[0m   [0mSELECT * FROM employees [0m
+  [4;36;1mEmployee Load (0.006344)[0m   [0;1mSELECT * FROM employees [0m
+  [4;35;1mEmployee Load (0.000611)[0m   [0mSELECT * FROM employees WHERE (employees."extension" = 233) LIMIT 1[0m
+  [4;36;1mEmployee Update (0.000794)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+14097672813', "name" = 'Jay Phillips', "group_id" = NULL, "extension" = '233', "time_zone" = 'America/Los_Angeles', "on_vacation" = 'f', "updated_at" = '2008-01-15 23:11:25' WHERE "id" = 22[0m
+  [4;35;1mEmployee Load (0.006460)[0m   [0mSELECT * FROM employees [0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-15 23:11:50) [GET]
+  Session ID: 63f4c8973b9609b110b65ee641e925b6
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.04651 (21 reqs/sec) | Rendering: 0.04342 (93%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-15 23:11:51) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--5d572432531f9ae7ec17c72d58900c346c9d75e9
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.006106)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.06078 (16 reqs/sec) | Rendering: 0.04547 (74%) | DB: 0.00611 (10%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-15 23:12:03) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000434)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Rendered employees/_employee_editor (0.42422)
+Completed in 0.44879 (2 reqs/sec) | Rendering: 0.44006 (98%) | DB: 0.00043 (0%) | 200 OK [http://localhost/employees/22/edit]
+
+
+Processing EmployeesController#update (for 127.0.0.1 at 2008-01-15 23:12:09) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"commit"=>"Update", "employee"=>{"on_vacation"=>"0", "name"=>"Jay Phillips", "extension"=>"250", "mobile_number"=>"+14097672813", "time_zone"=>"America/Los_Angeles"}, "authenticity_token"=>"41c15a2d7e5495625a1ded59344f46893e50144a", "_method"=>"put", "action"=>"update", "id"=>"22", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000366)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+  [4;35;1mEmployee Update (0.000399)[0m   [0mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "mobile_number" = '+14097672813', "name" = 'Jay Phillips', "group_id" = NULL, "extension" = '250', "time_zone" = 'America/Los_Angeles', "on_vacation" = 'f', "updated_at" = '2008-01-15 23:12:09' WHERE "id" = 22[0m
+Redirected to http://localhost:3000/employees/22
+Completed in 0.01497 (66 reqs/sec) | DB: 0.00076 (5%) | 302 Found [http://localhost/employees/22]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2008-01-15 23:12:09) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIidFbXBsb3llZSB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0%0AZWQuBjoKQHVzZWR7BjsHVA%3D%3D--4a4ca5059f7821c80bbb5da1c7d396d043fa7b44
+  Parameters: {"action"=>"show", "id"=>"22", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000374)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+Rendering template within layouts/application
+Rendering employees/show
+Completed in 0.04087 (24 reqs/sec) | Rendering: 0.03163 (77%) | DB: 0.00037 (0%) | 200 OK [http://localhost/employees/22]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-15 23:12:10) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.005949)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.03070 (32 reqs/sec) | Rendering: 0.01632 (53%) | DB: 0.00595 (19%) | 200 OK [http://localhost/employees]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-15 23:37:44) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00589 (169 reqs/sec) | Rendering: 0.00305 (51%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-01-15 23:37:47) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"editor", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000711)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.005080)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/editor
+Completed in 0.09231 (10 reqs/sec) | Rendering: 0.07018 (76%) | DB: 0.00579 (6%) | 200 OK [http://localhost/groups/editor]

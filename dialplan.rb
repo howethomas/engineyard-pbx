@@ -40,3 +40,7 @@ internal {
     when 1_000...10_000
   end
 }
+
+error_recovery {
+  
+}
