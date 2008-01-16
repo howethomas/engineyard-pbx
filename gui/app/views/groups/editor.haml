@@ -1,8 +1,13 @@
-%h2 Listing groups
+%h2 Group editor
 
-%p Specify your employees' memberships below.
+%p
+  Specify your employees' memberships below.
+  = submit_tag "Save!"
+
 
 = form_tag group_editor_url, :method => :post, :name => "memberships" do
+
+
 
 %table#group-editor
 
@@ -20,7 +25,7 @@
     -end
   - end
 
-= submit_tag "Save"
+= submit_tag "Save!"
 
 -end
 
