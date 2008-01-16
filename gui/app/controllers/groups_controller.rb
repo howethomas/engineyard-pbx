@@ -2,21 +2,22 @@ class GroupsController < ApplicationController
   
   def editor
     # TODO: Is this the right way to do partially RESTful controllers?
-    case request.request_method
-      when :get
-        @groups    = Group.find :all
-        @employees = Employee.find(:all).sort_by { |e| e.name[/\s*\S+$/].downcase }
-      when :post
-        associations = params.select { |(key,value)| key =~ /^membership/ }
-        redefine_membership_associations_with associations
+    
+    if request.request_method == :post
+      associations = params.select { |(key,value)| key =~ /^membership/ }
+      Membership.redefine_membership_associations_with normalize_associations(associations)
     end
+    
+    @groups    = Group.find :all
+    @employees = Employee.find(:all).sort_by { |e| e.name[/\s*\S+$/].downcase }
   end
   
   private
   
-  def redefine_membership_associations_with(associations)
-    associations = associations.map { |k,v| k }
-    raise "Not implemented yet\n#{associations.join("\n")}"
+  def normalize_associations(associations)
+    associations.map do |(key,value)|
+      key.match(/^membership_(\d+)_(\d+)$/).captures.map &:to_i
+    end
   end
   
 end
