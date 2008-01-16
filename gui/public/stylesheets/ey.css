@@ -90,24 +90,21 @@ h2 span.on-vacation {
 	color: #a50000;
 }
 
-ul.editor-users {
-	list-style: none;
-	padding: 0;
-}
-ul.editor-users li {
-	float: left;
-	margin: 3px;
-	padding: 1px 3px;
-	background-color: white;
-	border: 1px black dotted;
-	font-size: 12px;
-	cursor: move;
+table#group-editor {
+	margin: 0 auto;
+	width: 100%;
 }
 
-ul.editor-users li:hover {
-	background-color: black;
-	color: #f2f2d5;
-	border-color: #f2f2d5;
+table#group-editor th {
+	background-color: #a50000;
+	color: white;
+}
+table#group-editor td {
+	text-align: center;
+}
+table#group-editor td.employee-name {
+	text-align: left;
+	padding-left: 10px;
 }
 
 br.clear {
