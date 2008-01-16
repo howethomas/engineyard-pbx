@@ -11993,3 +11993,413 @@ Processing EmployeesController#index (for 127.0.0.1 at 2008-01-16 01:31:36) [GET
 Rendering template within layouts/application
 Rendering employees/index
 Completed in 0.03299 (30 reqs/sec) | Rendering: 0.01742 (52%) | DB: 0.00627 (19%) | 200 OK [http://localhost/employees]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-16 01:32:26) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00555 (180 reqs/sec) | Rendering: 0.00281 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-01-16 01:32:27) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"editor", "controller"=>"groups"}
+  [4;35;1mGroup Load (0.000671)[0m   [0mSELECT * FROM groups [0m
+  [4;36;1mEmployee Load (0.005433)[0m   [0;1mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/editor
+  [4;35;1mGroup Load (0.000266)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 16)) [0m
+  [4;36;1mGroup Load (0.000164)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 40)) [0m
+  [4;35;1mGroup Load (0.000160)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 27)) [0m
+  [4;36;1mGroup Load (0.000161)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 41)) [0m
+  [4;35;1mGroup Load (0.000159)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 38)) [0m
+  [4;36;1mGroup Load (0.000158)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 28)) [0m
+  [4;35;1mGroup Load (0.000159)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 33)) [0m
+  [4;36;1mGroup Load (0.000158)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 39)) [0m
+  [4;35;1mGroup Load (0.000160)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 14)) [0m
+  [4;36;1mGroup Load (0.000159)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 10)) [0m
+  [4;35;1mGroup Load (0.000163)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 25)) [0m
+  [4;36;1mGroup Load (0.000327)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 21)) [0m
+  [4;35;1mGroup Load (0.000201)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 23)) [0m
+  [4;36;1mGroup Load (0.000165)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 26)) [0m
+  [4;35;1mGroup Load (0.000165)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 37)) [0m
+  [4;36;1mGroup Load (0.000165)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 24)) [0m
+  [4;35;1mGroup Load (0.000163)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 13)) [0m
+  [4;36;1mGroup Load (0.000162)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 34)) [0m
+  [4;35;1mGroup Load (0.000161)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 11)) [0m
+  [4;36;1mGroup Load (0.000308)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 30)) [0m
+  [4;35;1mGroup Load (0.000165)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 12)) [0m
+  [4;36;1mGroup Load (0.000379)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 22)) [0m
+  [4;35;1mGroup Load (0.000290)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 18)) [0m
+  [4;36;1mGroup Load (0.000181)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 20)) [0m
+  [4;35;1mGroup Load (0.000184)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 7)) [0m
+  [4;36;1mGroup Load (0.000231)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 31)) [0m
+  [4;35;1mGroup Load (0.000231)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 8)) [0m
+  [4;36;1mGroup Load (0.000208)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 19)) [0m
+  [4;35;1mGroup Load (0.000194)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 29)) [0m
+  [4;36;1mGroup Load (0.000178)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 42)) [0m
+  [4;35;1mGroup Load (0.000170)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 17)) [0m
+  [4;36;1mGroup Load (0.000168)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 15)) [0m
+  [4;35;1mGroup Load (0.000178)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 32)) [0m
+  [4;36;1mGroup Load (0.000189)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 36)) [0m
+  [4;35;1mGroup Load (0.000183)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 35)) [0m
+  [4;36;1mGroup Load (0.000328)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 9)) [0m
+Completed in 0.15933 (6 reqs/sec) | Rendering: 0.03435 (21%) | DB: 0.01325 (8%) | 200 OK [http://localhost/groups/editor]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-16 01:32:28) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.006255)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.03263 (30 reqs/sec) | Rendering: 0.01711 (52%) | DB: 0.00626 (19%) | 200 OK [http://localhost/employees]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-01-16 01:32:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"editor", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000671)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.005357)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/editor
+  [4;36;1mGroup Load (0.000233)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 16)) [0m
+  [4;35;1mGroup Load (0.000161)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 40)) [0m
+  [4;36;1mGroup Load (0.000179)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 27)) [0m
+  [4;35;1mGroup Load (0.000156)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 41)) [0m
+  [4;36;1mGroup Load (0.000157)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 38)) [0m
+  [4;35;1mGroup Load (0.000155)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 28)) [0m
+  [4;36;1mGroup Load (0.000155)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 33)) [0m
+  [4;35;1mGroup Load (0.000179)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 39)) [0m
+  [4;36;1mGroup Load (0.000160)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 14)) [0m
+  [4;35;1mGroup Load (0.000156)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 10)) [0m
+  [4;36;1mGroup Load (0.000167)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 25)) [0m
+  [4;35;1mGroup Load (0.000314)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 21)) [0m
+  [4;36;1mGroup Load (0.000167)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 23)) [0m
+  [4;35;1mGroup Load (0.000158)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 26)) [0m
+  [4;36;1mGroup Load (0.000159)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 37)) [0m
+  [4;35;1mGroup Load (0.000155)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 24)) [0m
+  [4;36;1mGroup Load (0.000158)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 13)) [0m
+  [4;35;1mGroup Load (0.000158)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 34)) [0m
+  [4;36;1mGroup Load (0.000158)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 11)) [0m
+  [4;35;1mGroup Load (0.000291)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 30)) [0m
+  [4;36;1mGroup Load (0.000162)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 12)) [0m
+  [4;35;1mGroup Load (0.000379)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 22)) [0m
+  [4;36;1mGroup Load (0.000335)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 18)) [0m
+  [4;35;1mGroup Load (0.000163)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 20)) [0m
+  [4;36;1mGroup Load (0.000161)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 7)) [0m
+  [4;35;1mGroup Load (0.000162)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 31)) [0m
+  [4;36;1mGroup Load (0.000158)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 8)) [0m
+  [4;35;1mGroup Load (0.000158)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 19)) [0m
+  [4;36;1mGroup Load (0.000158)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 29)) [0m
+  [4;35;1mGroup Load (0.000159)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 42)) [0m
+  [4;36;1mGroup Load (0.000157)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 17)) [0m
+  [4;35;1mGroup Load (0.000156)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 15)) [0m
+  [4;36;1mGroup Load (0.000158)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 32)) [0m
+  [4;35;1mGroup Load (0.000156)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 36)) [0m
+  [4;36;1mGroup Load (0.000158)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 35)) [0m
+  [4;35;1mGroup Load (0.000304)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 9)) [0m
+Completed in 0.14936 (6 reqs/sec) | Rendering: 0.12004 (80%) | DB: 0.01269 (8%) | 200 OK [http://localhost/groups/editor]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-16 01:32:33) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.006475)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.03544 (28 reqs/sec) | Rendering: 0.01846 (52%) | DB: 0.00647 (18%) | 200 OK [http://localhost/employees]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-01-16 01:32:36) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"editor", "controller"=>"groups"}
+  [4;35;1mGroup Load (0.000678)[0m   [0mSELECT * FROM groups [0m
+  [4;36;1mEmployee Load (0.005348)[0m   [0;1mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/editor
+  [4;35;1mGroup Load (0.000271)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 16)) [0m
+  [4;36;1mGroup Load (0.000165)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 40)) [0m
+  [4;35;1mGroup Load (0.000169)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 27)) [0m
+  [4;36;1mGroup Load (0.000158)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 41)) [0m
+  [4;35;1mGroup Load (0.000159)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 38)) [0m
+  [4;36;1mGroup Load (0.000161)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 28)) [0m
+  [4;35;1mGroup Load (0.000159)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 33)) [0m
+  [4;36;1mGroup Load (0.000159)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 39)) [0m
+  [4;35;1mGroup Load (0.000169)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 14)) [0m
+  [4;36;1mGroup Load (0.000181)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 10)) [0m
+  [4;35;1mGroup Load (0.000170)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 25)) [0m
+  [4;36;1mGroup Load (0.000346)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 21)) [0m
+  [4;35;1mGroup Load (0.000192)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 23)) [0m
+  [4;36;1mGroup Load (0.000183)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 26)) [0m
+  [4;35;1mGroup Load (0.000176)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 37)) [0m
+  [4;36;1mGroup Load (0.000174)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 24)) [0m
+  [4;35;1mGroup Load (0.000169)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 13)) [0m
+  [4;36;1mGroup Load (0.000171)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 34)) [0m
+  [4;35;1mGroup Load (0.000167)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 11)) [0m
+  [4;36;1mGroup Load (0.000377)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 30)) [0m
+  [4;35;1mGroup Load (0.000179)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 12)) [0m
+  [4;36;1mGroup Load (0.000985)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 22)) [0m
+  [4;35;1mGroup Load (0.000332)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 18)) [0m
+  [4;36;1mGroup Load (0.000191)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 20)) [0m
+  [4;35;1mGroup Load (0.000161)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 7)) [0m
+  [4;36;1mGroup Load (0.000162)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 31)) [0m
+  [4;35;1mGroup Load (0.000158)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 8)) [0m
+  [4;36;1mGroup Load (0.000171)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 19)) [0m
+  [4;35;1mGroup Load (0.000166)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 29)) [0m
+  [4;36;1mGroup Load (0.000173)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 42)) [0m
+  [4;35;1mGroup Load (0.000169)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 17)) [0m
+  [4;36;1mGroup Load (0.000171)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 15)) [0m
+  [4;35;1mGroup Load (0.000160)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 32)) [0m
+  [4;36;1mGroup Load (0.000157)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 36)) [0m
+  [4;35;1mGroup Load (0.000215)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 35)) [0m
+  [4;36;1mGroup Load (0.000313)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 9)) [0m
+Completed in 0.06324 (15 reqs/sec) | Rendering: 0.03260 (51%) | DB: 0.01376 (21%) | 200 OK [http://localhost/groups/editor]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-16 04:40:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00607 (164 reqs/sec) | Rendering: 0.00301 (49%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-01-16 04:40:50) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"editor", "controller"=>"groups"}
+  [4;35;1mGroup Load (0.000684)[0m   [0mSELECT * FROM groups [0m
+  [4;36;1mEmployee Load (0.005385)[0m   [0;1mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/editor
+  [4;35;1mGroup Load (0.000247)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 16)) [0m
+  [4;36;1mGroup Load (0.000163)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 40)) [0m
+  [4;35;1mGroup Load (0.000161)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 27)) [0m
+  [4;36;1mGroup Load (0.000163)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 41)) [0m
+  [4;35;1mGroup Load (0.000158)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 38)) [0m
+  [4;36;1mGroup Load (0.000163)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 28)) [0m
+  [4;35;1mGroup Load (0.000163)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 33)) [0m
+  [4;36;1mGroup Load (0.000156)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 39)) [0m
+  [4;35;1mGroup Load (0.000158)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 14)) [0m
+  [4;36;1mGroup Load (0.000158)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 10)) [0m
+  [4;35;1mGroup Load (0.000158)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 25)) [0m
+  [4;36;1mGroup Load (0.000309)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 21)) [0m
+  [4;35;1mGroup Load (0.000165)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 23)) [0m
+  [4;36;1mGroup Load (0.000170)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 26)) [0m
+  [4;35;1mGroup Load (0.000180)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 37)) [0m
+  [4;36;1mGroup Load (0.000174)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 24)) [0m
+  [4;35;1mGroup Load (0.000169)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 13)) [0m
+  [4;36;1mGroup Load (0.000181)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 34)) [0m
+  [4;35;1mGroup Load (0.000170)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 11)) [0m
+  [4;36;1mGroup Load (0.000324)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 30)) [0m
+  [4;35;1mGroup Load (0.000191)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 12)) [0m
+  [4;36;1mGroup Load (0.000398)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 22)) [0m
+  [4;35;1mGroup Load (0.000296)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 18)) [0m
+  [4;36;1mGroup Load (0.000169)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 20)) [0m
+  [4;35;1mGroup Load (0.000163)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 7)) [0m
+  [4;36;1mGroup Load (0.000172)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 31)) [0m
+  [4;35;1mGroup Load (0.000164)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 8)) [0m
+  [4;36;1mGroup Load (0.000164)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 19)) [0m
+  [4;35;1mGroup Load (0.000162)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 29)) [0m
+  [4;36;1mGroup Load (0.000160)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 42)) [0m
+  [4;35;1mGroup Load (0.000157)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 17)) [0m
+  [4;36;1mGroup Load (0.000158)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 15)) [0m
+  [4;35;1mGroup Load (0.000158)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 32)) [0m
+  [4;36;1mGroup Load (0.000161)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 36)) [0m
+  [4;35;1mGroup Load (0.000156)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 35)) [0m
+  [4;36;1mGroup Load (0.000301)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 9)) [0m
+Completed in 0.06242 (16 reqs/sec) | Rendering: 0.03209 (51%) | DB: 0.01289 (20%) | 200 OK [http://localhost/groups/editor]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-01-16 04:43:26) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"editor", "controller"=>"groups"}
+  [4;35;1mGroup Load (0.000736)[0m   [0mSELECT * FROM groups [0m
+  [4;36;1mEmployee Load (0.005759)[0m   [0;1mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/editor
+  [4;35;1mGroup Load (0.000256)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 16)) [0m
+  [4;36;1mGroup Load (0.000167)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 40)) [0m
+  [4;35;1mGroup Load (0.000164)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 27)) [0m
+  [4;36;1mGroup Load (0.000159)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 41)) [0m
+  [4;35;1mGroup Load (0.000158)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 38)) [0m
+  [4;36;1mGroup Load (0.000163)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 28)) [0m
+  [4;35;1mGroup Load (0.000160)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 33)) [0m
+  [4;36;1mGroup Load (0.000160)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 39)) [0m
+  [4;35;1mGroup Load (0.000159)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 14)) [0m
+  [4;36;1mGroup Load (0.000158)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 10)) [0m
+  [4;35;1mGroup Load (0.000160)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 25)) [0m
+  [4;36;1mGroup Load (0.000332)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 21)) [0m
+  [4;35;1mGroup Load (0.000171)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 23)) [0m
+  [4;36;1mGroup Load (0.000163)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 26)) [0m
+  [4;35;1mGroup Load (0.000161)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 37)) [0m
+  [4;36;1mGroup Load (0.000158)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 24)) [0m
+  [4;35;1mGroup Load (0.000157)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 13)) [0m
+  [4;36;1mGroup Load (0.000156)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 34)) [0m
+  [4;35;1mGroup Load (0.000158)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 11)) [0m
+  [4;36;1mGroup Load (0.000793)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 30)) [0m
+  [4;35;1mGroup Load (0.000200)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 12)) [0m
+  [4;36;1mGroup Load (0.000381)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 22)) [0m
+  [4;35;1mGroup Load (0.000290)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 18)) [0m
+  [4;36;1mGroup Load (0.000164)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 20)) [0m
+  [4;35;1mGroup Load (0.000160)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 7)) [0m
+  [4;36;1mGroup Load (0.000159)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 31)) [0m
+  [4;35;1mGroup Load (0.000160)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 8)) [0m
+  [4;36;1mGroup Load (0.000164)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 19)) [0m
+  [4;35;1mGroup Load (0.000164)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 29)) [0m
+  [4;36;1mGroup Load (0.000163)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 42)) [0m
+  [4;35;1mGroup Load (0.000160)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 17)) [0m
+  [4;36;1mGroup Load (0.000159)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 15)) [0m
+  [4;35;1mGroup Load (0.000157)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 32)) [0m
+  [4;36;1mGroup Load (0.000156)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 36)) [0m
+  [4;35;1mGroup Load (0.000161)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 35)) [0m
+  [4;36;1mGroup Load (0.000301)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 9)) [0m
+Completed in 0.06406 (15 reqs/sec) | Rendering: 0.03187 (49%) | DB: 0.01371 (21%) | 200 OK [http://localhost/groups/editor]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-16 04:57:04) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00602 (166 reqs/sec) | Rendering: 0.00302 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-16 04:57:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.006293)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.03267 (30 reqs/sec) | Rendering: 0.01714 (52%) | DB: 0.00629 (19%) | 200 OK [http://localhost/employees]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-16 04:57:17) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00582 (171 reqs/sec) | Rendering: 0.00290 (49%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-01-16 04:57:18) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"editor", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000855)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.007276)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/editor
+  [4;36;1mGroup Load (0.000298)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 16)) [0m
+  [4;35;1mGroup Load (0.000219)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 40)) [0m
+  [4;36;1mGroup Load (0.000202)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 27)) [0m
+  [4;35;1mGroup Load (0.000168)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 41)) [0m
+  [4;36;1mGroup Load (0.000170)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 38)) [0m
+  [4;35;1mGroup Load (0.000160)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 28)) [0m
+  [4;36;1mGroup Load (0.000158)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 33)) [0m
+  [4;35;1mGroup Load (0.000166)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 39)) [0m
+  [4;36;1mGroup Load (0.000168)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 14)) [0m
+  [4;35;1mGroup Load (0.000157)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 10)) [0m
+  [4;36;1mGroup Load (0.000160)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 25)) [0m
+  [4;35;1mGroup Load (0.000316)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 21)) [0m
+  [4;36;1mGroup Load (0.000180)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 23)) [0m
+  [4;35;1mGroup Load (0.000176)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 26)) [0m
+  [4;36;1mGroup Load (0.000230)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 37)) [0m
+  [4;35;1mGroup Load (0.000209)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 24)) [0m
+  [4;36;1mGroup Load (0.000220)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 13)) [0m
+  [4;35;1mGroup Load (0.000208)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 34)) [0m
+  [4;36;1mGroup Load (0.000174)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 11)) [0m
+  [4;35;1mGroup Load (0.000339)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 30)) [0m
+  [4;36;1mGroup Load (0.000185)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 12)) [0m
+  [4;35;1mGroup Load (0.000447)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 22)) [0m
+  [4;36;1mGroup Load (0.000323)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 18)) [0m
+  [4;35;1mGroup Load (0.000175)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 20)) [0m
+  [4;36;1mGroup Load (0.000170)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 7)) [0m
+  [4;35;1mGroup Load (0.000197)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 31)) [0m
+  [4;36;1mGroup Load (0.000192)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 8)) [0m
+  [4;35;1mGroup Load (0.000178)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 19)) [0m
+  [4;36;1mGroup Load (0.000171)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 29)) [0m
+  [4;35;1mGroup Load (0.000173)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 42)) [0m
+  [4;36;1mGroup Load (0.000172)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 17)) [0m
+  [4;35;1mGroup Load (0.000192)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 15)) [0m
+  [4;36;1mGroup Load (0.000174)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 32)) [0m
+  [4;35;1mGroup Load (0.000173)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 36)) [0m
+  [4;36;1mGroup Load (0.000169)[0m   [0;1mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 35)) [0m
+  [4;35;1mGroup Load (0.000353)[0m   [0mSELECT groups.* FROM groups INNER JOIN memberships ON groups.id = memberships.group_id WHERE ((memberships.employee_id = 9)) [0m
+Completed in 0.46670 (2 reqs/sec) | Rendering: 0.13047 (27%) | DB: 0.01565 (3%) | 200 OK [http://localhost/groups/editor]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-01-16 04:58:38) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"editor", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000686)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load Including Associations (0.006766)[0m   [0mSELECT employees."id" AS t0_r0, employees."name" AS t0_r1, employees."extension" AS t0_r2, employees."created_at" AS t0_r3, employees."updated_at" AS t0_r4, employees."time_zone" AS t0_r5, employees."mobile_number" AS t0_r6, employees."group_id" AS t0_r7, employees."on_vacation" AS t0_r8, employees."email" AS t0_r9, groups."id" AS t1_r0, groups."name" AS t1_r1, groups."created_at" AS t1_r2, groups."updated_at" AS t1_r3 FROM employees LEFT OUTER JOIN memberships ON (employees."id" = memberships."employee_id") LEFT OUTER JOIN groups ON (groups."id" = memberships."group_id") [0m
+Rendering template within layouts/application
+Rendering groups/editor
+Completed in 0.04823 (20 reqs/sec) | Rendering: 0.01335 (27%) | DB: 0.00745 (15%) | 200 OK [http://localhost/groups/editor]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-01-16 05:00:15) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"commit"=>"Save!", "membership_30_1"=>"1", "membership_21_1"=>"1", "authenticity_token"=>"41c15a2d7e5495625a1ded59344f46893e50144a", "action"=>"editor", "membership_22_1"=>"1", "membership_22_2"=>"1", "controller"=>"groups", "membership_9_2"=>"1", "membership_18_2"=>"1"}
+
+
+RuntimeError ({"commit"=>"Save!", "membership_30_1"=>"1", "membership_21_1"=>"1", "authenticity_token"=>"41c15a2d7e5495625a1ded59344f46893e50144a", "action"=>"editor", "membership_22_1"=>"1", "membership_22_2"=>"1", "controller"=>"groups", "membership_9_2"=>"1", "membership_18_2"=>"1"}):
+    /app/controllers/groups_controller.rb:4:in `editor'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1158:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:699:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:691:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:687:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `sass_old_process'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.0/lib/sass/plugin/rails.rb:14:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:155:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:154:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel.rb:264:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.1/bin/mongrel_rails:281
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+
+Rendering /Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
