@@ -4,6 +4,10 @@ one:
   name: MyString
   time_zone: 1
   extension: MyString
+  mobile_number
+  time_zone
+  on_vacation
+  email
 
 two:
   name: MyString

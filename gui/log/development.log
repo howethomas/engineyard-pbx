@@ -12520,3 +12520,31 @@ Rendering template within layouts/application
 Rendering employees/edit
 Rendered employees/_employee_editor (0.39181)
 Completed in 0.40803 (2 reqs/sec) | Rendering: 0.39736 (97%) | DB: 0.00046 (0%) | 200 OK [http://localhost/employees/13/edit]
+  [4;36;1mSQL (0.000268)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000294)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000395)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000202)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000476)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000203)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000231)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000201)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000313)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000199)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to RemoveGroupId (9)
+  [4;36;1mSQL (0.003293)[0m   [0;1mCREATE TEMPORARY TABLE altered_employees ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "extension" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "time_zone" varchar(255) DEFAULT NULL, "mobile_number" varchar(255) DEFAULT NULL, "group_id" integer DEFAULT NULL, "on_vacation" boolean DEFAULT NULL, "email" varchar(255) DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000171)[0m   [0mPRAGMA index_list(employees)[0m
+  [4;36;1mSQL (0.000684)[0m   [0;1mDROP TABLE employees[0m
+  [4;35;1mSQL (0.000354)[0m   [0mCREATE TABLE employees ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL, "extension" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "time_zone" varchar(255) DEFAULT NULL, "mobile_number" varchar(255) DEFAULT NULL, "on_vacation" boolean DEFAULT NULL, "email" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000067)[0m   [0;1mPRAGMA index_list(altered_employees)[0m
+  [4;35;1mSQL (0.000172)[0m   [0mDROP TABLE altered_employees[0m
+  [4;36;1mSQL (0.002526)[0m   [0;1mUPDATE schema_info SET version = 9[0m
+  [4;35;1mSQL (0.000326)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000535)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000081)[0m   [0mPRAGMA index_list(employees)[0m
+  [4;36;1mSQL (0.000075)[0m   [0;1mPRAGMA index_list(groups)[0m
+  [4;35;1mSQL (0.000077)[0m   [0mPRAGMA index_list(memberships)[0m
