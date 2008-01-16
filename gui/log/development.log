@@ -12403,3 +12403,120 @@ RuntimeError ({"commit"=>"Save!", "membership_30_1"=>"1", "membership_21_1"=>"1"
     ./script/server:3
 
 Rendering /Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-16 05:01:23) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.01036 (96 reqs/sec) | Rendering: 0.00706 (68%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-16 05:01:24) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00645 (155 reqs/sec) | Rendering: 0.00364 (56%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-01-16 05:01:24) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00570 (175 reqs/sec) | Rendering: 0.00284 (49%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-16 05:01:26) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.006449)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.03726 (26 reqs/sec) | Rendering: 0.02102 (56%) | DB: 0.00645 (17%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-16 05:01:34) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000495)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Rendered employees/_employee_editor (0.44593)
+Completed in 0.46400 (2 reqs/sec) | Rendering: 0.45271 (97%) | DB: 0.00049 (0%) | 200 OK [http://localhost/employees/22/edit]
+
+
+Processing EmployeesController#update (for 127.0.0.1 at 2008-01-16 05:01:37) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"commit"=>"Update", "employee"=>{"on_vacation"=>"1", "name"=>"Jay Phillips", "extension"=>"250", "mobile_number"=>"+14097672813", "time_zone"=>"America/Los_Angeles", "email"=>"Jay@Codemecca.com"}, "authenticity_token"=>"41c15a2d7e5495625a1ded59344f46893e50144a", "_method"=>"put", "action"=>"update", "id"=>"22", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000414)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+  [4;35;1mEmployee Update (0.000510)[0m   [0mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "email" = 'Jay@Codemecca.com', "mobile_number" = '+14097672813', "name" = 'Jay Phillips', "group_id" = NULL, "extension" = '250', "time_zone" = 'America/Los_Angeles', "on_vacation" = 't', "updated_at" = '2008-01-16 05:01:37' WHERE "id" = 22[0m
+Redirected to http://localhost:3000/employees/22
+Completed in 0.01786 (55 reqs/sec) | DB: 0.00092 (5%) | 302 Found [http://localhost/employees/22]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2008-01-16 05:01:37) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIidFbXBsb3llZSB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0%0AZWQuBjoKQHVzZWR7BjsHVA%3D%3D--4a4ca5059f7821c80bbb5da1c7d396d043fa7b44
+  Parameters: {"action"=>"show", "id"=>"22", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000445)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+Rendering template within layouts/application
+Rendering employees/show
+Completed in 0.01642 (60 reqs/sec) | Rendering: 0.00595 (36%) | DB: 0.00044 (2%) | 200 OK [http://localhost/employees/22]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-16 05:01:40) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.006873)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.03428 (29 reqs/sec) | Rendering: 0.01761 (51%) | DB: 0.00687 (20%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-16 05:01:44) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000418)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Rendered employees/_employee_editor (0.38339)
+Completed in 0.39956 (2 reqs/sec) | Rendering: 0.38907 (97%) | DB: 0.00042 (0%) | 200 OK [http://localhost/employees/22/edit]
+
+
+Processing EmployeesController#update (for 127.0.0.1 at 2008-01-16 05:01:47) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"commit"=>"Update", "employee"=>{"on_vacation"=>"0", "name"=>"Jay Phillips", "extension"=>"250", "mobile_number"=>"+14097672813", "time_zone"=>"America/Los_Angeles", "email"=>"Jay@Codemecca.com"}, "authenticity_token"=>"41c15a2d7e5495625a1ded59344f46893e50144a", "_method"=>"put", "action"=>"update", "id"=>"22", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000394)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+  [4;36;1mEmployee Update (0.000420)[0m   [0;1mUPDATE employees SET "created_at" = '2008-01-13 21:56:26', "email" = 'Jay@Codemecca.com', "mobile_number" = '+14097672813', "name" = 'Jay Phillips', "group_id" = NULL, "extension" = '250', "time_zone" = 'America/Los_Angeles', "on_vacation" = 'f', "updated_at" = '2008-01-16 05:01:47' WHERE "id" = 22[0m
+Redirected to http://localhost:3000/employees/22
+Completed in 0.01636 (61 reqs/sec) | DB: 0.00081 (4%) | 302 Found [http://localhost/employees/22]
+
+
+Processing EmployeesController#show (for 127.0.0.1 at 2008-01-16 05:01:47) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIidFbXBsb3llZSB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0%0AZWQuBjoKQHVzZWR7BjsHVA%3D%3D--4a4ca5059f7821c80bbb5da1c7d396d043fa7b44
+  Parameters: {"action"=>"show", "id"=>"22", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000391)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+Rendering template within layouts/application
+Rendering employees/show
+Completed in 0.01440 (69 reqs/sec) | Rendering: 0.00440 (30%) | DB: 0.00039 (2%) | 200 OK [http://localhost/employees/22]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-01-16 05:01:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.006307)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.03290 (30 reqs/sec) | Rendering: 0.01720 (52%) | DB: 0.00631 (19%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-01-16 05:02:13) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjIwY2RkZGY3M2ExN2U1YjE0ODI5NzQ0MGYwOTBh%0AZWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ce2673125de3d5969e42237fc52c761859865b27
+  Parameters: {"action"=>"edit", "id"=>"13", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000463)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 13) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Rendered employees/_employee_editor (0.39181)
+Completed in 0.40803 (2 reqs/sec) | Rendering: 0.39736 (97%) | DB: 0.00046 (0%) | 200 OK [http://localhost/employees/13/edit]
