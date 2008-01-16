@@ -1,13 +1,12 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  time_zone: 1
+jay:
+  name: Jay Phillips
+  time_zone: America/Los Angeles
   extension: MyString
-  mobile_number
-  time_zone
-  on_vacation
-  email
+  mobile_number: +14097672813
+  on_vacation: false
+  email: jicksta@gmail.com
 
 two:
   name: MyString
