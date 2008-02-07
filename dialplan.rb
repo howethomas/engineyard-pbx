@@ -1,46 +1,100 @@
-ahn {
-  
-  @choice = input 4, :timeout => 4.seconds, :play => 'engineyard/prompt'
-  puts "choice: #{@choice.inspect}"
-  
-  case @choice.to_i
-    when 200...300: +employees
-    when 1      
-      # IMPLEMENT GROUP DIALING
-      # queue :sales
-    when 2 
-      # tech support
-    when 3
-      # finance
-    when 0
-      # operator
+# IVR editor
+# Queue (group) editor
+
+=begin
+billing@engineyard.com
+Edit groups in Employee edit view
+
+add groups, define extensions
+
+
+When going to the group editor, view a list a groups and can specify their IVR extensions there
+When you select a group, you view the Group editor as it is now with just one column, instead.
+
+=end
+
+from_pstn {
+  menu 'engineyard/prompt', :tries => 3, :timeout => 7 do |link|
+    link.sales        1
+    link.tech_support 2
+    link.finance      3
+    link.other        0
+    
+    link.employee *Employee.find(:all).map(&:extension)
+    
+    link.conferences 900..999
+    
+    link.on_premature_timeout { play 'are-you-still-there' }
+    link.on_invalid { play 'invalid' }
+    link.on_failure do
+      play %w'vm-sorry one-moment-please'
+      +other
+    end
   end
 }
 
-employees {
-  puts "Dialing an employee!"
-  
-  employee = Employee.find_by_extension @choice
+from_codemecca { +from_pstn }
+
+employee {
+  employee = Employee.find_by_extension extension
   mobile_number = employee.mobile_number if employee
   
   if mobile_number
-    #dial "SIP/voipms/#{mobile_number}", :callerid => callerid
+    # dial "SIP/voipms/#{mobile_number}", :caller_id => "104097672813"
     puts "DIALING #{mobile_number}! mocked out"
   else
-    play 'invalid'
+    play %w'sorry number-not-in-db'
     +ahn
   end
 
 }
 
-internal {
-  # Only allow internal users to dial into conferences
-  case extension
-    when 200...300
-    when 1_000...10_000
-  end
+sales {
+  play 'privacy-please-stay-on-line-to-be-connected'
+  # Enter the sales queue
 }
 
-error_recovery {
+group_dialer {
+  
+  play 'privacy-please-stay-on-line-to-be-connected'
+  # Enter the tech support queue
+}
+
+# Should be a group with Riki (or any other employee) as a member.
+finance {
+  play 'privacy-please-stay-on-line-to-be-connected'
+  riki = Employee.find_by_name "Riki Crusha"
+  dial "IAX2/jay-trunk-out/#{riki.mobile_number}", :caller_id => "14097672813"
+}
+
+conferences {
+  join extension
+}
+
+other {
+  +sales
+}
+
+# This is mostly my debug context.
+from_internal {
+  
+  extension_map = {
+    '250' => "jay-desk-650"
+  }
+  
+  case extension.to_s
+    when *extension_map.keys  
+      dial "SIP/#{extension_map[extension.to_s]}"
+    when /^18(00|88|77)\d{7}$/
+      puts "Dialing 'toll free' number"
+      dial "IAX2/jay-trunk-out/#{extension}", :caller_id => 1_409_767_2813
+    when /^\d{10}$/
+      puts "here??!??!?"
+      dial "IAX2/jay-trunk-out/1#{extension}", :caller_id => 1_409_767_2813
+    when /^\d{11}$/
+      dial "IAX2/jay-trunk-out/#{extension}", :caller_id => 1_409_767_2813
+    else
+      play 'invalid'
+  end
   
 }

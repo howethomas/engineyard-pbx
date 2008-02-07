@@ -12548,3 +12548,269 @@ Migrating to RemoveGroupId (9)
   [4;35;1mSQL (0.000081)[0m   [0mPRAGMA index_list(employees)[0m
   [4;36;1mSQL (0.000075)[0m   [0;1mPRAGMA index_list(groups)[0m
   [4;35;1mSQL (0.000077)[0m   [0mPRAGMA index_list(memberships)[0m
+  [4;36;1mEmployee Load (0.006768)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Evan Phoenix') LIMIT 1[0m
+  [4;36;1mEmployee Load (0.001770)[0m   [0;1mSELECT * FROM employees WHERE (employees."name" = 'Jay Phillips') LIMIT 1[0m
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-02-06 21:15:00) [GET]
+  Session ID: 912ce59aaec6533d05d04132d0e67269
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.09601 (10 reqs/sec) | Rendering: 0.09281 (96%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-02-06 21:15:05) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--5d572432531f9ae7ec17c72d58900c346c9d75e9
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.019884)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.07172 (13 reqs/sec) | Rendering: 0.04092 (57%) | DB: 0.01988 (27%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-02-06 21:15:10) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.000349)[0m   [0mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Rendered employees/_employee_editor (0.29696)
+Completed in 0.33387 (2 reqs/sec) | Rendering: 0.32485 (97%) | DB: 0.00035 (0%) | 200 OK [http://localhost/employees/22/edit]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-02-06 21:15:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"editor", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000685)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load Including Associations (0.006258)[0m   [0mSELECT employees."id" AS t0_r0, employees."name" AS t0_r1, employees."extension" AS t0_r2, employees."created_at" AS t0_r3, employees."updated_at" AS t0_r4, employees."time_zone" AS t0_r5, employees."mobile_number" AS t0_r6, employees."on_vacation" AS t0_r7, employees."email" AS t0_r8, groups."id" AS t1_r0, groups."name" AS t1_r1, groups."created_at" AS t1_r2, groups."updated_at" AS t1_r3 FROM employees LEFT OUTER JOIN memberships ON (employees."id" = memberships."employee_id") LEFT OUTER JOIN groups ON (groups."id" = memberships."group_id") [0m
+Rendering template within layouts/application
+Rendering groups/editor
+Completed in 0.13612 (7 reqs/sec) | Rendering: 0.03529 (25%) | DB: 0.00694 (5%) | 200 OK [http://localhost/groups/editor]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-02-06 21:15:23) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00522 (191 reqs/sec) | Rendering: 0.00259 (49%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-02-06 21:15:28) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"editor", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000665)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load Including Associations (0.006234)[0m   [0mSELECT employees."id" AS t0_r0, employees."name" AS t0_r1, employees."extension" AS t0_r2, employees."created_at" AS t0_r3, employees."updated_at" AS t0_r4, employees."time_zone" AS t0_r5, employees."mobile_number" AS t0_r6, employees."on_vacation" AS t0_r7, employees."email" AS t0_r8, groups."id" AS t1_r0, groups."name" AS t1_r1, groups."created_at" AS t1_r2, groups."updated_at" AS t1_r3 FROM employees LEFT OUTER JOIN memberships ON (employees."id" = memberships."employee_id") LEFT OUTER JOIN groups ON (groups."id" = memberships."group_id") [0m
+Rendering template within layouts/application
+Rendering groups/editor
+Completed in 0.04602 (21 reqs/sec) | Rendering: 0.01270 (27%) | DB: 0.00690 (14%) | 200 OK [http://localhost/groups/editor]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-02-06 21:15:30) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.005853)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.03027 (33 reqs/sec) | Rendering: 0.01579 (52%) | DB: 0.00585 (19%) | 200 OK [http://localhost/employees]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-02-06 22:39:53) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00539 (185 reqs/sec) | Rendering: 0.00273 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-02-06 22:40:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.005918)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.03046 (32 reqs/sec) | Rendering: 0.01569 (51%) | DB: 0.00592 (19%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-02-06 22:40:46) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000389)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Rendered employees/_employee_editor (0.23414)
+Completed in 0.25124 (3 reqs/sec) | Rendering: 0.24174 (96%) | DB: 0.00039 (0%) | 200 OK [http://localhost/employees/22/edit]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-02-06 22:41:06) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.005674)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.10367 (9 reqs/sec) | Rendering: 0.08936 (86%) | DB: 0.00567 (5%) | 200 OK [http://localhost/employees]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-02-06 22:41:12) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"editor", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000687)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load Including Associations (0.006284)[0m   [0mSELECT employees."id" AS t0_r0, employees."name" AS t0_r1, employees."extension" AS t0_r2, employees."created_at" AS t0_r3, employees."updated_at" AS t0_r4, employees."time_zone" AS t0_r5, employees."mobile_number" AS t0_r6, employees."on_vacation" AS t0_r7, employees."email" AS t0_r8, groups."id" AS t1_r0, groups."name" AS t1_r1, groups."created_at" AS t1_r2, groups."updated_at" AS t1_r3 FROM employees LEFT OUTER JOIN memberships ON (employees."id" = memberships."employee_id") LEFT OUTER JOIN groups ON (groups."id" = memberships."group_id") [0m
+Rendering template within layouts/application
+Rendering groups/editor
+Completed in 0.04488 (22 reqs/sec) | Rendering: 0.01205 (26%) | DB: 0.00697 (15%) | 200 OK [http://localhost/groups/editor]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-02-06 22:43:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.005765)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.02964 (33 reqs/sec) | Rendering: 0.01530 (51%) | DB: 0.00577 (19%) | 200 OK [http://localhost/employees]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-02-06 22:44:08) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"editor", "controller"=>"groups"}
+  [4;35;1mGroup Load (0.000871)[0m   [0mSELECT * FROM groups [0m
+  [4;36;1mEmployee Load Including Associations (0.006099)[0m   [0;1mSELECT employees."id" AS t0_r0, employees."name" AS t0_r1, employees."extension" AS t0_r2, employees."created_at" AS t0_r3, employees."updated_at" AS t0_r4, employees."time_zone" AS t0_r5, employees."mobile_number" AS t0_r6, employees."on_vacation" AS t0_r7, employees."email" AS t0_r8, groups."id" AS t1_r0, groups."name" AS t1_r1, groups."created_at" AS t1_r2, groups."updated_at" AS t1_r3 FROM employees LEFT OUTER JOIN memberships ON (employees."id" = memberships."employee_id") LEFT OUTER JOIN groups ON (groups."id" = memberships."group_id") [0m
+Rendering template within layouts/application
+Rendering groups/editor
+Completed in 0.12926 (7 reqs/sec) | Rendering: 0.09653 (74%) | DB: 0.00697 (5%) | 200 OK [http://localhost/groups/editor]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-02-06 22:56:49) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"editor", "controller"=>"groups"}
+  [4;35;1mGroup Load (0.000833)[0m   [0mSELECT * FROM groups [0m
+  [4;36;1mEmployee Load Including Associations (0.006246)[0m   [0;1mSELECT employees."id" AS t0_r0, employees."name" AS t0_r1, employees."extension" AS t0_r2, employees."created_at" AS t0_r3, employees."updated_at" AS t0_r4, employees."time_zone" AS t0_r5, employees."mobile_number" AS t0_r6, employees."on_vacation" AS t0_r7, employees."email" AS t0_r8, groups."id" AS t1_r0, groups."name" AS t1_r1, groups."created_at" AS t1_r2, groups."updated_at" AS t1_r3 FROM employees LEFT OUTER JOIN memberships ON (employees."id" = memberships."employee_id") LEFT OUTER JOIN groups ON (groups."id" = memberships."group_id") [0m
+Rendering template within layouts/application
+Rendering groups/editor
+Completed in 0.04650 (21 reqs/sec) | Rendering: 0.01179 (25%) | DB: 0.00708 (15%) | 200 OK [http://localhost/groups/editor]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-02-06 22:59:20) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00613 (163 reqs/sec) | Rendering: 0.00348 (56%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-02-06 23:02:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00507 (197 reqs/sec) | Rendering: 0.00255 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-02-06 23:02:43) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.006376)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.03170 (31 reqs/sec) | Rendering: 0.01670 (52%) | DB: 0.00638 (20%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-02-06 23:02:49) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"edit", "id"=>"25", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000346)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 25) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Rendered employees/_employee_editor (0.22374)
+Completed in 0.23782 (4 reqs/sec) | Rendering: 0.22866 (96%) | DB: 0.00035 (0%) | 200 OK [http://localhost/employees/25/edit]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-02-06 23:08:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00540 (185 reqs/sec) | Rendering: 0.00268 (49%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-02-06 23:08:38) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00536 (186 reqs/sec) | Rendering: 0.00271 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-02-07 04:54:18) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00791 (126 reqs/sec) | Rendering: 0.00368 (46%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-02-07 04:54:22) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.015796)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.06844 (14 reqs/sec) | Rendering: 0.04302 (62%) | DB: 0.01580 (23%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-02-07 04:54:25) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000383)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Rendered employees/_employee_editor (0.21983)
+Completed in 0.23431 (4 reqs/sec) | Rendering: 0.22506 (96%) | DB: 0.00038 (0%) | 200 OK [http://localhost/employees/22/edit]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-02-07 04:54:51) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"editor", "controller"=>"groups"}
+  [4;35;1mGroup Load (0.000796)[0m   [0mSELECT * FROM groups [0m
+  [4;36;1mEmployee Load Including Associations (0.006770)[0m   [0;1mSELECT employees."id" AS t0_r0, employees."name" AS t0_r1, employees."extension" AS t0_r2, employees."created_at" AS t0_r3, employees."updated_at" AS t0_r4, employees."time_zone" AS t0_r5, employees."mobile_number" AS t0_r6, employees."on_vacation" AS t0_r7, employees."email" AS t0_r8, groups."id" AS t1_r0, groups."name" AS t1_r1, groups."created_at" AS t1_r2, groups."updated_at" AS t1_r3 FROM employees LEFT OUTER JOIN memberships ON (employees."id" = memberships."employee_id") LEFT OUTER JOIN groups ON (groups."id" = memberships."group_id") [0m
+Rendering template within layouts/application
+Rendering groups/editor
+Completed in 0.04889 (20 reqs/sec) | Rendering: 0.01231 (25%) | DB: 0.00757 (15%) | 200 OK [http://localhost/groups/editor]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-02-07 04:55:14) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"editor", "controller"=>"groups"}
+  [4;35;1mGroup Load (0.000744)[0m   [0mSELECT * FROM groups [0m
+  [4;36;1mEmployee Load Including Associations (0.006388)[0m   [0;1mSELECT employees."id" AS t0_r0, employees."name" AS t0_r1, employees."extension" AS t0_r2, employees."created_at" AS t0_r3, employees."updated_at" AS t0_r4, employees."time_zone" AS t0_r5, employees."mobile_number" AS t0_r6, employees."on_vacation" AS t0_r7, employees."email" AS t0_r8, groups."id" AS t1_r0, groups."name" AS t1_r1, groups."created_at" AS t1_r2, groups."updated_at" AS t1_r3 FROM employees LEFT OUTER JOIN memberships ON (employees."id" = memberships."employee_id") LEFT OUTER JOIN groups ON (groups."id" = memberships."group_id") [0m
+Rendering template within layouts/application
+Rendering groups/editor
+Completed in 0.05062 (19 reqs/sec) | Rendering: 0.01345 (26%) | DB: 0.00713 (14%) | 200 OK [http://localhost/groups/editor]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-02-07 07:37:29) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00651 (153 reqs/sec) | Rendering: 0.00286 (43%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-02-07 07:37:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;35;1mEmployee Load (0.005704)[0m   [0mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.03091 (32 reqs/sec) | Rendering: 0.01644 (53%) | DB: 0.00570 (18%) | 200 OK [http://localhost/employees]
+
+
+Processing EmployeesController#edit (for 127.0.0.1 at 2008-02-07 07:37:33) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZDliZDI3YjViOTkwMjlmNGNlM2NiZThhMGQ0ZjQ0%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--789ccdb42509f68dd72dcae87d428bee32bcc92b
+  Parameters: {"action"=>"edit", "id"=>"22", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.000399)[0m   [0;1mSELECT * FROM employees WHERE (employees."id" = 22) [0m
+Rendering template within layouts/application
+Rendering employees/edit
+Rendered employees/_employee_editor (0.31275)
+Completed in 0.32963 (3 reqs/sec) | Rendering: 0.31864 (96%) | DB: 0.00040 (0%) | 200 OK [http://localhost/employees/22/edit]
