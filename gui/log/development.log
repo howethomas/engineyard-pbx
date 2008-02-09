@@ -13877,3 +13877,38 @@ Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:33
 Rendering template within layouts/application
 Rendering groups/extension_manager
 Completed in 0.01660 (60 reqs/sec) | Rendering: 0.00486 (29%) | DB: 0.00357 (21%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-02-09 00:37:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00471 (212 reqs/sec) | Rendering: 0.00266 (56%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-02-09 00:37:21) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.004080)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.02186 (45 reqs/sec) | Rendering: 0.01181 (54%) | DB: 0.00408 (18%) | 200 OK [http://localhost/employees]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-02-09 00:39:00) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00436 (229 reqs/sec) | Rendering: 0.00266 (60%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:39:02) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;35;1mGroup Load (0.000512)[0m   [0mSELECT * FROM groups [0m
+  [4;36;1mEmployee Load (0.003080)[0m   [0;1mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01683 (59 reqs/sec) | Rendering: 0.00488 (28%) | DB: 0.00359 (21%) | 200 OK [http://localhost/extension_manager]
