@@ -7,8 +7,13 @@ class GroupsController < ApplicationController
     end
     
     @groups    = Group.find :all
-    # @employees = Employee.find(:all).sort_by { |e| e.name[/\s*\S+$/].downcase }
     @employees = Employee.find(:all, :include => :groups).sort_by { |e| e.name[/\s*\S+$/].downcase }
+  end
+  
+  def extension_manager
+    @groups = Group.find :all# , :order => ''
+    @employees = Employee.find :all
+    
   end
   
   private

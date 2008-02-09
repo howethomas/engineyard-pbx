@@ -118,3 +118,26 @@ div.editor-group {
 div.editor-group p.name {
 	text-align: center;
 }
+
+div#extension_manager ul {
+	list-style: none;
+}
+
+div#extension_manager ul li {
+	clear: left;
+}
+div#extension_manager ul li span {
+	float: left;
+	display: block;
+}
+
+div#extension_manager ul li span.extension {
+	width: 100px;
+}
+
+div#extension_manager ul li span.name {
+	width: 325px;
+}
+div#extension_manager br, div#extension_manager h2 {
+	clear:left;
+}

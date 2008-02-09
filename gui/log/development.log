@@ -12814,3 +12814,1066 @@ Rendering template within layouts/application
 Rendering employees/edit
 Rendered employees/_employee_editor (0.31275)
 Completed in 0.32963 (3 reqs/sec) | Rendering: 0.31864 (96%) | DB: 0.00040 (0%) | 200 OK [http://localhost/employees/22/edit]
+
+
+Processing WelcomeController#index (for 127.0.0.1 at 2008-02-09 00:02:51) [GET]
+  Session ID: 5d64aa65170541644edf405fc7d61878
+  Parameters: {"action"=>"index", "controller"=>"welcome"}
+Rendering template within layouts/application
+Rendering welcome/index
+Completed in 0.00829 (120 reqs/sec) | Rendering: 0.00559 (67%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing EmployeesController#index (for 127.0.0.1 at 2008-02-09 00:02:55) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--5d572432531f9ae7ec17c72d58900c346c9d75e9
+  Parameters: {"action"=>"index", "controller"=>"employees"}
+  [4;36;1mEmployee Load (0.004418)[0m   [0;1mSELECT * FROM employees ORDER BY extension[0m
+Rendering template within layouts/application
+Rendering employees/index
+Completed in 0.02356 (42 reqs/sec) | Rendering: 0.01267 (53%) | DB: 0.00442 (18%) | 200 OK [http://localhost/employees]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:03:27) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;35;1mGroup Load (0.000494)[0m   [0mSELECT * FROM groups [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.02761 (36 reqs/sec) | Rendering: 0.01180 (42%) | DB: 0.00049 (1%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:03:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000510)[0m   [0;1mSELECT * FROM groups [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.00831 (120 reqs/sec) | Rendering: 0.00310 (37%) | DB: 0.00051 (6%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:06:45) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;35;1mGroup Load (0.000000)[0m   [0mSQLite3::SQLException: near " ": syntax error: SELECT * FROM groups ORDER BY [0m
+
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near " ": syntax error: SELECT * FROM groups    ORDER BY ):
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb:151:in `log'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/sqlite_adapter.rb:132:in `execute'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/sqlite_adapter.rb:352:in `catch_schema_changes'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/sqlite_adapter.rb:132:in `execute'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/sqlite_adapter.rb:256:in `select'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/database_statements.rb:7:in `select_all_without_query_cache'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:53:in `select_all'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:74:in `cache_sql'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:53:in `select_all'
+    /vendor/rails/activerecord/lib/active_record/base.rb:531:in `find_by_sql'
+    /vendor/rails/activerecord/lib/active_record/base.rb:1242:in `find_every'
+    /vendor/rails/activerecord/lib/active_record/base.rb:502:in `find'
+    /app/controllers/groups_controller.rb:14:in `extension_manager'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1158:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:699:in `call_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:691:in `perform_action_without_benchmark'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+    /vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    /vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    /vendor/rails/actionpack/lib/action_controller/filters.rb:687:in `process_without_session_management_support'
+    /vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `sass_old_process'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.1/lib/sass/plugin/rails.rb:15:in `process'
+    /vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/mongrel_rails:281
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    /vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:39
+    ./script/server:3:in `require'
+    ./script/server:3
+
+Rendering /Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:07:00) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000490)[0m   [0;1mSELECT * FROM groups [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.00817 (122 reqs/sec) | Rendering: 0.00316 (38%) | DB: 0.00049 (5%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:08:51) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;35;1mGroup Load (0.000481)[0m   [0mSELECT * FROM groups [0m
+  [4;36;1mEmployee Load (0.003195)[0m   [0;1mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+ERROR: compiling _run_erb_47app47views47groups47extension_manager46rhtml RAISED compile error
+/Users/jicksta/Desktop/ey/gui/app/views/groups/extension_manager.rhtml:15: syntax error, unexpected $end, expecting kEND
+Function body: def _run_erb_47app47views47groups47extension_manager46rhtml(local_assigns)
+_erbout = '';  for group in @groups ; _erbout.concat "\n"
+_erbout.concat(( group.name ).to_s); _erbout.concat "\n"
+ end ; _erbout.concat "\n"
+_erbout.concat "\n"
+_erbout.concat "<h2>Read-Only</h2>\n"
+_erbout.concat "\n"
+_erbout.concat "<table id=\"employees\">\n"
+ for employee in @employees ; _erbout.concat "\n"
+ next unless employee.extension ; _erbout.concat "\n"
+_erbout.concat "  <tr>\n"
+_erbout.concat "    <td>"; _erbout.concat(( employee.extension ).to_s); _erbout.concat "</td>\n"
+_erbout.concat "    <td>"; _erbout.concat(( employee.name ).to_s); _erbout.concat "</td>\n"
+_erbout.concat "  </tr>\n"
+_erbout.concat "</table>"; _erbout
+end
+Backtrace: /Users/jicksta/Desktop/ey/gui/app/views/groups/extension_manager.rhtml:15:in `compile_template'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/base.rb:638:in `compile_and_render_template'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:1100:in `render_for_file'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:836:in `render_with_no_layout'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/layout.rb:261:in `render_without_benchmark'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:1153:in `default_render'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/filters.rb:699:in `call_filters'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/filters.rb:691:in `perform_action_without_benchmark'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/filters.rb:687:in `process_without_session_management_support'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `sass_old_process'
+/Library/Ruby/Gems/1.8/gems/haml-1.8.1/lib/sass/plugin/rails.rb:15:in `process'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/../lib/mongrel/rails.rb:76:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/../lib/mongrel/rails.rb:74:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:282:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:281:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:281:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/mongrel_rails:128:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/command.rb:212:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/mongrel_rails:281
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+/Users/jicksta/Desktop/ey/gui/vendor/rails/railties/lib/commands/server.rb:39
+./script/server:3:in `require'
+./script/server:3
+
+
+ActionView::TemplateError (compile error
+/Users/jicksta/Desktop/ey/gui/app/views/groups/extension_manager.rhtml:15: syntax error, unexpected $end, expecting kEND) on line #15 of groups/extension_manager.rhtml:
+12:     <td><%= employee.name %></td>
+13:   </tr>
+14: </table>
+    app/views/groups/extension_manager.rhtml:15:in `compile_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:638:in `compile_and_render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1100:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:261:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1153:in `default_render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:699:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:691:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:687:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `sass_old_process'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.1/lib/sass/plugin/rails.rb:15:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:09:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;35;1mGroup Load (0.000469)[0m   [0mSELECT * FROM groups [0m
+  [4;36;1mEmployee Load (0.003097)[0m   [0;1mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01696 (58 reqs/sec) | Rendering: 0.00516 (30%) | DB: 0.00357 (21%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:09:58) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;35;1mGroup Load (0.000470)[0m   [0mSELECT * FROM groups [0m
+  [4;36;1mEmployee Load (0.003218)[0m   [0;1mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01731 (57 reqs/sec) | Rendering: 0.00544 (31%) | DB: 0.00369 (21%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:11:36) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;35;1mGroup Load (0.000470)[0m   [0mSELECT * FROM groups [0m
+  [4;36;1mEmployee Load (0.003142)[0m   [0;1mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+
+
+ActionView::TemplateError (undefined local variable or method `groups_editor_url' for #<ActionView::Base:0x271c7b0>) on line #13 of groups/extension_manager.rhtml:
+10: 
+11: <h2>Read-Only</h2>
+12: 
+13: <p>Click <%= link_to "here", groups_editor_url %> to edit the employees' extensions</p>
+14: 
+15: <ul id="employees">
+16: <% for employee in @employees %>
+
+    app/views/groups/extension_manager.rhtml:13:in `_run_erb_47app47views47groups47extension_manager46rhtml'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `send'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `compile_and_render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1100:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:261:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1153:in `default_render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:699:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:691:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:687:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `sass_old_process'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.1/lib/sass/plugin/rails.rb:15:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:11:47) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;35;1mGroup Load (0.000502)[0m   [0mSELECT * FROM groups [0m
+  [4;36;1mEmployee Load (0.003141)[0m   [0;1mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+
+
+ActionView::TemplateError (undefined local variable or method `groups_editor_path' for #<ActionView::Base:0x27762c4>) on line #13 of groups/extension_manager.rhtml:
+10: 
+11: <h2>Read-Only</h2>
+12: 
+13: <p>Click <%= link_to "here", groups_editor_path %> to edit the employees' extensions</p>
+14: 
+15: <ul id="employees">
+16: <% for employee in @employees %>
+
+    app/views/groups/extension_manager.rhtml:13:in `_run_erb_47app47views47groups47extension_manager46rhtml'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `send'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `compile_and_render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1100:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:261:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1153:in `default_render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:699:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:691:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:687:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `sass_old_process'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.1/lib/sass/plugin/rails.rb:15:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:12:35) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000607)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003418)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+
+
+ActionView::TemplateError (undefined local variable or method `groups_editor_url' for #<ActionView::Base:0x2777e08>) on line #13 of groups/extension_manager.rhtml:
+10: 
+11: <h2>Read-Only</h2>
+12: 
+13: <p>Click <%= link_to "here", groups_editor_url %> to edit the employees' extensions</p>
+14: 
+15: <ul id="employees">
+16: <% for employee in @employees %>
+
+    app/views/groups/extension_manager.rhtml:13:in `_run_erb_47app47views47groups47extension_manager46rhtml'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `send'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `compile_and_render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1100:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:261:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1153:in `default_render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:699:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:691:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:687:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `sass_old_process'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.1/lib/sass/plugin/rails.rb:15:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:12:41) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000489)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003164)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01929 (51 reqs/sec) | Rendering: 0.00711 (36%) | DB: 0.00365 (18%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:12:52) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000492)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003062)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01722 (58 reqs/sec) | Rendering: 0.00532 (30%) | DB: 0.00355 (20%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:14:01) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000486)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003170)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+
+
+ActionView::TemplateError (undefined local variable or method `employee' for #<ActionView::Base:0x25083e8>) on line #7 of groups/extension_manager.rhtml:
+4: 
+5: <ul class="groups">
+6:   <% for group in @groups %>  
+7:   <span class="option"><%= employee.extension %></span>
+8:   <span class="name"><%= employee.name %></span>
+9:   <% end %>
+10: </ul>
+
+    app/views/groups/extension_manager.rhtml:7:in `_run_erb_47app47views47groups47extension_manager46rhtml'
+    app/views/groups/extension_manager.rhtml:6:in `each'
+    app/views/groups/extension_manager.rhtml:6:in `_run_erb_47app47views47groups47extension_manager46rhtml'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `send'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `compile_and_render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1100:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:261:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1153:in `default_render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:699:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:691:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:687:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `sass_old_process'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.1/lib/sass/plugin/rails.rb:15:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:14:10) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000467)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003082)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+
+
+ActionView::TemplateError (undefined method `extension' for #<Group:0x25d08d4>) on line #7 of groups/extension_manager.rhtml:
+4: 
+5: <ul class="groups">
+6:   <% for group in @groups %>  
+7:   <span class="option"><%= group.extension %></span>
+8:   <span class="name"><%= group.name %></span>
+9:   <% end %>
+10: </ul>
+
+    vendor/rails/activerecord/lib/active_record/attribute_methods.rb:206:in `method_missing'
+    app/views/groups/extension_manager.rhtml:7:in `_run_erb_47app47views47groups47extension_manager46rhtml'
+    app/views/groups/extension_manager.rhtml:6:in `each'
+    app/views/groups/extension_manager.rhtml:6:in `_run_erb_47app47views47groups47extension_manager46rhtml'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `send'
+    vendor/rails/actionpack/lib/action_view/base.rb:645:in `compile_and_render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:367:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:316:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1100:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:261:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1153:in `default_render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:699:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:691:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:678:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching.rb:677:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:687:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:123:in `sass_old_process'
+    /Library/Ruby/Gems/1.8/gems/haml-1.8.1/lib/sass/plugin/rails.rb:15:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:388:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.3/bin/mongrel_rails:281
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:489:in `load'
+    vendor/rails/railties/lib/commands/servers/mongrel.rb:64
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:496:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    script/server:3:in `require'
+    script/server:3
+
+Rendering /Users/jicksta/Desktop/ey/gui/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+  [4;36;1mSQL (0.000196)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000217)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000134)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000141)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000132)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000132)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000162)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000153)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000153)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000151)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000151)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to AddIvrOptionsToGroups (10)
+  [4;35;1mSQL (0.034142)[0m   [0mALTER TABLE groups ADD "ivr_option" integer[0m
+  [4;36;1mSQL (0.003605)[0m   [0;1mVACUUM[0m
+  [4;35;1mSQL (0.001704)[0m   [0mUPDATE schema_info SET version = 10[0m
+  [4;36;1mSQL (0.000209)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000290)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000048)[0m   [0;1mPRAGMA index_list(employees)[0m
+  [4;35;1mSQL (0.000053)[0m   [0mPRAGMA index_list(groups)[0m
+  [4;36;1mSQL (0.000054)[0m   [0;1mPRAGMA index_list(memberships)[0m
+  [4;36;1mGroup Load (0.000670)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mGroup Load (0.000353)[0m   [0mSELECT * FROM groups WHERE (groups."id" = 1) [0m
+  [4;36;1mGroup Load (0.000359)[0m   [0;1mSELECT * FROM groups WHERE (groups."id" = 2) [0m
+  [4;35;1mGroup Load (0.000182)[0m   [0mSELECT * FROM groups WHERE (groups."id" = 3) [0m
+  [4;36;1mGroup Load (0.000411)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mGroup Load (0.000381)[0m   [0mSELECT * FROM groups [0m
+  [4;36;1mGroup Load (0.000380)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mGroup Load (0.000384)[0m   [0mSELECT * FROM groups [0m
+  [4;36;1mGroup Load (0.000437)[0m   [0;1mSELECT * FROM groups [0m
+  [4;36;1mGroup Load (0.000556)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mGroup Update (0.000487)[0m   [0mUPDATE groups SET "created_at" = '2008-01-15 02:51:22', "name" = 'Sales', "updated_at" = '2008-02-09 00:22:36', "ivr_option" = 1 WHERE "id" = 1[0m
+  [4;36;1mGroup Update (0.000397)[0m   [0;1mUPDATE groups SET "created_at" = '2008-01-15 02:51:29', "name" = 'Tech support', "updated_at" = '2008-02-09 00:22:39', "ivr_option" = 2 WHERE "id" = 2[0m
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:22:47) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000553)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003100)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.02540 (39 reqs/sec) | Rendering: 0.01320 (51%) | DB: 0.00365 (14%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:23:14) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000503)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003070)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01750 (57 reqs/sec) | Rendering: 0.00560 (31%) | DB: 0.00357 (20%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:23:40) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000504)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003161)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.06455 (15 reqs/sec) | Rendering: 0.00583 (9%) | DB: 0.00366 (5%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:23:43) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000575)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003256)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01863 (53 reqs/sec) | Rendering: 0.00577 (30%) | DB: 0.00383 (20%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:23:57) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000500)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003158)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01752 (57 reqs/sec) | Rendering: 0.00563 (32%) | DB: 0.00366 (20%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:24:06) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000655)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003139)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.02217 (45 reqs/sec) | Rendering: 0.00886 (39%) | DB: 0.00379 (17%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:24:27) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000504)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003065)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01739 (57 reqs/sec) | Rendering: 0.00560 (32%) | DB: 0.00357 (20%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:24:50) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000518)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003148)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01785 (56 reqs/sec) | Rendering: 0.00578 (32%) | DB: 0.00367 (20%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#editor (for 127.0.0.1 at 2008-02-09 00:24:57) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"editor", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000482)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load Including Associations (0.004858)[0m   [0mSELECT employees."id" AS t0_r0, employees."name" AS t0_r1, employees."extension" AS t0_r2, employees."created_at" AS t0_r3, employees."updated_at" AS t0_r4, employees."time_zone" AS t0_r5, employees."mobile_number" AS t0_r6, employees."on_vacation" AS t0_r7, employees."email" AS t0_r8, groups."id" AS t1_r0, groups."name" AS t1_r1, groups."created_at" AS t1_r2, groups."updated_at" AS t1_r3, groups."ivr_option" AS t1_r4 FROM employees LEFT OUTER JOIN memberships ON (employees."id" = memberships."employee_id") LEFT OUTER JOIN groups ON (groups."id" = memberships."group_id") [0m
+Rendering template within layouts/application
+Rendering groups/editor
+Completed in 0.03887 (25 reqs/sec) | Rendering: 0.00976 (25%) | DB: 0.00534 (13%) | 200 OK [http://localhost/groups/editor]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:26:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000513)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003150)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01791 (55 reqs/sec) | Rendering: 0.00582 (32%) | DB: 0.00366 (20%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:28:20) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000502)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003174)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.02554 (39 reqs/sec) | Rendering: 0.01335 (52%) | DB: 0.00368 (14%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:28:49) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000493)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003111)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01669 (59 reqs/sec) | Rendering: 0.00486 (29%) | DB: 0.00360 (21%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:29:25) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000496)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003112)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01740 (57 reqs/sec) | Rendering: 0.00566 (32%) | DB: 0.00361 (20%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:29:34) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000535)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003214)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.06389 (15 reqs/sec) | Rendering: 0.00505 (7%) | DB: 0.00375 (5%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:29:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000483)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003130)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01686 (59 reqs/sec) | Rendering: 0.00493 (29%) | DB: 0.00361 (21%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:30:12) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000508)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003255)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01702 (58 reqs/sec) | Rendering: 0.00486 (28%) | DB: 0.00376 (22%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:30:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000488)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003086)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01646 (60 reqs/sec) | Rendering: 0.00480 (29%) | DB: 0.00357 (21%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:30:51) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000493)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003110)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01689 (59 reqs/sec) | Rendering: 0.00483 (28%) | DB: 0.00360 (21%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:31:06) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000489)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003102)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01683 (59 reqs/sec) | Rendering: 0.00495 (29%) | DB: 0.00359 (21%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:31:11) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000477)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003085)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01648 (60 reqs/sec) | Rendering: 0.00479 (29%) | DB: 0.00356 (21%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:31:45) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000498)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003133)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01701 (58 reqs/sec) | Rendering: 0.00490 (28%) | DB: 0.00363 (21%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:32:51) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000485)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003144)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01684 (59 reqs/sec) | Rendering: 0.00488 (29%) | DB: 0.00363 (21%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:32:59) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000538)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003126)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01678 (59 reqs/sec) | Rendering: 0.00487 (29%) | DB: 0.00366 (21%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:33:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000502)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003133)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01716 (58 reqs/sec) | Rendering: 0.00515 (29%) | DB: 0.00363 (21%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:33:10) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000483)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003206)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01699 (58 reqs/sec) | Rendering: 0.00501 (29%) | DB: 0.00369 (21%) | 200 OK [http://localhost/groups/extension_manager]
+
+
+Processing GroupsController#extension_manager (for 127.0.0.1 at 2008-02-09 00:33:21) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYjMxNmI0ZGIyNTk1YmY3MTgyODE3NTU3YzExMjM5%0AYmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--6ea0292814328fb34d8c37050f7a0eaf8e1fe788
+  Parameters: {"action"=>"extension_manager", "controller"=>"groups"}
+  [4;36;1mGroup Load (0.000500)[0m   [0;1mSELECT * FROM groups [0m
+  [4;35;1mEmployee Load (0.003074)[0m   [0mSELECT * FROM employees [0m
+Rendering template within layouts/application
+Rendering groups/extension_manager
+Completed in 0.01660 (60 reqs/sec) | Rendering: 0.00486 (29%) | DB: 0.00357 (21%) | 200 OK [http://localhost/groups/extension_manager]
