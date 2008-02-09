@@ -14,11 +14,13 @@ Adhearsion::Configuration.configure do |config|
   
   # config.enable_drb 
   
+  config.enable_rails :path => 'gui', :env => :development
+  
   # config.asterisk.speech_engine = :cepstral
   
   # Configure FreeSwitch
   # config.enable_freeswitch :listening_port => 4572
   
   # Configure a database to use ActiveRecord-backed models.
-  config.enable_database :adapter => "sqlite3", :dbfile => "gui/db/development.sqlite3"
+  # config.enable_database :adapter => "sqlite3", :dbfile => "gui/db/development.sqlite3"
 end

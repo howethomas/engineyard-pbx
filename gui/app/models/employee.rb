@@ -1,3 +1,4 @@
+puts "Loading employee"
 class Employee < ActiveRecord::Base
   
   validates_numericality_of :extension

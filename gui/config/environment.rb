@@ -61,6 +61,3 @@ Rails::Initializer.run do |config|
   ENV['TZ'] = 'UTC' # This makes Time.now return time in UTC
 
 end
-
-# FROM ADVICE ON: http://www.marklunds.com/articles/one/311
-
