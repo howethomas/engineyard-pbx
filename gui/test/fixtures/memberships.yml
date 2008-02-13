@@ -1,9 +1,0 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  group_id: 1
-  employee_id: 1
-
-two:
-  group_id: 1
-  employee_id: 1

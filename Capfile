@@ -2,8 +2,10 @@ load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
 load 'config/deploy'
 
+*AHN_SERVERS = '10.0.1.195'
+
 set :scm, :git
-set :repository, File.expand_path('~/ey.git')
+set :repository, "git@github.com:jicksta/engineyard-pbx.git"
 set :application, "pbx"
 set :user, "jicksta"
 set :deploy_to, "~/pbx"
@@ -13,7 +15,21 @@ set :ahn_repository, 'http://svn.adhearsion.com/trunk'
 set :ahn_deploy_to, '/usr/local/adhearsion'
 
 
-role :pbx, '10.0.1.195', :primary => true
+
+
+task :pbx do
+  role :app, 
+end
+
+task :gui do
+  role :app,
+end
+
+namespace :deploy do
+  task :restart do
+    ahn.restart
+  end
+end
 
 namespace :ahn do
   
