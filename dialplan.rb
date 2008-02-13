@@ -68,6 +68,7 @@ finance {
 }
 
 conferences {
+  play 'conf-enteringno', extension
   join extension
 }
 
