@@ -1,3 +1,5 @@
+PATH_TO_RAILS = File.expand_path(File.dirname(__FILE__) + '/../.path_to_gui')
+
 Adhearsion::Configuration.configure do |config|
   # Whether incoming calls be automatically answered. Defaults to true.
   # config.automatically_answer_incoming_calls = false
@@ -14,7 +16,7 @@ Adhearsion::Configuration.configure do |config|
   
   # config.enable_drb 
   
-  config.enable_rails :path => 'gui', :env => :development
+  config.enable_rails :path => File.read(PATH_TO_RAILS).chomp, :env => :development
   
   # config.asterisk.speech_engine = :cepstral
   
