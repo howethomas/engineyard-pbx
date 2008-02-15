@@ -13,6 +13,11 @@ When you select a group, you view the Group editor as it is now with just one co
 
 =end
 
+ahn {
+  # p QueueClient
+  new_queue_client.ohai
+}
+
 from_pstn {
   menu 'engineyard/prompt', :tries => 3, :timeout => 7 do |link|
     link.sales        1
