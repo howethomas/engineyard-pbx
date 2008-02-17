@@ -67,7 +67,7 @@ class CallFile
   CALLER_ID_NUMBER       = 14097672813
   HANDLING_CONTEXT       = 'login'
   
-  attr_reader :phone_number, :wait_time, :file_name, :agent_id, :employee_id
+  attr_reader :phone_number, :wait_time, :file_name, :agent_id, :employee_id, :customer_cookie
   def initialize(options)
     
     @phone_number    = options[:phone_number]
