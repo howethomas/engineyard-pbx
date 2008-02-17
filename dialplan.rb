@@ -20,6 +20,14 @@ from_pstn {
   end
 }
 
+from_queue_outbound {
+  play 'conf-waitforleader'
+}
+
+from_voipms {
+  play 'hello-world'
+}
+
 agent_login {
   p add_queue_member('ey', channel[/^(.+)-\w+$/, 1])
 }
