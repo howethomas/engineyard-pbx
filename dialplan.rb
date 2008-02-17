@@ -19,32 +19,15 @@ from_queue_outbound {
 }
 
 login {
-  # TODO: Set the call type here!
-  add_queue_member 'ey', 'Agent/100'
-  agent_login 100, false
-}
-
-from_pstn_old {
-  menu 'engineyard/prompt', :tries => 3, :timeout => 7 do |link|
-    link.sales        1
-    link.tech_support 2
-    link.finance      3
-    link.other        0
-    
-    link.employee *Employee.find(:all).map(&:extension)
-    
-    link.conferences 900..999
-    
-    link.on_premature_timeout { play 'are-you-still-there' }
-    link.on_invalid { play 'invalid' }
-    link.on_failure do
-      play %w'vm-sorry one-moment-please'
-      +other
-    end
+  agent = Employee.find employee_id 
+  if AgentHistoryTracker.should_answer_call_with_id customer_cookie
+    AgentHistoryTracker << queue_member_id
+    add_queue_member 'ey', 'Agent/100'
+    agent_login 100, false
+  else
+    play 'tt-weasels'
   end
 }
-
-from_codemecca { +from_pstn }
 
 employee {
   employee = Employee.find_by_extension extension
@@ -60,53 +43,59 @@ employee {
 
 }
 
-sales {
-  play 'privacy-please-stay-on-line-to-be-connected'
-  # Enter the sales queue
-}
-
 group_dialer {
+  play 'privacy-please-stay-on-line-to-be-connected'
   
-  play 'privacy-please-stay-on-line-to-be-connected'
-  # Enter the tech support queue
-}
-
-# Should be a group with Riki (or any other employee) as a member.
-finance {
-  play 'privacy-please-stay-on-line-to-be-connected'
-  riki = Employee.find_by_name "Riki Crusha"
-  dial "IAX2/jay-trunk-out/#{riki.mobile_number}", :caller_id => "14097672813"
+  this_group   = Group.find_by_ivr_option extension
+  this_machine = Server.find_by_name THIS_SERVER
+  this_caller  = `uuidgen`.strip # Umm? Hackeyyy
+  
+  if this_group && this_machine
+    
+    this_group.generate_calls this_machine, this_caller
+    queue this_group.name # MUST SET A TIMEOUT!
+    
+    # voicemail this_group.name
+  else
+    # SERIOUS PROBLEMS!
+  end
 }
 
 conferences {
-  play 'conf-enteringno', extension
-  join extension
+  # SINCE THIS IS A PUBLIC-FACING CONFERENCE BRIDGE, THERE SHOULD BE 
+  # A GLOBAL ENGINEYARD PASSWORD TO ACCESS IT. TRUSTWORTHY PEOPLE
+  # WON'T NEED TO ENTER THE PASSWORD. THE PASSWORD CAN BE CHANGED IN
+  # THE WEB INTERFACE
+  password = OptionsManager[:monkey].to_s
+  tries = 0
+  while tries < 3
+    attempt = input password.length, :play => "please-enter-password"
+    if attempt.to_s == password
+      tries = 3
+      join extension
+    else
+      tries += 1
+    end
+  end
 }
 
 other {
   +sales
 }
 
-# This is mostly my debug context.
-from_internal {
-  
-  extension_map = {
-    '250' => "jay-desk-650"
-  }
-  
-  case extension.to_s
-    when *extension_map.keys  
-      dial "SIP/#{extension_map[extension.to_s]}"
-    when /^18(00|88|77)\d{7}$/
-      puts "Dialing 'toll free' number"
-      dial "IAX2/jay-trunk-out/#{extension}", :caller_id => 1_409_767_2813
-    when /^\d{10}$/
-      puts "here??!??!?"
-      dial "IAX2/jay-trunk-out/1#{extension}", :caller_id => 1_409_767_2813
-    when /^\d{11}$/
-      dial "IAX2/jay-trunk-out/#{extension}", :caller_id => 1_409_767_2813
-    else
-      play 'invalid'
+ivr {
+  menu 'engineyard/prompt', :tries => 3, :timeout => 7 do |link|
+    link.group_dialer 1,2,3,4,5
+    
+    link.employee *Employee.find(:all).map(&:extension)
+    
+    link.conferences 900..999
+    
+    link.on_premature_timeout { play 'are-you-still-there' }
+    link.on_invalid { play 'invalid' }
+    link.on_failure do
+      play %w'vm-sorry one-moment-please'
+      +other
+    end
   end
-  
 }
