@@ -20,11 +20,12 @@ from_queue_outbound {
 
 login {
   agent = Employee.find employee_id 
-  if AgentHistoryTracker.should_answer_call_with_id customer_cookie
+  if AgentHistoryTracker.should_answer_call_with_id? customer_cookie
     AgentHistoryTracker << queue_member_id
     add_queue_member 'ey', 'Agent/100'
     agent_login 100, false
   else
+    puts "It seems another agent has already answered this call!"
     play 'tt-weasels'
   end
 }

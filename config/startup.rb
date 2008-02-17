@@ -34,10 +34,10 @@ class AgentHistoryTracker
       end
     end
     
-    def should_answer_call_with_id(unique_id)
+    def should_answer_call_with_id?(unique_id)
       cleanup!
       atomically do
-        return !chronicle.find { |record| record[:id] == unique_id }.nil?
+        return !chronicle.find { |record| record[:id] == unique_id }
       end
     end
     

@@ -94,7 +94,7 @@ MaxRetries: 1
 WaitTime: #{wait_time}
 Context: login
 Extension: s
-CallerID: #{CALLER_ID_NAME} <#{CALLER_ID_NUMBER}>
+CallerID: "#{CALLER_ID_NAME}" <#{CALLER_ID_NUMBER}>
 Set: customer_cookie=#{customer_cookie}
 Set: employee_id=#{employee_id}
     CALL_FILE_CONTENT
