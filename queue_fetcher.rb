@@ -27,7 +27,7 @@ Scheduler.join
 
 }
 
-require File.join(File.dirname(__FILE__), *%w[ey-gui config environment.rb])
+require File.read('.path_to_gui').chomp + '/config/environment.rb'
 
 class Scheduler
   
