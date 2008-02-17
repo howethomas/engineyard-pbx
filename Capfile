@@ -1,6 +1,6 @@
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 
-AHN_SERVERS = '10.0.1.195'
+AHN_SERVERS = '192.168.2.3'
 
 # Git/Github setup
 set :scm, :git
@@ -33,7 +33,7 @@ role :app, AHN_SERVERS
 after 'deploy', :update_path_to_rails
 
 task :update_path_to_rails do
-  run "echo #{rails_deploy_to} > #{ahn_deploy_to}/.path_to_gui"
+  run "echo #{rails_deploy_to} > #{ahn_deploy_to}/current/.path_to_gui"
 end
 
 namespace :deploy do
