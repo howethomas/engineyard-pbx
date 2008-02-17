@@ -7,18 +7,28 @@ Edit groups in Employee edit view
 
 add groups, define extensions
 
-
 When going to the group editor, view a list a groups and can specify their IVR extensions there
 When you select a group, you view the Group editor as it is now with just one column, instead.
 
 =end
 
-ahn {
-  # p QueueClient
-  new_queue_client.ohai
+from_pstn {
+  p extension
+  menu 'tt-monkeys' do |link|
+    link.agent_login  1
+    link.get_in_queue 2
+  end
 }
 
-from_pstn {
+agent_login {
+  p add_queue_member('ey', channel[/^(.+)-\w+$/, 1])
+}
+
+get_in_queue {
+  queue "ey"
+}
+
+from_pstn_old {
   menu 'engineyard/prompt', :tries => 3, :timeout => 7 do |link|
     link.sales        1
     link.tech_support 2
