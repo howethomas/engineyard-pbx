@@ -19,6 +19,7 @@ from_queue_outbound {
 }
 
 login {
+  # TODO: Set the call type here!
   add_queue_member 'ey', 'Agent/100'
   agent_login 100, false
 }

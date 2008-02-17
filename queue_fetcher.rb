@@ -59,6 +59,8 @@ end
 class CallFile
   
   ASTERISK_CALL_FILE_DIR = '/var/spool/asterisk/outgoing'
+  CALLER_ID_NAME         = 'EY Sales'
+  CALLER_ID_NUMBER       = 14097672813
   
   attr_reader :phone_number, :wait_time, :file_name#, :agent_id
   def initialize(phone_number, wait_time = 15)
@@ -83,6 +85,7 @@ MaxRetries: 1
 WaitTime: #{wait_time}
 Context: from_voipms
 Extension: s
+CallerID: #{CALLER_ID_NAME} <#{CALLER_ID_NUMBER}>
     CALL_FILE_CONTENT
   end
   
