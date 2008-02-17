@@ -47,11 +47,13 @@ group_dialer {
   play 'privacy-please-stay-on-line-to-be-connected'
   
   this_group   = Group.find_by_ivr_option extension
+  p [:this_group, this_group]
   this_machine = Server.find_by_name THIS_SERVER
+  p [:this_machine, this_machine]
   this_caller  = `uuidgen`.strip # Umm? Hackeyyy
+  p [:this_caller, this_caller]
   
   if this_group && this_machine
-    
     this_group.generate_calls this_machine, this_caller
     queue this_group.name # MUST SET A TIMEOUT!
     
