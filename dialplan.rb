@@ -12,30 +12,15 @@ When you select a group, you view the Group editor as it is now with just one co
 
 =end
 
-from_pstn {
-  p extension
-  menu 'tt-monkeys' do |link|
-    link.agent_login  1
-    link.get_in_queue 2
-  end
-}
-
 from_queue_outbound {
-  play 'conf-waitforleader'
-}
-
-from_voipms {
-  menu "hello-world" do |link|
-    link.agent_login '#'
+  menu "hello-world", :timeout => 1.minute do |link|
+    link.login '#'
   end
 }
 
-agent_login {
-  p add_queue_member('ey', channel[/^(.+)-\w+$/, 1])
-}
-
-get_in_queue {
-  queue "ey"
+login {
+  add_queue_member 'ey', 'Agent/100'
+  agent_login 100, false
 }
 
 from_pstn_old {
