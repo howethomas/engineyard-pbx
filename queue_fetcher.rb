@@ -59,7 +59,6 @@ end
 class CallFile
   
   ASTERISK_CALL_FILE_DIR = '/var/spool/asterisk/outgoing'
-  # ASTERISK_CALL_FILE_DIR = '/Users/jicksta/Desktop'
   
   attr_reader :phone_number, :wait_time, :file_name#, :agent_id
   def initialize(phone_number, wait_time = 15)
@@ -82,7 +81,7 @@ class CallFile
 Channel: IAX2/voipms/#{phone_number}
 MaxRetries: 1
 WaitTime: #{wait_time}
-Context: from_queue_outbound
+Context: from_voipms
 Extension: s
     CALL_FILE_CONTENT
   end

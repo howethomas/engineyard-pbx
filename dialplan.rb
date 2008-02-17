@@ -25,7 +25,9 @@ from_queue_outbound {
 }
 
 from_voipms {
-  play 'hello-world'
+  menu "hello-world" do |link|
+    link.agent_login '#'
+  end
 }
 
 agent_login {
