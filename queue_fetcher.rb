@@ -3,23 +3,14 @@ END {
 pbx1 = Server.find(:first)
 
 Scheduler.for pbx1 do |event|
+  puts "I got an event with ID #{event.id}"
   begin
-    puts "I got an event with ID #{event.id}"
-    case event.name.to_sym
-      when :call_agent
-        
-        call_options = YAML.load event.message
-        
-        puts "CALLING AGENT WITH #{call_options.inspect}"
-        CallFile.new(call_options).write_to_disk
-        
-      else
-        STDERR.puts "Unrecognized event name #{event.name} with #{event.message}"
-    end
-    event.complete!
+    QueueMessageHandler.send(event.name, event.message)
   rescue => exception
     STDERR.puts exception, *exception.backtrace
     sleep 0.2
+  ensure
+    event.complete!
   end
 end
 
@@ -55,9 +46,41 @@ class Scheduler
   end
   
   def self.join
-    thread_group.list.each &:join
+    thread_group.list.each(&:join)
   end
   
+end
+
+
+class QueueMessageHandler
+  class << self
+    
+    def call_agent(message)
+      call_options = YAML.load message
+      puts "CALLING AGENT WITH #{call_options.inspect}"
+      CallFile.new(call_options).write_to_disk
+    end
+    
+    CONFIG_FILE_MODULE_NAMES = {
+      "queues" => "app_queue",
+      "agents" => "chan_agent"
+    }
+    CONFIG_FILE_MODULE_NAMES.default = ''
+    
+    def regenerate_config_file(config_name)
+      dynamic_config_file = File.dirname(__FILE__) + "config/asterisk/#{config_name}.rb"
+      config_file_code = File.read dynamic_config_file
+      
+      config_class_name = config_class_name.camelize
+      config_generator = Adhearsion::VoIP::Asterisk::ConfigFileGenerators.const_get(config_class_name).new
+      config_generator.instance_eval(config_file_code)
+      File.open("/etc/asterisk/#{config_name}.conf", "w") do |file|
+        file.write config_generator
+      end
+      `asterisk -rx reload #{CONFIG_FILE_MODULE_NAMES[config_name]}`
+    end
+    
+  end
 end
 
 class CallFile
