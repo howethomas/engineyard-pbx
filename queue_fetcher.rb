@@ -99,13 +99,14 @@ class CallFile
   CALLER_ID_NUMBER       = 14097672813
   HANDLING_CONTEXT       = 'login'
   
-  attr_reader :phone_number, :wait_time, :file_name, :agent_id, :employee_id, :customer_cookie
+  attr_reader :phone_number, :wait_time, :file_name, :agent_id, :employee_id, :customer_cookie, :group_id
   def initialize(options)
     
     @phone_number    = options[:phone_number]
     @wait_time       = options[:wait_time] || 15
     @employee_id     = options[:employee_id]
     @customer_cookie = options[:customer_cookie]
+    @group_id        = options[:group_id]
     
     @file_name       = "#{Time.now.to_f}_#{rand(10_000_000)}.call"
     
@@ -129,6 +130,7 @@ Extension: s
 CallerID: "#{CALLER_ID_NAME}" <#{CALLER_ID_NUMBER}>
 Set: customer_cookie=#{customer_cookie}
 Set: employee_id=#{employee_id}
+Set: group_id={group_id}
     CALL_FILE_CONTENT
   end
   

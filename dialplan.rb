@@ -20,12 +20,17 @@ from_queue_outbound {
 
 login {
   
-  employee_id = get_variable 'employee_id'
+  group_id        = get_variable 'group_id'
+  employee_id     = get_variable 'employee_id'
   customer_cookie = get_variable 'customer_cookie'
   
-  p [employee_id, customer_cookie]
+  p {:emp => employee_id, :caller => customer_cookie, :group => group_id}
   
-  agent = Employee.find employee_id
+  agent       = Employee.find employee_id
+  queue_group = Group.find group_id
+  
+  puts "People waiting: " + execute("QUEUE_WAITING_COUNT", queue_group.name)
+  
   if AgentHistoryTracker.should_answer_call_with_id? customer_cookie
     AgentHistoryTracker << customer_cookie
     add_queue_member 'Jay', 'Agent/100'
