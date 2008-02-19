@@ -14,6 +14,8 @@ set :rails_deploy_to, project_deploy_to_root + "/pbx-gui"
 
 # Adhearsion-related variables
 set :ahn_repository, 'http://svn.adhearsion.com/trunk'
+set :ahn_install_dir, "/usr/local/adhearsion"
+
 set :ahn_deploy_to, project_deploy_to_root + "/pbx"
 
 # Capistrano setup
@@ -45,11 +47,11 @@ end
 namespace :ahn do
   
   task :init do
-    sudo "svn co #{ahn_repository} #{ahn_deploy_to}"
+    sudo "svn co #{ahn_repository} #{ahn_install_dir}"
   end
   
   task :update do
-    sudo "svn update #{ahn_deploy_to}"
+    sudo "svn update #{ahn_install_dir}"
   end
 end
 
