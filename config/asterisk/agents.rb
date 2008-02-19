@@ -1,5 +1,5 @@
-Employee.find(:all) do |employee|
-  agent employee.id(:name => employee.name)
+for employee in Employee.find(:all)
+  agent employee.id, :name => employee.name
 end
 
 persistent_agents false
