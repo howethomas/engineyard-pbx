@@ -21,6 +21,7 @@ Scheduler.join
 require File.read(File.dirname(__FILE__) + "/.path_to_gui").chomp + '/config/environment.rb'
 require File.dirname(`which ahn`) + "/../lib/adhearsion"
 require 'adhearsion/voip/asterisk/config_generators/queues.conf.rb'
+require 'adhearsion/voip/asterisk/config_generators/agents.conf.rb'
 
 class Scheduler
   
