@@ -18,7 +18,9 @@ Scheduler.join
 
 }
 
-require File.read('.path_to_gui').chomp + '/config/environment.rb'
+require File.read(File.dirname(__FILE__) + "/.path_to_gui").chomp + '/config/environment.rb'
+require File.dirname(`which ahn`) + "/../lib/adhearsion"
+require 'adhearsion/voip/asterisk/config_generators/queues.conf.rb'
 
 class Scheduler
   
@@ -68,16 +70,22 @@ class QueueMessageHandler
     CONFIG_FILE_MODULE_NAMES.default = ''
     
     def regenerate_config_file(config_name)
-      dynamic_config_file = File.dirname(__FILE__) + "config/asterisk/#{config_name}.rb"
+      dynamic_config_file = File.dirname(__FILE__) + "/config/asterisk/#{config_name}.rb"
       config_file_code = File.read dynamic_config_file
       
-      config_class_name = config_class_name.camelize
+      config_class_name = config_name.camelize
       config_generator = Adhearsion::VoIP::Asterisk::ConfigFileGenerators.const_get(config_class_name).new
       config_generator.instance_eval(config_file_code)
-      File.open("/etc/asterisk/#{config_name}.conf", "w") do |file|
-        file.write config_generator
+      
+      asterisk_config_file = "/etc/asterisk/#{config_name}.conf"
+      if File.exists?(asterisk_config_file)
+        File.open(asterisk_config_file, "w") do |file|
+          file.write config_generator
+        end
+        `asterisk -rx reload #{CONFIG_FILE_MODULE_NAMES[config_name]}`
+      else
+        puts asterisk_config_file + " does not exist! Is Asterisk installed???"
       end
-      `asterisk -rx reload #{CONFIG_FILE_MODULE_NAMES[config_name]}`
     end
     
   end

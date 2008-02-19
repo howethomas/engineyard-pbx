@@ -1,0 +1,15 @@
+# 
+-
+  host: pbx1.mydomain.com
+  username: config_writer
+  password: password
+  asterisk_dir: /etc/asterisk2
+
+-
+  host: pbx2.mydomain.com
+  username: config_writer
+  password: password
+
+-
+  host: staging_virtual_machine.mydomain.com
+  key: ~/.ssh/id_dsa # Carefu2
