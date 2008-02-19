@@ -1,4 +1,4 @@
-persistent_members true
+persistent_members false
 
 for group in Group.find :all
 
