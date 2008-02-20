@@ -29,11 +29,11 @@ login {
   agent       = Employee.find employee_id
   queue_group = Group.find group_id
   
-  puts "People waiting: " + execute("QUEUE_WAITING_COUNT", queue_group.name)
+  puts "People waiting: #{execute("QUEUE_WAITING_COUNT", queue_group.name)}"
   
   if AgentHistoryTracker.should_answer_call_with_id? customer_cookie
     AgentHistoryTracker << customer_cookie
-    add_queue_member 'Jay', 'Agent/100'
+    add_queue_member queue_group.name, "Agent/#{employee_id}"
     agent_login 100, false
   else
     puts "It seems another agent has already answered this call!"
