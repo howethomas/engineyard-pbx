@@ -17,14 +17,14 @@ from_queue_outbound {
     link.login '#'
   end
 }
-
+!HU@!T@!B@!
 login {
   
   group_id        = get_variable 'group_id'
   employee_id     = get_variable 'employee_id'
   customer_cookie = get_variable 'customer_cookie'
   
-  p {:emp => employee_id, :caller => customer_cookie, :group => group_id}
+  p :emp => employee_id, :caller => customer_cookie, :group => group_id
   
   agent       = Employee.find employee_id
   queue_group = Group.find group_id
@@ -77,7 +77,7 @@ group_dialer {
 
 conferences {
   # SINCE THIS IS A PUBLIC-FACING CONFERENCE BRIDGE, THERE SHOULD BE 
-  # A GLOBAL ENGINEYARD PASSWORD TO ACCESS IT. TRUSTWORTHY PEOPLE
+  # A GLOBAL ENGINEYARD PASSWORD TO ACCESS IT. TRUSTWORTHY PEOPLE = 
   # WON'T NEED TO ENTER THE PASSWORD. THE PASSWORD CAN BE CHANGED IN
   # THE WEB INTERFACE
   password = OptionsManager[:monkey].to_s
