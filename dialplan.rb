@@ -29,7 +29,7 @@ login {
   agent       = Employee.find employee_id
   queue_group = Group.find group_id
   
-  puts "People waiting: #{raw_response("QUEUE_WAITING_COUNT", queue_group.name)}"
+  puts %(People waiting: #{raw_response(%'EXEC QUEUE_WAITING_COUNT #{queue_group.name}')})
   
   if AgentHistoryTracker.should_answer_call_with_id? customer_cookie
     AgentHistoryTracker << customer_cookie
