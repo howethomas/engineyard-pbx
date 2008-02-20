@@ -17,7 +17,7 @@ from_queue_outbound {
     link.login '#'
   end
 }
-!HU@!T@!B@!
+
 login {
   
   group_id        = get_variable 'group_id'
