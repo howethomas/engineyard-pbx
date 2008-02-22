@@ -1,5 +1,7 @@
 persistent_members false
 
+# SHOULD BE ABLE TO ACCESS A @server_name VARIABLE.
+
 for group in Group.find :all
 
   queue group.name do |q|
@@ -18,7 +20,8 @@ for group in Group.find :all
     q.periodically_announce "queue-periodic-announce", :every => 1.minute
     
     q.leave_when_empty true
-
+    
+    
     # TODO: These should be combined
     q.report_hold_time false
     q.announce_hold_time false

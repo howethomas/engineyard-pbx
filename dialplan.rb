@@ -1,22 +1,8 @@
-# IVR editor
-# Queue (group) editor
-
 =begin
-billing@engineyard.com
-Edit groups in Employee edit view
-
-add groups, define extensions
-
 When going to the group editor, view a list a groups and can specify their IVR extensions there
 When you select a group, you view the Group editor as it is now with just one column, instead.
 
 =end
-
-from_queue_outbound {
-  menu "hello-world", :timeout => 1.minute do |link|
-    link.login '#'
-  end
-}
 
 login {
   
@@ -29,16 +15,27 @@ login {
   agent       = Employee.find employee_id
   queue_group = Group.find group_id
   
-  puts %(People waiting: #{raw_response(%'EXEC QUEUE_WAITING_COUNT #{queue_group.name}')})
+  waiting_members = variable("QUEUE_WAITING_COUNT(#{queue_group.name})").to_i
   
-  if AgentHistoryTracker.should_answer_call_with_id? customer_cookie
-    AgentHistoryTracker << customer_cookie
-    agent_login(employee_id, true)
+  if waiting_members > 0
+    agent_login(employee_id, true) # true for "silent"
   else
-    puts "It seems another agent has already answered this call!"
-    play 'tt-weasels'
+    other_groups = employee.groups - [queue_group]
+    if other_groups.find { |group| variable("QUEUE_WAITING_COUNT(#{group.name})").to_i > 0 }
+      agent_login(employee_id, true)  # true for "silent"
+    else
+      +call_already_answered
+    end
   end
 }
+
+call_already_answered {
+  puts "It seems another agent has already answered this call!"
+  play 'tt-weasels'
+}
+
+# if AgentHistoryTracker.should_answer_call_with_id? customer_cookie
+#   AgentHistoryTracker << customer_cookie
 
 employee {
   employee = Employee.find_by_extension extension
@@ -98,7 +95,7 @@ other {
 
 ivr {
   menu 'engineyard/prompt', :tries => 3, :timeout => 7 do |link|
-    link.group_dialer 1,2,3,4,5
+    link.group_dialer 1,2,3,4,5 # Group.find(:all).map(&:ivr_extension)
     
     link.employee *Employee.find(:all).map(&:extension)
     

@@ -9,8 +9,10 @@ Adhearsion::Configuration.configure do |config|
   ### Should be able to write locally!
   ### Should be able to write remotely
   ### Should be able to write remotely in parallel!
+  
+  
   # config.asterisk.generate :files => %w[agents queues], :write => :locally
-  # config.asterisk.generate :files => %w[agents queues], :write => :remotely, :host => '192.168.1.1', :username => "foobar", :something => "qaz"
+  # config.asterisk.generate :files => %w[agents queues], :write => :remotely
   
   # By default Asterisk is enabled with the default settings
   # config.asterisk.enable_ami :host => "127.0.0.1", :username => "admin", :password => "password"
