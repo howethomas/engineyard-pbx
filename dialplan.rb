@@ -24,10 +24,10 @@ login {
   if waiting_members > 0
     this_queue.agents.login! employee_id, :silent => true
   else
-    other_groups = employee.groups - [queue_group]
+    other_groups = agent.groups - [queue_group]
     needy_queue  = other_groups.find { |group| queue(group.name).waiting_count > 0 }
     if needy_queue
-      needy_queue.agents.login!(employee_id, :silent => true)
+      queue(needy_queue.name).agents.login!(employee_id, :silent => true)
     else
       +call_already_answered
     end
@@ -68,7 +68,7 @@ group_dialer {
   
   if this_group && this_machine
     this_group.generate_calls this_machine, this_caller
-    queue this_group.name # MUST SET A TIMEOUT!
+    queue(this_group.name).join! # MUST SET A TIMEOUT!
     
     # voicemail this_group.name
   else

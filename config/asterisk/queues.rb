@@ -13,7 +13,7 @@ for group in Group.find :all
     q.join_empty true # Mandatory!
   
     q.ring_timeout 15.seconds
-    q.retry_after_waiting 5.seconds
+    q.retry_after_waiting 5.seconds # IS THIS REALLLYYY WHAT THIS DOES? DOUBLE CHECK!
     
     q.queue_status_announce_frequency 1.5.minutes
 
