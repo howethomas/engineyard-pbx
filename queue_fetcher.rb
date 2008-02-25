@@ -123,7 +123,7 @@ class CallFile
   def to_s
     <<-CALL_FILE_CONTENT
 Channel: IAX2/voipms/#{phone_number}
-MaxRetries: 1
+MaxRetries: 0
 WaitTime: #{wait_time}
 Context: login
 Extension: s
