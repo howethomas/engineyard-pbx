@@ -10,19 +10,24 @@ login {
   employee_id     = get_variable 'employee_id'
   customer_cookie = get_variable 'customer_cookie'
   
-  p :emp => employee_id, :caller => customer_cookie, :group => group_id
+  ahn_log :emp => employee_id, :caller => customer_cookie, :group => group_id
   
   agent       = Employee.find employee_id
   queue_group = Group.find group_id
   
-  waiting_members = variable("QUEUE_WAITING_COUNT(#{queue_group.name})").to_i
+  this_queue = queue queue_group.name
+  
+  waiting_members = this_queue.waiting_count
+  
+  ahn_log waiting_members
   
   if waiting_members > 0
-    agent_login(employee_id, true) # true for "silent"
+    this_queue.agents.login! employee_id, :silent => true
   else
     other_groups = employee.groups - [queue_group]
-    if other_groups.find { |group| variable("QUEUE_WAITING_COUNT(#{group.name})").to_i > 0 }
-      agent_login(employee_id, true)  # true for "silent"
+    needy_queue  = other_groups.find { |group| queue(group.name).waiting_count > 0 }
+    if needy_queue
+      needy_queue.agents.login!(employee_id, :silent => true)
     else
       +call_already_answered
     end
@@ -99,7 +104,7 @@ ivr {
     
     link.employee *Employee.find(:all).map(&:extension)
     
-    link.conferences 900..999
+    link.conferences 800..899
     
     link.on_premature_timeout { play 'are-you-still-there' }
     link.on_invalid { play 'invalid' }
