@@ -1,9 +1,3 @@
-=begin
-When going to the group editor, view a list a groups and can specify their IVR extensions there
-When you select a group, you view the Group editor as it is now with just one column, instead.
-
-=end
-
 login {
   
   group_id        = get_variable 'group_id'
@@ -17,13 +11,7 @@ login {
   
   this_queue = queue queue_group.name
   
-  waiting_members = this_queue.waiting_count
-  
-  ahn_log waiting_members
-  
-  if waiting_members > 0
-    this_queue.agents.login! employee_id, :silent => true
-  else
+  if this_queue.empty?
     other_groups = agent.groups - [queue_group]
     needy_queue  = other_groups.find { |group| queue(group.name).waiting_count > 0 }
     if needy_queue
@@ -31,6 +19,8 @@ login {
     else
       +call_already_answered
     end
+  else
+    this_queue.agents.login! employee_id, :silent => true
   end
 }
 
@@ -38,9 +28,6 @@ call_already_answered {
   puts "It seems another agent has already answered this call!"
   play 'tt-weasels'
 }
-
-# if AgentHistoryTracker.should_answer_call_with_id? customer_cookie
-#   AgentHistoryTracker << customer_cookie
 
 employee {
   employee = Employee.find_by_extension extension
@@ -63,12 +50,12 @@ group_dialer {
   p [:this_group, this_group]
   this_machine = Server.find_by_name THIS_SERVER
   p [:this_machine, this_machine]
-  this_caller  = `uuidgen`.strip # Umm? Hackeyyy
+  this_caller  = `uuidgen`.strip
   p [:this_caller, this_caller]
   
   if this_group && this_machine
     this_group.generate_calls this_machine, this_caller
-    queue(this_group.name).join! # MUST SET A TIMEOUT!
+    queue(this_group.name).join! :timeout => 2.seconds, :allow_transfer => :agent
     
     # voicemail this_group.name
   else
@@ -114,3 +101,8 @@ ivr {
     end
   end
 }
+
+
+
+# if AgentHistoryTracker.should_answer_call_with_id? customer_cookie
+#   AgentHistoryTracker << customer_cookie
