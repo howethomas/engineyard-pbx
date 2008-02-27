@@ -1,30 +1,35 @@
 login {
   
-  group_id        = get_variable 'group_id'
-  employee_id     = get_variable 'employee_id'
-  customer_cookie = get_variable 'customer_cookie'
+  @group_id        = get_variable 'group_id'
+  @employee_id     = get_variable 'employee_id'
+  @customer_cookie = get_variable 'customer_cookie'
   
-  ahn_log :emp => employee_id, :caller => customer_cookie, :group => group_id
+  ahn_log :emp => @employee_id, :caller => @customer_cookie, :group => @group_id
   
-  agent       = Employee.find employee_id
-  queue_group = Group.find group_id
+  @agent       = Employee.find @employee_id
+  @queue_group = Group.find @group_id
   
-  this_queue = queue queue_group.name
+  @queue = queue(@queue_group.name)
   
-  if this_queue.empty?
-    other_groups = agent.groups - [queue_group]
-    needy_queue  = other_groups.find { |group| queue(group.name).waiting_count > 0 }
-    if needy_queue
-      confirmation = input 1, :timeout => 4.seconds, :play => 'you-sound-cute'
-      if confirmation == '#'
-        queue(needy_queue.name).agents.login!(employee_id, :silent => true)
+  if @queue.empty?
+    @other_groups = @agent.groups - [@queue_group]
+    @queue = @other_groups.find { |group| !queue(group.name).empty? }
+    if @queue
+      menu 'you-sound-cute', :timeout => 10.seconds do |link|
+        link.confirmed '#'
       end
     else
       +call_already_answered
     end
   else
-    this_queue.agents.login! employee_id, :silent => true
+    menu 'you-sound-cute', :timeout => 10.seconds do |link|
+      link.confirmed '#'
+    end
   end
+}
+
+confirmed {
+  queue(@queue.name).agents.login!(@employee_id, :silent => true)
 }
 
 call_already_answered {
