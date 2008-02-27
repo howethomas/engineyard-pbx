@@ -15,7 +15,10 @@ login {
     other_groups = agent.groups - [queue_group]
     needy_queue  = other_groups.find { |group| queue(group.name).waiting_count > 0 }
     if needy_queue
-      queue(needy_queue.name).agents.login!(employee_id, :silent => true)
+      confirmation = input 1, :timeout => 4.seconds, :play => 'you-sound-cute'
+      if confirmation == '#'
+        queue(needy_queue.name).agents.login!(employee_id, :silent => true)
+      end
     else
       +call_already_answered
     end

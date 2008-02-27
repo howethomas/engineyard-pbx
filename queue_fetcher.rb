@@ -103,7 +103,7 @@ class CallFile
   def initialize(options)
     
     @phone_number    = options[:phone_number]
-    @wait_time       = options[:wait_time] || 15
+    @wait_time       = options[:wait_time] || 35
     @employee_id     = options[:employee_id]
     @customer_cookie = options[:customer_cookie]
     @group_id        = options[:group_id]
