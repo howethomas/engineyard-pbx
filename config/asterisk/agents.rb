@@ -3,4 +3,4 @@ for employee in Employee.find(:all)
 end
 
 persistent_agents false
-allow_star_to_hangup false
+# allow_star_to_hangup false # Is this necessary?

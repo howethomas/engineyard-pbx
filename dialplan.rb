@@ -37,6 +37,12 @@ call_already_answered {
   play 'tt-weasels'
 }
 
+employee_tree {
+  menu do |link|
+    link.employee *Employee.find(:all).map(&:extension)
+  end
+}
+
 employee {
   employee = Employee.find_by_extension extension
   mobile_number = employee.mobile_number if employee
@@ -46,7 +52,7 @@ employee {
     puts "DIALING #{mobile_number}! mocked out"
   else
     play %w'sorry number-not-in-db'
-    +ahn
+    +employee_tree
   end
 
 }
@@ -62,7 +68,7 @@ group_dialer {
   p [:this_caller, this_caller]
   
   if this_group && this_machine
-    this_group.generate_calls this_machine, this_caller
+    this_group.generate_calls(this_machine, this_caller)
     queue(this_group.name).join! :timeout => 90.seconds, :allow_transfer => :agent
     # voicemail this_group.name
   else
@@ -75,7 +81,7 @@ conferences {
   # A GLOBAL ENGINEYARD PASSWORD TO ACCESS IT. TRUSTWORTHY PEOPLE = 
   # WON'T NEED TO ENTER THE PASSWORD. THE PASSWORD CAN BE CHANGED IN
   # THE WEB INTERFACE
-  password = OptionsManager[:monkey].to_s
+  password = SettingsManager[:conference_password]
   tries = 0
   while tries < 3
     attempt = input password.length, :play => "please-enter-password"
@@ -96,7 +102,7 @@ ivr {
   menu 'engineyard/prompt', :tries => 3, :timeout => 7 do |link|
     link.group_dialer 1,2,3,4,5 # Group.find(:all).map(&:ivr_extension)
     
-    link.employee *Employee.find(:all).map(&:extension)
+    link.employee 9
     
     link.conferences 800..899
     
@@ -108,8 +114,3 @@ ivr {
     end
   end
 }
-
-
-
-# if AgentHistoryTracker.should_answer_call_with_id? customer_cookie
-#   AgentHistoryTracker << customer_cookie
