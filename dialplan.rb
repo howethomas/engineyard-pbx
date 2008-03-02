@@ -39,7 +39,7 @@ call_already_answered {
 
 employee_tree {
   menu do |link|
-    link.employee *Employee.find(:all).map(&:extension)
+    link.employee(*Employee.find(:all).map(&:extension))
   end
 }
 
