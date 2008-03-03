@@ -104,7 +104,7 @@ ivr {
     link.employee 9
     link.conferences 800..899
     
-    link.group_dialer(*Group.find(:all).map(&:ivr_extension))
+    link.group_dialer(*Group.find(:all).map(&:ivr_option))
     
     link.on_premature_timeout { play 'are-you-still-there' }
     link.on_invalid { play 'invalid' }
