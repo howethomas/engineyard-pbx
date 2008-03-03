@@ -48,6 +48,7 @@ employee {
   mobile_number = employee.mobile_number if employee
   
   if mobile_number
+    play 'pls-hold-while-try'
     # dial "SIP/voipms/#{mobile_number}", :caller_id => "104097672813"
     puts "DIALING #{mobile_number}! mocked out"
   else
