@@ -101,7 +101,7 @@ other {
 ivr {
   menu 'engineyard/prompt', :tries => 3, :timeout => 7 do |link|
     
-    link.employee 9
+    link.employee_tree 9
     link.conferences 800..899
     
     link.group_dialer(*Group.find(:all).map(&:ivr_option))
