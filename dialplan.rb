@@ -22,7 +22,8 @@ login {
       +call_already_answered
     end
   else
-    menu 'you-sound-cute', :timeout => 10.seconds do |link|
+    group_sound_file_name = @queue_group.name.gsub(/\s+/, '_').underscore.dasherize
+    menu 'engineyard/press-pound-to-accept-a-call-for-the', group_sound_file_name, :timeout => 10.seconds do |link|
       link.confirmed '#'
     end
   end
