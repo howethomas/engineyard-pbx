@@ -100,11 +100,11 @@ other {
 
 ivr {
   menu 'engineyard/prompt', :tries => 3, :timeout => 7 do |link|
-    link.group_dialer 1,2,3,4,5 # Group.find(:all).map(&:ivr_extension)
     
     link.employee 9
-    
     link.conferences 800..899
+    
+    link.group_dialer(*Group.find(:all).map(&:ivr_extension))
     
     link.on_premature_timeout { play 'are-you-still-there' }
     link.on_invalid { play 'invalid' }
