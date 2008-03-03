@@ -18,7 +18,14 @@ Scheduler.join
 
 }
 
-require File.read(File.dirname(__FILE__) + "/.path_to_gui").chomp + '/config/environment.rb'
+path_to_gui_file = File.expand_path(File.dirname(__FILE__) + '/../.path_to_gui')
+PATH_TO_RAILS = if File.exists? path_to_gui_file
+  File.read(path_to_gui_file).strip
+else
+  File.expand_path(File.dirname(__FILE__) + '/../ey-gui')
+end
+
+require PATH_TO_RAILS + "/config/environment.rb"
 require File.dirname(`which ahn`) + "/../lib/adhearsion"
 require 'adhearsion/voip/asterisk/config_generators/queues.conf.rb'
 require 'adhearsion/voip/asterisk/config_generators/agents.conf.rb'
@@ -61,7 +68,7 @@ class QueueMessageHandler
     def call_agent(message)
       call_options = YAML.load message
       puts "CALLING AGENT WITH #{call_options.inspect}"
-      CallFile.new(call_options).write_to_disk
+      AgentReachingCallFile.new(call_options).write_to_disk
     end
     
     CONFIG_FILE_MODULE_NAMES = {
@@ -89,17 +96,53 @@ class QueueMessageHandler
       end
     end
     
+    def introduce(message)
+      source, destination = message.split '|'
+      IntroductionCallFile.new(source, destination).write_to_disk
+    end
+    
   end
 end
 
 class CallFile
   
-  ASTERISK_CALL_FILE_DIR = '/var/spool/asterisk/outgoing'
-  CALLER_ID_NAME         = 'EY Sales'
-  CALLER_ID_NUMBER       = 14097672813
-  HANDLING_CONTEXT       = 'login'
+  CALLER_ID_NUMBER = 1_866_518_9273 # EY Main #. MUST BE GROUP-SPECIFIC!
   
-  attr_reader :phone_number, :wait_time, :file_name, :agent_id, :employee_id, :customer_cookie, :group_id
+  def write_to_disk
+    temp_file = "/tmp/#{new_call_file_name}"
+    File.open temp_file, "a" do |file|
+      file.puts contents
+    end
+    `mv #{temp_file} #{asterisk_call_file_directory}`
+  end
+  
+  def contents
+    raise NotImplementedError
+  end
+  
+  protected
+  
+  def outbound_trunk
+    'IAX2/voipms/%s'
+  end
+  
+  private
+  
+  def new_call_file_name
+    "#{Time.now.to_f}_#{rand(10_000_000)}.call"
+  end
+  
+  def asterisk_call_file_directory
+    '/var/spool/asterisk/outgoing'
+  end
+  
+end
+
+class AgentReachingCallFile < CallFile
+  
+  attr_reader :phone_number, :wait_time, :agent_id, :employee_id,
+              :customer_cookie, :group_id, :group_name, :caller_id_num
+  
   def initialize(options)
     
     @phone_number    = options[:phone_number]
@@ -108,30 +151,51 @@ class CallFile
     @customer_cookie = options[:customer_cookie]
     @group_id        = options[:group_id]
     
-    @file_name       = "#{Time.now.to_f}_#{rand(10_000_000)}.call"
+    group_instance   = Group.find @group_id 
+    @group_name      = group_instance.name
+    @caller_id_num   = group_instance.caller_id || Group::MAIN_ENGINEYARD_NUMBER
     
   end
   
-  def write_to_disk
-    temp_file = "/tmp/#@file_name"
-    File.open temp_file, "a" do |file|
-      file.puts to_s
-    end
-    `mv #{temp_file} #{ASTERISK_CALL_FILE_DIR}`
-  end
-  
-  def to_s
+  def contents
     <<-CALL_FILE_CONTENT
-Channel: IAX2/voipms/#{phone_number}
+Channel: #{outbound_trunk % phone_number}
 MaxRetries: 0
 WaitTime: #{wait_time}
-Context: login
+Context: #{handling_context}
 Extension: s
-CallerID: "#{CALLER_ID_NAME}" <#{CALLER_ID_NUMBER}>
+CallerID: #{caller_id}
 Set: customer_cookie=#{customer_cookie}
 Set: employee_id=#{employee_id}
 Set: group_id=#{group_id}
     CALL_FILE_CONTENT
   end
+  private
   
+  def caller_id
+    %("EY #{group_name}" <#{caller_id_num}>)
+  end
+  
+  def handling_context
+    'login'
+  end
+  
+end
+
+class IntroductionCallFile < CallFile
+  
+  attr_reader :source, :destination
+  def initialize(source, destination)
+    @source, @destination = source, destination
+  end
+  
+  def contents
+    <<-CALL_FILE_CONTENT
+Channel: #{outbound_trunk % source}
+MaxRetries: 0
+Application: Dial
+Data: #{outbound_trunk % destination}
+CallerID: "EngineYard" <#{source}>
+    CALL_FILE_CONTENT
+  end
 end

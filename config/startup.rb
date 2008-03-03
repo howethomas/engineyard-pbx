@@ -1,9 +1,14 @@
-PATH_TO_RAILS = File.expand_path(File.dirname(__FILE__) + '/../.path_to_gui')
+path_to_gui_file = File.expand_path(File.dirname(__FILE__) + '/../.path_to_gui')
+PATH_TO_RAILS = if File.exists? path_to_gui_file
+  File.read(path_to_gui_file).strip
+else
+  File.expand_path(File.dirname(__FILE__) + '/../../ey-gui')
+end
 
 Adhearsion::Configuration.configure do |config|
   
   config.enable_asterisk
-  config.enable_rails :path => File.read(PATH_TO_RAILS).chomp, :env => :development
+  config.enable_rails :path => PATH_TO_RAILS, :env => :development
   
   ### Should be able to write multiple files!
   ### Should be able to write locally!
