@@ -141,14 +141,13 @@ end
 class AgentReachingCallFile < CallFile
   
   attr_reader :phone_number, :wait_time, :agent_id, :employee_id,
-              :customer_cookie, :group_id, :group_name, :caller_id_num
+              :group_id, :group_name, :caller_id_num
   
   def initialize(options)
     
     @phone_number    = options[:phone_number]
     @wait_time       = options[:wait_time] || 35
     @employee_id     = options[:employee_id]
-    @customer_cookie = options[:customer_cookie]
     @group_id        = options[:group_id]
     
     group_instance   = Group.find @group_id 
@@ -165,7 +164,6 @@ WaitTime: #{wait_time}
 Context: #{handling_context}
 Extension: s
 CallerID: #{caller_id}
-Set: customer_cookie=#{customer_cookie}
 Set: employee_id=#{employee_id}
 Set: group_id=#{group_id}
     CALL_FILE_CONTENT

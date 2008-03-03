@@ -2,9 +2,8 @@ login {
   
   @group_id        = get_variable 'group_id'
   @employee_id     = get_variable 'employee_id'
-  @customer_cookie = get_variable 'customer_cookie'
   
-  ahn_log :emp => @employee_id, :caller => @customer_cookie, :group => @group_id
+  ahn_log :emp => @employee_id, :group => @group_id
   
   @agent       = Employee.find @employee_id
   @queue_group = Group.find @group_id
@@ -66,11 +65,9 @@ group_dialer {
   p [:this_group, this_group]
   this_machine = Server.find_by_name THIS_SERVER
   p [:this_machine, this_machine]
-  this_caller  = `uuidgen`.strip
-  p [:this_caller, this_caller]
   
   if this_group && this_machine
-    this_group.generate_calls(this_machine, this_caller)
+    this_group.generate_calls(this_machine)
     queue(this_group.name).join! :timeout => 90.seconds, :allow_transfer => :agent
     # voicemail this_group.name
   else
