@@ -28,18 +28,47 @@ end
 
 THIS_SERVER = "pbx-1"
 
+# This is basically a translation of ast_channel_reason2str() from main/channel.c and
+# ast_control_frame_type in include/asterisk/frame.h in the Asterisk source code.
+ASTERISK_FRAME_STATES = [
+  :failure,     # "Call Failure (not BUSY, and not NO_ANSWER, maybe Circuit busy or down?)"
+  :hangup,      # Other end has hungup
+  :ring,        # Local ring
+  :ringing,     # Remote end is ringing
+  :answer,      # Remote end has answered
+  :busy,        # Remote end is busy
+  :takeoffhook, # Make it go off hook
+  :offhook,     # Line is off hook
+  :congestion,  # Congestion (circuits busy)
+  :flash,       # Flash hook
+  :wink,        # Wink
+  :option,      # Set a low-level option
+  :radio_key,   # Key Radio
+  :radio_unkey, # Un-Key Radio
+  :progress,    # Indicate PROGRESS
+  :proceeding,  # Indicate CALL PROCEEDING
+  :hold,        # Indicate call is placed on hold
+  :unhold,      # Indicate call is left from hold
+  :vidupdate,   # Indicate video frame update
+]
+
 Adhearsion::Hooks::OnFailedCall.create_hook do |call|
   begin
-    combined_next_tries, group_id, employee_id = call.variable 'next_tries', 'group_id', 'employee_id'
-    if !combined_next_tries.blank?
-      next_attempt, *next_tries = combined_next_tries.split '|'
-      Server.find_by_name(THIS_SERVER).call_agent \
-        :phone_number => next_attempt,
-        :next_tries   => next_tries,
-        :employee_id  => employee_id,
-        :group_id     => group_id
-    else
-      ahn_log.warn "Agent unreachable because there are no more steps remaining! Giving up!"
+    failure_reason = ASTERISK_FRAME_STATES[call.variable('REASON').to_i]
+    ahn_log.call_failure.warn "Handling failure logic because an agent call failed with the state: #{failure_reason}"
+    if [:failure, :busy, :congestion].include? failure_reason
+      combined_next_tries, group_id, employee_id = call.variable 'next_tries', 'group_id', 'employee_id'
+      if !combined_next_tries.blank?
+        next_attempt, *next_tries = combined_next_tries.split '|'
+        Server.find_by_name(THIS_SERVER).call_agent \
+          :phone_number => next_attempt,
+          :next_tries   => next_tries,
+          :employee_id  => employee_id,
+          :group_id     => group_id
+      else
+        ahn_log.call_failure.error "Agent unreachable because there are no more steps remaining! Giving up!"
+      end
+    else ahn_log.call_failure.warn "A call to an agent seems to have failed because they didn't answer."
     end
   rescue => e
     p e
