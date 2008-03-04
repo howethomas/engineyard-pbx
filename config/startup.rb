@@ -28,44 +28,64 @@ end
 
 THIS_SERVER = "pbx-1"
 
-# Determines whether the answered call should actually give a call to the callee. 
-# We wouldn't want to give a call to the callee if another agent already picked
-# up the call.
-class AgentHistoryTracker
-  
-  cattr_reader :time_to_live, :lock, :chronicle
-  
-  @@time_to_live = 3
-  @@lock         = Mutex.new
-  @@chronicle    = []
-  
-  class << self
-    
-    def <<(unique_id)
-      cleanup!
-      atomically do
-        chronicle << {:expiration_time => time_to_live.from_now, :id => unique_id}
-      end
+Adhearsion::Hooks::OnFailedCall.create_hook do |call|
+  begin
+    combined_next_tries, group_id, employee_id = call.variable 'next_tries', 'group_id', 'employee_id'
+    if !combined_next_tries.blank?
+      next_attempt, *next_tries = combined_next_tries.split '|'
+      Server.find_by_name(THIS_SERVER).call_agent \
+        :phone_number => next_attempt,
+        :next_tries   => next_tries,
+        :employee_id  => employee_id,
+        :group_id     => group_id
+    else
+      ahn_log.warn "Agent unreachable because there are no more steps remaining! Giving up!"
     end
-    
-    def should_answer_call_with_id?(unique_id)
-      cleanup!
-      atomically do
-        return !chronicle.find { |record| record[:id] == unique_id }
-      end
-    end
-    
-    private
-    
-    def cleanup!
-      atomically do
-        chronicle.shift until chronicle.empty? || chronicle.first[:expiration_time] > Time.now
-      end
-    end
-
-    def atomically(&synchronized_code)
-      lock.synchronize(&synchronized_code)
-    end
+  rescue => e
+    p e
+    puts *e.backtrace
   end
-  
 end
+
+# # Determines whether the answered call should actually give a call to the callee. 
+# # We wouldn't want to give a call to the callee if another agent already picked
+# # up the call.
+# class AgentHistoryTracker
+#   
+#   cattr_reader :time_to_live, :lock, :chronicle
+#   
+#   @@time_to_live = 3
+#   @@lock         = Mutex.new
+#   @@chronicle    = []
+#   
+#   class << self
+#     
+#     def <<(unique_id)
+#       cleanup!
+#       atomically do
+#         chronicle << {:expiration_time => time_to_live.from_now, :id => unique_id}
+#       end
+#     end
+#     
+#     def should_answer_call_with_id?(unique_id)
+#       cleanup!
+#       atomically do
+#         return !chronicle.find { |record| record[:id] == unique_id }
+#       end
+#     end
+#     
+#     private
+#     
+#     def cleanup!
+#       atomically do
+#         chronicle.shift until chronicle.empty? || chronicle.first[:expiration_time] > Time.now
+#       end
+#     end
+# 
+#     def atomically(&synchronized_code)
+#       lock.synchronize(&synchronized_code)
+#     end
+#   end
+#   
+# end
+

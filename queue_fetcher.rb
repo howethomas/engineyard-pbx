@@ -1,5 +1,9 @@
 END {
 
+Trunk.new("VoIP.ms")  { |number| "IAX2/voipms/#{number}"   }
+Trunk.new("Nufone")   { |number| "IAX2/vm@nufone/#{number}" }
+# Trunk.new("Vitelity") { |number| "SIP/#{number}@vitelity" }
+
 pbx1 = Server.find(:first)
 
 Scheduler.for pbx1 do |event|
@@ -68,7 +72,7 @@ class QueueMessageHandler
     def call_agent(message)
       call_options = YAML.load message
       puts "CALLING AGENT WITH #{call_options.inspect}"
-      AgentReachingCallFile.new(call_options).write_to_disk
+      AgentReachingCallFile.create call_options
     end
     
     CONFIG_FILE_MODULE_NAMES = {
@@ -104,9 +108,30 @@ class QueueMessageHandler
   end
 end
 
-class CallFile
+class Trunk
   
-  CALLER_ID_NUMBER = 1_866_518_9273 # EY Main #. MUST BE GROUP-SPECIFIC!
+  @@instances = []
+ 
+  class << self
+    def sequence_for_number(number)
+      @@instances.map { |trunk| trunk.format(number) }
+    end
+  end
+  
+  attr_reader :name
+  def initialize(name, &block)
+    raise LocalJumpError, "block not supplied!" unless block_given?
+    @number_formatter = block
+    @@instances << self
+  end
+  
+  def format(number)
+    @number_formatter.call(number)
+  end
+  
+end
+
+class CallFile
   
   def write_to_disk
     temp_file = "/tmp/#{new_call_file_name}"
@@ -122,10 +147,6 @@ class CallFile
   
   protected
   
-  def outbound_trunk
-    'IAX2/voipms/%s'
-  end
-  
   private
   
   def new_call_file_name
@@ -140,38 +161,46 @@ end
 
 class AgentReachingCallFile < CallFile
   
-  attr_reader :phone_number, :wait_time, :agent_id, :employee_id,
-              :group_id, :group_name, :caller_id_num
+  class << self
+    def create(options)
+      if options.has_key? :next_tries
+        ahn_log "RETRYING AGENT WITH #{options.inspect}"
+        RetryAgentReachingCallFile.new(options).write_to_disk
+      else
+        FirstTimeAgentReachingCallFile.new(options).write_to_disk
+      end
+    end
+  end
   
   def initialize(options)
-    
-    @phone_number    = options[:phone_number]
-    @wait_time       = options[:wait_time] || 35
+    @wait_time       = options[:wait_time] || 5
     @employee_id     = options[:employee_id]
     @group_id        = options[:group_id]
     
-    group_instance   = Group.find @group_id 
-    @group_name      = group_instance.name
-    @caller_id_num   = group_instance.caller_id || Group::MAIN_ENGINEYARD_NUMBER
-    
+    # The following variables are used to determine the CallerID name.
+    @group_instance  = Group.find @group_id 
+    @group_name      = @group_instance.name
+    @caller_id_num   = @group_instance.caller_id || Group::MAIN_ENGINEYARD_NUMBER
   end
   
   def contents
     <<-CALL_FILE_CONTENT
-Channel: #{outbound_trunk % phone_number}
-MaxRetries: 0
-WaitTime: #{wait_time}
-Context: #{handling_context}
 Extension: s
+MaxRetries: 0
+Context: #{handling_context}
 CallerID: #{caller_id}
-Set: employee_id=#{employee_id}
-Set: group_id=#{group_id}
+Channel: #@channel
+WaitTime: #@wait_time
+Set: employee_id=#@employee_id
+Set: group_id=#@group_id
+Set: next_tries=#@next_tries
     CALL_FILE_CONTENT
   end
-  private
+  
+  protected
   
   def caller_id
-    %("EY #{group_name}" <#{caller_id_num}>)
+    %("EY #@group_name" <#@caller_id_num>)
   end
   
   def handling_context
@@ -180,19 +209,43 @@ Set: group_id=#{group_id}
   
 end
 
+class FirstTimeAgentReachingCallFile < AgentReachingCallFile
+  def initialize(options)
+    super
+    
+    @phone_number = options[:phone_number]
+    @sequence   = Trunk.sequence_for_number @phone_number
+    
+    @channel    = @sequence.pop
+    @next_tries = @sequence.join '|'
+    ahn_log @next_tries
+  end
+end
+
+class RetryAgentReachingCallFile < AgentReachingCallFile
+  def initialize(options)
+    super
+    @channel    = options[:phone_number]
+    @next_tries = options[:next_tries]
+  end
+end
+
 class IntroductionCallFile < CallFile
   
   attr_reader :source, :destination
   def initialize(source, destination)
     @source, @destination = source, destination
+    
+    @channel = Trunk.sequence_for_number(source).first
+    @data    = Trunk.sequence_for_number(destination).first
   end
   
   def contents
     <<-CALL_FILE_CONTENT
-Channel: #{outbound_trunk % source}
+Channel: #@channel
 MaxRetries: 0
 Application: Dial
-Data: #{outbound_trunk % destination}
+Data: #@data
 CallerID: "EngineYard" <#{source}>
     CALL_FILE_CONTENT
   end
