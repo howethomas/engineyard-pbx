@@ -1,3 +1,20 @@
+ivr {
+  menu 'engineyard/prompt', :tries => 3, :timeout => 7 do |link|
+    
+    link.employee_tree 9
+    link.conferences 800..899
+    
+    link.group_dialer(*Group.find(:all).map(&:ivr_option))
+    
+    link.on_premature_timeout { play 'are-you-still-there' }
+    link.on_invalid { play 'invalid' }
+    link.on_failure do
+      play %w'vm-sorry one-moment-please'
+      +other
+    end
+  end
+}
+
 login {
   
   @group_id        = get_variable 'group_id'
@@ -29,12 +46,14 @@ login {
 }
 
 confirmed {
-  queue(@queue.name).agents.login!(@employee_id, :silent => true)
+  q = queue @queue.name
+  +call_already_answered if q.empty?
+  q.agents.login!(@employee_id, :silent => true)
 }
 
 call_already_answered {
-  puts "It seems another agent has already answered this call!"
-  play 'tt-weasels'
+  ahn_log "#{@agent.name} answered after the queue had become empty."
+  play 'sorry-no-more-calls-waiting'
 }
 
 employee_tree {
@@ -49,8 +68,7 @@ employee {
   
   if mobile_number
     play 'pls-hold-while-try'
-    # dial "SIP/voipms/#{mobile_number}", :caller_id => "104097672813"
-    puts "DIALING #{mobile_number}! mocked out"
+    dial "IAX2/voipms/#{mobile_number}", :caller_id => "18665189273"
   else
     play %w'sorry number-not-in-db'
     +employee_tree
@@ -76,40 +94,9 @@ group_dialer {
 }
 
 conferences {
-  # SINCE THIS IS A PUBLIC-FACING CONFERENCE BRIDGE, THERE SHOULD BE 
-  # A GLOBAL ENGINEYARD PASSWORD TO ACCESS IT. TRUSTWORTHY PEOPLE = 
-  # WON'T NEED TO ENTER THE PASSWORD. THE PASSWORD CAN BE CHANGED IN
-  # THE WEB INTERFACE
-  password = SettingsManager[:conference_password]
-  tries = 0
-  while tries < 3
-    attempt = input password.length, :play => "please-enter-password"
-    if attempt.to_s == password
-      tries = 3
-      join extension
-    else
-      tries += 1
-    end
-  end
+  join extension
 }
 
 other {
   +sales
-}
-
-ivr {
-  menu 'engineyard/prompt', :tries => 3, :timeout => 7 do |link|
-    
-    link.employee_tree 9
-    link.conferences 800..899
-    
-    link.group_dialer(*Group.find(:all).map(&:ivr_option))
-    
-    link.on_premature_timeout { play 'are-you-still-there' }
-    link.on_invalid { play 'invalid' }
-    link.on_failure do
-      play %w'vm-sorry one-moment-please'
-      +other
-    end
-  end
 }

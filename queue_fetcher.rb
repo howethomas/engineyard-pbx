@@ -1,7 +1,7 @@
 END {
 
-Trunk.new("VoIP.ms")  { |number| "IAX2/voipms/#{number}"   }
 Trunk.new("Nufone")   { |number| "IAX2/vm@nufone/#{number}" }
+Trunk.new("VoIP.ms")  { |number| "IAX2/voipms/#{number}"   }
 # Trunk.new("Vitelity") { |number| "SIP/#{number}@vitelity" }
 
 pbx1 = Server.find(:first)
@@ -173,7 +173,7 @@ class AgentReachingCallFile < CallFile
   end
   
   def initialize(options)
-    @wait_time       = options[:wait_time] || 5
+    @wait_time       = options[:wait_time] || 35
     @employee_id     = options[:employee_id]
     @group_id        = options[:group_id]
     

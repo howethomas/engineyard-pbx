@@ -1,3 +1,9 @@
+unless defined? Adhearsion
+  require 'rubygems'
+  gem 'adhearsion', '>= 0.7.999'
+  require 'adhearsion' 
+end
+
 path_to_gui_file = File.expand_path(File.dirname(__FILE__) + '/../.path_to_gui')
 PATH_TO_RAILS = if File.exists? path_to_gui_file
   File.read(path_to_gui_file).strip
@@ -6,6 +12,8 @@ else
 end
 
 Adhearsion::Configuration.configure do |config|
+  
+  config.logging :level => :debug
   
   config.enable_asterisk
   config.enable_rails :path => PATH_TO_RAILS, :env => :development
@@ -28,35 +36,11 @@ end
 
 THIS_SERVER = "pbx-1"
 
-# This is basically a translation of ast_channel_reason2str() from main/channel.c and
-# ast_control_frame_type in include/asterisk/frame.h in the Asterisk source code.
-ASTERISK_FRAME_STATES = [
-  :failure,     # "Call Failure (not BUSY, and not NO_ANSWER, maybe Circuit busy or down?)"
-  :hangup,      # Other end has hungup
-  :ring,        # Local ring
-  :ringing,     # Remote end is ringing
-  :answer,      # Remote end has answered
-  :busy,        # Remote end is busy
-  :takeoffhook, # Make it go off hook
-  :offhook,     # Line is off hook
-  :congestion,  # Congestion (circuits busy)
-  :flash,       # Flash hook
-  :wink,        # Wink
-  :option,      # Set a low-level option
-  :radio_key,   # Key Radio
-  :radio_unkey, # Un-Key Radio
-  :progress,    # Indicate PROGRESS
-  :proceeding,  # Indicate CALL PROCEEDING
-  :hold,        # Indicate call is placed on hold
-  :unhold,      # Indicate call is left from hold
-  :vidupdate,   # Indicate video frame update
-]
-
 Adhearsion::Hooks::OnFailedCall.create_hook do |call|
   begin
-    failure_reason = ASTERISK_FRAME_STATES[call.variable('REASON').to_i]
-    ahn_log.call_failure.warn "Handling failure logic because an agent call failed with the state: #{failure_reason}"
+    failure_reason = call.failed_reason
     if [:failure, :busy, :congestion].include? failure_reason
+      ahn_log.call_failure.warn "Attemping failure recovery because an agent login failed with the state: #{failure_reason.inspect}"
       combined_next_tries, group_id, employee_id = call.variable 'next_tries', 'group_id', 'employee_id'
       if !combined_next_tries.blank?
         next_attempt, *next_tries = combined_next_tries.split '|'
@@ -76,45 +60,4 @@ Adhearsion::Hooks::OnFailedCall.create_hook do |call|
   end
 end
 
-# # Determines whether the answered call should actually give a call to the callee. 
-# # We wouldn't want to give a call to the callee if another agent already picked
-# # up the call.
-# class AgentHistoryTracker
-#   
-#   cattr_reader :time_to_live, :lock, :chronicle
-#   
-#   @@time_to_live = 3
-#   @@lock         = Mutex.new
-#   @@chronicle    = []
-#   
-#   class << self
-#     
-#     def <<(unique_id)
-#       cleanup!
-#       atomically do
-#         chronicle << {:expiration_time => time_to_live.from_now, :id => unique_id}
-#       end
-#     end
-#     
-#     def should_answer_call_with_id?(unique_id)
-#       cleanup!
-#       atomically do
-#         return !chronicle.find { |record| record[:id] == unique_id }
-#       end
-#     end
-#     
-#     private
-#     
-#     def cleanup!
-#       atomically do
-#         chronicle.shift until chronicle.empty? || chronicle.first[:expiration_time] > Time.now
-#       end
-#     end
-# 
-#     def atomically(&synchronized_code)
-#       lock.synchronize(&synchronized_code)
-#     end
-#   end
-#   
-# end
-
+Adhearsion::Initializer.start_from_init_file(__FILE__, File.dirname(__FILE__) + "/..")
