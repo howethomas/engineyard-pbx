@@ -86,7 +86,7 @@ group_dialer {
   
   if this_group && this_machine
     this_group.generate_calls(this_machine)
-    queue(this_group.name).join! :timeout => 90.seconds, :allow_transfer => :agent
+    queue(this_group.name).join! :timeout => group.settings.queue_timeout, :allow_transfer => :agent
     # voicemail this_group.name
   else
     ahn_log.dialplan.error "GROUP AND MACHINE NOT FOUND!!!"

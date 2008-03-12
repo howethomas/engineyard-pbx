@@ -1,24 +1,5 @@
 END {
 
-Trunk.new("Nufone")   { |number| "IAX2/vm@nufone/#{number}" }
-Trunk.new("VoIP.ms")  { |number| "IAX2/voipms/#{number}"   }
-# Trunk.new("Vitelity") { |number| "SIP/#{number}@vitelity" }
-
-pbx1 = Server.find(:first)
-
-Scheduler.for pbx1 do |event|
-  puts "I got an event with ID #{event.id}"
-  begin
-    QueueMessageHandler.send(event.name, event.message)
-  rescue => exception
-    STDERR.puts exception, *exception.backtrace
-    sleep 0.2
-  ensure
-    event.complete!
-  end
-end
-
-Scheduler.join
 
 }
 
@@ -33,6 +14,7 @@ require PATH_TO_RAILS + "/config/environment.rb"
 require File.dirname(`which ahn`) + "/../lib/adhearsion"
 require 'adhearsion/voip/asterisk/config_generators/queues.conf.rb'
 require 'adhearsion/voip/asterisk/config_generators/agents.conf.rb'
+require 'adhearsion/voip/asterisk/config_generators/voicemail.conf.rb'
 
 class Scheduler
   
@@ -96,7 +78,7 @@ class QueueMessageHandler
         end
         `asterisk -rx reload #{CONFIG_FILE_MODULE_NAMES[config_name]}`
       else
-        puts asterisk_config_file + " does not exist! Is Asterisk installed???"
+        ahn_log.messages.error asterisk_config_file + " does not exist! Is Asterisk installed???"
       end
     end
     
@@ -144,8 +126,6 @@ class CallFile
   def contents
     raise NotImplementedError
   end
-  
-  protected
   
   private
   
@@ -250,3 +230,27 @@ CallerID: "EngineYard" <#{source}>
     CALL_FILE_CONTENT
   end
 end
+
+
+#### BELOW IS THE IMPLEMENTATION!!!
+
+
+Trunk.new("Nufone")   { |number| "IAX2/vm@nufone/#{number}" }
+Trunk.new("VoIP.ms")  { |number| "IAX2/voipms/#{number}"   }
+# Trunk.new("Vitelity") { |number| "SIP/#{number}@vitelity" }
+
+pbx1 = Server.find(:first)
+
+Scheduler.for pbx1 do |event|
+  puts "I got an event with ID #{event.id}"
+  begin
+    QueueMessageHandler.send(event.name, event.message)
+  rescue => exception
+    STDERR.puts exception, *exception.backtrace
+    sleep 0.2
+  ensure
+    event.complete!
+  end
+end
+
+Scheduler.join
