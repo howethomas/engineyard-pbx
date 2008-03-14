@@ -1,6 +1,7 @@
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 
-AHN_SERVERS = '192.168.2.214'
+PRODUCTION_SERVERS = %w[65.74.174.200 65.74.174.199]
+VM_AHN_SERVERS = '192.168.2.223'
 
 # Git/Github setup
 set :scm, :git
@@ -30,9 +31,17 @@ depend :remote, :gem, "activesupport", ">= 2.0.2"
 depend :remote, :gem, "hoe", ">= 1.5.0"
 depend :remote, :gem, "rubigen", ">= 1.1.1"
 
-role :app, AHN_SERVERS
+
 
 after 'deploy', :update_path_to_rails
+
+task :vm do
+  role :app, AHN_SERVERS
+end
+
+task :production do
+  role :app, PRODUCTION_SERVERS
+end
 
 task :update_path_to_rails do
   run "echo #{rails_deploy_to}/current > #{ahn_deploy_to}/current/.path_to_gui"

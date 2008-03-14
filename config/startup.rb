@@ -23,7 +23,6 @@ Adhearsion::Configuration.configure do |config|
   ### Should be able to write remotely
   ### Should be able to write remotely in parallel!
   
-  
   # config.asterisk.generate :files => %w[agents queues], :write => :locally
   # config.asterisk.generate :files => %w[agents queues], :write => :remotely
   

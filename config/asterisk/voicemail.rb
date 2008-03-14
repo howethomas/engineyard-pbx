@@ -1,7 +1,6 @@
 context :employees do |context|
   Employee.find(:all).each do |employee|
-    context.mailbox do |mailbox|
-      mailbox.mailbox_number employee.id
+    context.mailbox employee.id do |mailbox|
       mailbox.pin_number 1337
       mailbox.name employee.name
       mailbox.email employee.email
@@ -11,8 +10,7 @@ end
 
 context :groups do |context|
   Group.find(:all).each do |group|
-    context.mailbox do |mailbox|
-      mailbox.mailbox_number group.id
+    context.mailbox group.id do |mailbox|
       mailbox.pin_number 1337
       mailbox.name group.name
       mailbox.email group.email
@@ -43,12 +41,12 @@ emails do |config|
   config.from :name => signature, :email => "noreply@adhearsion.com"
   config.attach_recordings true
   config.body <<-BODY
-Dear #{email[:name]}:
+Dear #{config[:name]}:
 
-The caller #{email[:caller_id]} left you a #{email[:duration]} long voicemail
-(number #{email[:message_number]}) on #{email[:date]} in mailbox #{email[:mailbox]}.
+The caller #{config[:caller_id]} left you a #{config[:duration]} long voicemail
+(number #{config[:message_number]}) on #{config[:date]} in mailbox #{config[:mailbox]}.
 
-#{ "The recording is attached to this email.\n" if email.attach_recordings? }
+#{ "The recording is attached to this email.\n" if config.attach_recordings? }
     - #{signature}
   BODY
 end
