@@ -10,8 +10,9 @@ for group in Group.find :all
       q.member member.id
     end
   
-    q.join_empty true # Mandatory!
-  
+    q.join_empty true        # Mandatory!
+    q.leave_when_empty false # Mandatory!
+    
     q.ring_timeout 15.seconds
     q.retry_after_waiting 5.seconds # IS THIS REALLLYYY WHAT THIS DOES? DOUBLE CHECK!
     
@@ -19,7 +20,6 @@ for group in Group.find :all
 
     q.periodically_announce "queue-periodic-announce", :every => 1.minute
     
-    q.leave_when_empty true
     
     
     # TODO: These should be combined

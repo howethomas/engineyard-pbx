@@ -31,7 +31,8 @@ login {
     @other_groups = @agent.groups - [@queue_group]
     @queue = @other_groups.find { |group| !queue(group.name).empty? }
     if @queue
-      menu 'you-sound-cute', :timeout => 10.seconds do |link|
+      # If the queue is now empty but we found another queue the person can join...
+      menu 'engineyard/press-pound-to-accept-a-call-for-the', :timeout => 10.seconds do |link|
         link.confirmed '#'
       end
     else
@@ -68,7 +69,9 @@ employee {
   
   if mobile_number
     play 'pls-hold-while-try'
-    dial "IAX2/voipms/#{mobile_number}", :caller_id => "18665189273"
+    dial_timeout = Setting.find_by_name('extension_dial_timeout').global_setting_override.value || 24
+    dial "IAX2/voipms/#{mobile_number}", :caller_id => "18665189273", :for => dial_timeout, :confirm => true
+    voicemail :employees => employee.id
   else
     play %w'sorry number-not-in-db'
     +employee_tree
@@ -85,15 +88,34 @@ group_dialer {
   p [:this_machine, this_machine]
   
   if this_group && this_machine
-    this_group.generate_calls(this_machine)
-    queue(this_group.name).join! :timeout => group.settings.queue_timeout, :allow_transfer => :agent
-    # voicemail this_group.name
+    this_group.generate_calls this_machine
+    queue(this_group.name).join! :timeout => this_group.settings.queue_timeout, :allow_transfer => :agent
+    voicemail :groups => this_group.id
   else
     ahn_log.dialplan.error "GROUP AND MACHINE NOT FOUND!!!"
   end
 }
 
 conferences {
+  3.times {
+    pin = input :play => %w"pls-enter-conf-password then-press-pound"
+    valid_pin = Setting.find_by_name('primary_conference_pin').global_setting_override.value
+  
+    +enter_conference if pin == valid_pin
+  
+    valid_pin = Setting.find_by_name('secondary_conference_pin').global_setting_override.value
+    if !valid_pin.blank? && pin == valid_pin
+      +enter_conference
+    else
+      play 'conf-invalidpin'
+    end
+  }
+  
+  play %w'pls-try-call-later vm-goodbye'
+}
+
+enter_conference {
+  play "entering-conf-number", extension
   join extension
 }
 
