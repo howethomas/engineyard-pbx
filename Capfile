@@ -51,8 +51,17 @@ task :update_path_to_rails do
 end
 
 namespace :deploy do
+  task :start do
+    run "/etc/init.d/adhearsion start"
+  end
+  
+  task :stop do
+    run "/etc/init.d/adhearsion stop"
+  end
+  
   task :restart do
-    # ahn.restart
+    stop
+    start
   end
 end
 
