@@ -80,14 +80,13 @@ employee {
 }
 
 group_dialer {
-  play 'privacy-please-stay-on-line-to-be-connected'
-  
   this_group   = Group.find_by_ivr_option extension
-  p [:this_group, this_group]
   this_machine = Server.find_by_name THIS_SERVER
-  p [:this_machine, this_machine]
   
-  if this_group && this_machine
+  if this_group && this_group.empty?
+    voicemail :groups => this_group.id # TEST THIS
+  elsif this_group && this_machine
+    play 'privacy-please-stay-on-line-to-be-connected'
     this_group.generate_calls this_machine
     queue(this_group.name).join! :timeout => this_group.settings.queue_timeout, :allow_transfer => :agent
     voicemail :groups => this_group.id

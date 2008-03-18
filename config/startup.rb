@@ -1,7 +1,11 @@
 unless defined? Adhearsion
-  require 'rubygems'
-  gem 'adhearsion', '>= 0.7.999'
-  require 'adhearsion' 
+  if File.exists? File.dirname(__FILE__) + "/../adhearsion/lib/adhearsion.rb"
+    require File.dirname(__FILE__) + "/../adhearsion/lib/adhearsion.rb"
+  else  
+    require 'rubygems'
+    gem 'adhearsion', '>= 0.7.999'
+    require 'adhearsion'
+  end
 end
 
 path_to_gui_file = File.expand_path(File.dirname(__FILE__) + '/../.path_to_gui')

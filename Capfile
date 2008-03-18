@@ -32,11 +32,12 @@ depend :remote, :gem, "activerecord", ">= 2.0.2"
 depend :remote, :gem, "activesupport", ">= 2.0.2"
 depend :remote, :gem, "hoe", ">= 1.5.0"
 depend :remote, :gem, "rubigen", ">= 1.1.1"
+depend :remote, :gem, "log4r", ">= 1.0.5"
 
 after 'deploy', :update_path_to_rails
 
 task :vm do
-  role :app, *AHN_SERVERS
+  role :app, *VM_AHN_SERVERS
 end
 
 task :production do
