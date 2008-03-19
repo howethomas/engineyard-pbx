@@ -1,5 +1,5 @@
 ivr {
-  sleep 12
+  sleep 1
   menu 'engineyard/prompt', :tries => 3, :timeout => 7 do |link|
     
     link.employee_tree 9
