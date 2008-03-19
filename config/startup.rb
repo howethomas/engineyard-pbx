@@ -37,7 +37,13 @@ Adhearsion::Configuration.configure do |config|
   
 end
 
-THIS_SERVER = "pbx-1"
+HOSTNAME = `hostname`.chomp
+THIS_SERVER = if ["pbx-1", "pbx-2"].include? HOSTNAME
+  HOSTNAME
+else
+  ahn_log.warn "Unrecognized hostname! Making THIS_SERVER 'pbx-1'"
+  "pbx-1"
+end
 
 Adhearsion::Hooks::OnFailedCall.create_hook do |call|
   begin

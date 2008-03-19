@@ -27,6 +27,8 @@ set :deploy_to, ahn_deploy_to
 depend :remote, :command, "git"
 depend :remote, :command, "asterisk"
 depend :remote, :directory, project_deploy_to_root
+depend :remote, :directory, '/etc/asterisk'
+depend :remote, :directory, '/var/lib/asterisk/sounds/engineyard'
 depend :remote, :gem, "rails", ">= 2.0.2"
 depend :remote, :gem, "activerecord", ">= 2.0.2"
 depend :remote, :gem, "activesupport", ">= 2.0.2"
@@ -46,22 +48,20 @@ task :production do
   role :app, *PRODUCTION_SERVERS
 end
 
+
+before 'deploy:update', 'ahn:stop'
+after 'deploy:finalize_update', :update_path_to_rails
+after 'deploy:finalize_update', 'ahn:start'
+
+
 task :update_path_to_rails do
   run "echo #{rails_deploy_to}/current > #{ahn_deploy_to}/current/.path_to_gui"
 end
 
 namespace :deploy do
-  task :start do
-    run "/etc/init.d/adhearsion start"
-  end
-  
-  task :stop do
-    run "/etc/init.d/adhearsion stop"
-  end
   
   task :restart do
-    stop
-    start
+    # This is already handled by the before/after hooks above
   end
 end
 
@@ -73,6 +73,19 @@ namespace :ahn do
   
   task :update do
     run "svn update #{ahn_install_dir}"
+  end
+  
+  task :start do
+    run "#{ahn_install_dir}/bin/ahnctl start #{ahn_deploy_to}/current"
+  end
+  
+  task :stop do
+    run "#{ahn_install_dir}/bin/ahnctl stop #{ahn_deploy_to}/current"
+  end
+  
+  task :restart do
+    stop
+    start
   end
 end
 

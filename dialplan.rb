@@ -1,4 +1,5 @@
 ivr {
+  sleep 12
   menu 'engineyard/prompt', :tries => 3, :timeout => 7 do |link|
     
     link.employee_tree 9
@@ -17,8 +18,8 @@ ivr {
 
 login {
   
-  @group_id        = get_variable 'group_id'
-  @employee_id     = get_variable 'employee_id'
+  @group_id    = get_variable 'group_id'
+  @employee_id = get_variable 'employee_id'
   
   ahn_log :emp => @employee_id, :group => @group_id
   
@@ -83,7 +84,7 @@ group_dialer {
   this_group   = Group.find_by_ivr_option extension
   this_machine = Server.find_by_name THIS_SERVER
   
-  if this_group && this_group.empty?
+  if this_group && this_group.employees.count.zero?
     voicemail :groups => this_group.id # TEST THIS
   elsif this_group && this_machine
     play 'privacy-please-stay-on-line-to-be-connected'
