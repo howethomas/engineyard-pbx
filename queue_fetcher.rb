@@ -1,9 +1,5 @@
-END {
 
-
-}
-
-path_to_gui_file = File.expand_path(File.dirname(__FILE__) + '/../.path_to_gui')
+path_to_gui_file = File.expand_path(File.dirname(__FILE__) + '/.path_to_gui')
 PATH_TO_RAILS = if File.exists? path_to_gui_file
   File.read(path_to_gui_file).strip
 else
@@ -11,7 +7,9 @@ else
 end
 
 require PATH_TO_RAILS + "/config/environment.rb"
-require File.dirname(`which ahn`) + "/../lib/adhearsion"
+
+ahn_path = File.dirname(`which ahn`) + "/../lib/adhearsion"
+require File.exist?(ahn_path) ? ahn_path : '/usr/local/adhearsion/lib/adhearsion'
 require 'adhearsion/voip/asterisk/config_generators/queues.conf.rb'
 require 'adhearsion/voip/asterisk/config_generators/agents.conf.rb'
 require 'adhearsion/voip/asterisk/config_generators/voicemail.conf.rb'
