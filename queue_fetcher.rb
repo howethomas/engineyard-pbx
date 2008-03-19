@@ -232,10 +232,12 @@ end
 
 #### BELOW IS THE IMPLEMENTATION!!!
 
-
-Trunk.new("Nufone")   { |number| "IAX2/vm@nufone/#{number}" }
-Trunk.new("VoIP.ms")  { |number| "IAX2/voipms/#{number}"   }
-# Trunk.new("Vitelity") { |number| "SIP/#{number}@vitelity" }
+if `hostname`.starts_with? 'pbx'
+  Trunk.new("Vitelity") { |number| "SIP/#{number}@vitel-outbound" }
+else
+  Trunk.new("Nufone")   { |number| "IAX2/vm@nufone/#{number}" }
+  Trunk.new("VoIP.ms")  { |number| "IAX2/voipms/#{number}"   }
+end
 
 pbx1 = Server.find(:first)
 
