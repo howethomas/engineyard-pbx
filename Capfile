@@ -27,7 +27,6 @@ set :deploy_to, ahn_deploy_to
 depend :remote, :command, "git"
 depend :remote, :command, "asterisk"
 depend :remote, :directory, project_deploy_to_root
-depend :remote, :directory, '/var/log/queue_fetcher'
 depend :remote, :directory, '/etc/asterisk'
 depend :remote, :directory, '/var/lib/asterisk/sounds/engineyard'
 depend :remote, :match, "ruby -v", /1\.8\.6/
@@ -42,6 +41,7 @@ depend :remote, :gem, "tzinfo", ">= 0.3.7"
 depend :remote, :gem, "sqlite3-ruby", ">= 1.2.1"
 depend :remote, :gem, "daemons", ">= 1.2.1"
 
+before 'deploy', 'ahn:update'
 after 'deploy', :update_path_to_rails
 
 task :vm do

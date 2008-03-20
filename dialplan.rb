@@ -89,9 +89,17 @@ group_dialer {
   if this_group && this_group.employees.count.zero?
     voicemail :groups => this_group.id # TEST THIS
   elsif this_group && this_machine
-    play 'privacy-please-stay-on-line-to-be-connected'
-    this_group.generate_calls this_machine
-    queue(this_group.name).join! :timeout => this_group.settings.queue_timeout, :allow_transfer => :agent
+    this_queue = queue this_group.name
+    
+    agents_who_are_busy_handling_calls = this_queue.agents.select(&:logged_in?).map(&:id)
+    
+    if agents_who_are_busy_handling_calls.size >= this_queue.agents.count
+      play 'all-reps-busy'
+    else
+      play 'privacy-please-stay-on-line-to-be-connected'      
+      this_group.generate_calls(this_machine, :exclude => agents_who_are_busy_handling_calls)
+      this_queue.join! :timeout => this_group.settings.queue_timeout, :allow_transfer => :agent
+    end
     voicemail :groups => this_group.id
   else
     ahn_log.dialplan.error "GROUP AND MACHINE NOT FOUND!!!"
