@@ -71,13 +71,15 @@ employee {
   if mobile_number
     play 'pls-hold-while-try'
     dial_timeout = Setting.find_by_name('extension_dial_timeout').global_setting_override.value || 24
-    dial "IAX2/voipms/#{mobile_number}", :caller_id => "18665189273", :for => dial_timeout, :confirm => true
+    
+    # This must eventually be abstracted in the call routing DSL!
+    trunk = `hostname`.starts_with?('pbx') ? "SIP/#{mobile_number}@vitel-outbound" : "IAX2/voipms/#{mobile_number}"
+    dial trunk, :caller_id => "18665189273", :for => dial_timeout, :confirm => true
     voicemail :employees => employee.id
   else
     play %w'sorry number-not-in-db'
     +employee_tree
   end
-
 }
 
 group_dialer {

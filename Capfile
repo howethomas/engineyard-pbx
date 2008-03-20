@@ -29,12 +29,16 @@ depend :remote, :command, "asterisk"
 depend :remote, :directory, project_deploy_to_root
 depend :remote, :directory, '/etc/asterisk'
 depend :remote, :directory, '/var/lib/asterisk/sounds/engineyard'
+depend :remote, :match, "ruby -v", /1\.8\.6/
 depend :remote, :gem, "rails", ">= 2.0.2"
+depend :remote, :gem, "haml", ">= 1.8.2"
 depend :remote, :gem, "activerecord", ">= 2.0.2"
 depend :remote, :gem, "activesupport", ">= 2.0.2"
 depend :remote, :gem, "hoe", ">= 1.5.0"
 depend :remote, :gem, "rubigen", ">= 1.1.1"
 depend :remote, :gem, "log4r", ">= 1.0.5"
+depend :remote, :gem, "tzinfo", ">= 0.3.7"
+depend :remote, :gem, "sqlite3-ruby", ">= 1.2.1"
 
 after 'deploy', :update_path_to_rails
 
@@ -47,7 +51,6 @@ task :production do
   set :use_sudo, "false"
   role :app, *PRODUCTION_SERVERS
 end
-
 
 before 'deploy:update', 'ahn:stop'
 after 'deploy:finalize_update', :update_path_to_rails
