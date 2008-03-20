@@ -233,6 +233,7 @@ end
 #### BELOW IS THE IMPLEMENTATION!!!
 
 if `hostname`.starts_with? 'pbx'
+  # Trunk.new("VoIP.ms Debug Account") { |number| "IAX2/#{number}@jay-trunk-out" }
   Trunk.new("Vitelity") { |number| "SIP/#{number}@vitel-outbound" }
 else
   Trunk.new("Nufone")   { |number| "IAX2/vm@nufone/#{number}" }

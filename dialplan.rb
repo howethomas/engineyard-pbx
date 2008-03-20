@@ -33,7 +33,7 @@ login {
     @queue = @other_groups.find { |group| !queue(group.name).empty? }
     if @queue
       # If the queue is now empty but we found another queue the person can join...
-      menu 'engineyard/press-pound-to-accept-a-call-for-the', :timeout => 10.seconds do |link|
+      menu 'engineyard/press-pound-to-accept-a-call-for-the', :timeout => 30.seconds do |link|
         link.confirmed '#'
       end
     else
@@ -59,7 +59,7 @@ call_already_answered {
 }
 
 employee_tree {
-  menu do |link|
+  menu :timeout => 45.seconds do |link|
     link.employee(*Employee.find(:all).map(&:extension))
   end
 }
@@ -75,7 +75,7 @@ employee {
     # This must eventually be abstracted in the call routing DSL!
     trunk = `hostname`.starts_with?('pbx') ? "SIP/#{mobile_number}@vitel-outbound" : "IAX2/voipms/#{mobile_number}"
     dial trunk, :caller_id => "18665189273", :for => dial_timeout, :confirm => true
-    voicemail :employees => employee.id
+    voicemail :employees => employee.id if last_dial_unsuccessful?
   else
     play %w'sorry number-not-in-db'
     +employee_tree

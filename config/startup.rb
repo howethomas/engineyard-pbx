@@ -45,6 +45,19 @@ else
   "pbx-1"
 end
 
+Adhearsion::Hooks::OnHungupCall.create_hook do |env|
+  group_id = env.variable "group_id"
+  unless group_id.blank?
+    ahn_log "Detected an agent hanging up!"
+    
+    group = Group.find group_id
+    queue = env.queue group.name
+    
+    ahn_log "Logging the current channel out. Result follows"
+    ahn_log queue.agents.logout! 
+  end
+end
+
 Adhearsion::Hooks::OnFailedCall.create_hook do |call|
   begin
     failure_reason = call.failed_reason

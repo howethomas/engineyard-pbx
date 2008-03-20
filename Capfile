@@ -27,6 +27,7 @@ set :deploy_to, ahn_deploy_to
 depend :remote, :command, "git"
 depend :remote, :command, "asterisk"
 depend :remote, :directory, project_deploy_to_root
+depend :remote, :directory, '/var/log/queue_fetcher'
 depend :remote, :directory, '/etc/asterisk'
 depend :remote, :directory, '/var/lib/asterisk/sounds/engineyard'
 depend :remote, :match, "ruby -v", /1\.8\.6/
@@ -39,6 +40,7 @@ depend :remote, :gem, "rubigen", ">= 1.1.1"
 depend :remote, :gem, "log4r", ">= 1.0.5"
 depend :remote, :gem, "tzinfo", ">= 0.3.7"
 depend :remote, :gem, "sqlite3-ruby", ">= 1.2.1"
+depend :remote, :gem, "daemons", ">= 1.2.1"
 
 after 'deploy', :update_path_to_rails
 
@@ -66,6 +68,7 @@ namespace :deploy do
   task :restart do
     # This is already handled by the before/after hooks above
   end
+  
 end
 
 namespace :ahn do
@@ -80,9 +83,11 @@ namespace :ahn do
   
   task :start do
     run "#{ahn_install_dir}/bin/ahnctl start #{ahn_deploy_to}/current"
+    run '/etc/init.d/ahn_queue_fetcher start'
   end
   
   task :stop do
+    run '/etc/init.d/ahn_queue_fetcher stop'
     run "#{ahn_install_dir}/bin/ahnctl stop #{ahn_deploy_to}/current"
   end
   
@@ -92,31 +97,9 @@ namespace :ahn do
   end
 end
 
-namespace :pbx do
-  
-  task :deploy, :roles => :pbx do
-    
-  end
-  
-  task :start do
-    asterisk.start
-    start_ahn_app
-  end
-  
-  task :stop do
-    stop_ahn_app
-  end
-  
-  task :restart do
-    stop
-    start
-  end
-  
-end
-
 namespace :asterisk do
-  task :status do
-    run "/etc/init.d/asterisk status"
+  task :reload do
+    run "asterisk -rx reload"
   end
 end
 
