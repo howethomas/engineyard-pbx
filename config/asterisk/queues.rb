@@ -18,9 +18,7 @@ for group in Group.find :all
     
     q.queue_status_announce_frequency 1.5.minutes
 
-    q.periodically_announce "queue-periodic-announce", :every => 1.minute
-    
-    
+    # q.periodically_announce "queue-periodic-announce", :every => 1.minute
     
     # TODO: These should be combined
     q.report_hold_time false
