@@ -1,7 +1,7 @@
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 
 PRODUCTION_SERVERS = %w[65.74.174.200 65.74.174.199]
-VM_AHN_SERVERS = '192.168.2.223'
+VM_AHN_SERVERS = '10.0.1.194'
 
 # Git/Github setup
 set :scm, :git
@@ -21,12 +21,15 @@ set :ahn_deploy_to, project_deploy_to_root + "/pbx"
 
 # Capistrano setup
 set :application, "pbx" # Why is this needed?
-set :user, "jicksta"    # SHOULD BE 'deploy'!
+set :user, "deploy"    # SHOULD BE 'deploy'!
+set :group, 'deploy'
 set :deploy_to, ahn_deploy_to
 
 depend :remote, :command, "git"
+depend :remote, :command, "svn" # Used for Adhearsion trunk
 depend :remote, :command, "asterisk"
 depend :remote, :directory, project_deploy_to_root
+depend :remote, :directory, '/etc/thin'
 depend :remote, :directory, '/etc/asterisk'
 depend :remote, :directory, '/var/lib/asterisk/sounds/engineyard'
 depend :remote, :match, "ruby -v", /1\.8\.6/
@@ -39,12 +42,28 @@ depend :remote, :gem, "rubigen", ">= 1.1.1"
 depend :remote, :gem, "log4r", ">= 1.0.5"
 depend :remote, :gem, "tzinfo", ">= 0.3.7"
 depend :remote, :gem, "sqlite3-ruby", ">= 1.2.1"
-depend :remote, :gem, "daemons", ">= 1.2.1"
+depend :remote, :gem, "daemons", ">= 1.0.10"
+depend :remote, :gem, "thin", ">= 0.7.1"
 
 before 'deploy', 'ahn:update'
 after 'deploy', :update_path_to_rails
+after 'deploy:setup', :create_engineyard_folder
+after 'deploy:setup', 'ahn:init'
+after 'deploy:setup', :chmod_adhearsion_folder
+
+task :chmod_adhearsion_folder do
+  sudo "chown -R #{user} /usr/local/adhearsion"
+  sudo "chgrp -R #{group} /usr/local/adhearsion"
+end
+
+task :create_engineyard_folder do
+  sudo 'mkdir /usr/local/engineyard'
+  sudo "chown -R #{user} /usr/local/engineyard"
+  sudo "chgrp -R #{group} /usr/local/engineyard"
+end
 
 task :vm do
+  set :user, 'deploy'
   role :app, *VM_AHN_SERVERS
 end
 
@@ -55,8 +74,8 @@ task :production do
 end
 
 before 'deploy:update', 'ahn:stop'
-after 'deploy:finalize_update', :update_path_to_rails
-after 'deploy:finalize_update', 'ahn:start'
+after 'deploy', :update_path_to_rails
+after 'deploy', 'ahn:start'
 
 
 task :update_path_to_rails do
@@ -87,8 +106,8 @@ namespace :ahn do
   end
   
   task :stop do
-    run '/etc/init.d/ahn_queue_fetcher stop'
-    run "#{ahn_install_dir}/bin/ahnctl stop #{ahn_deploy_to}/current"
+    run '/etc/init.d/ahn_queue_fetcher stop || true'
+    run "#{ahn_install_dir}/bin/ahnctl stop #{ahn_deploy_to}/current || true"
   end
   
   task :restart do
