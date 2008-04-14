@@ -1,6 +1,6 @@
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 
-PRODUCTION_SERVERS = %w[65.74.174.200 65.74.174.199]
+PRODUCTION_SERVERS = %w[65.74.175.133 65.74.175.134]
 VM_AHN_SERVERS = '10.0.1.194'
 
 # Git/Github setup
