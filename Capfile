@@ -28,6 +28,7 @@ set :deploy_to, ahn_deploy_to
 depend :remote, :command, "git"
 depend :remote, :command, "svn" # Used for Adhearsion trunk
 depend :remote, :command, "asterisk"
+depend :remote, :command, "sqlite3"
 depend :remote, :directory, project_deploy_to_root
 depend :remote, :directory, '/etc/thin'
 depend :remote, :directory, '/etc/asterisk'

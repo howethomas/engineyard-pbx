@@ -18,6 +18,8 @@ ivr {
 
 login {
   
+  variable 'DYNAMIC_FEATURES' => 'atxfer'
+  
   @group_id    = get_variable 'group_id'
   @employee_id = get_variable 'employee_id'
   
@@ -59,7 +61,7 @@ call_already_answered {
 }
 
 employee_tree {
-  menu :timeout => 45.seconds do |link|
+  menu 'engineyard/please-enter-employee-extension', :timeout => 45.seconds do |link|
     link.employee(*Employee.find(:all).map(&:extension))
   end
 }
