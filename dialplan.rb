@@ -67,6 +67,9 @@ employee_tree {
 }
 
 employee {
+  
+  variable "DYNAMIC_FEATURES" => 'atxfer'
+  
   employee = Employee.find_by_extension extension
   mobile_number = employee.mobile_number if employee
   
