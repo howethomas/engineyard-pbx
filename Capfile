@@ -21,7 +21,7 @@ set :ahn_deploy_to, project_deploy_to_root + "/pbx"
 
 # Capistrano setup
 set :application, "pbx" # Why is this needed?
-set :user, "deploy"    # SHOULD BE 'deploy'!
+set :user, "deploy"
 set :group, 'deploy'
 set :deploy_to, ahn_deploy_to
 
