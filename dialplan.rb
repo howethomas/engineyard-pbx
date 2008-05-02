@@ -1,3 +1,29 @@
+from_trunk {
+  case extension    
+    when 415_963_3720
+      +ivr
+    when 415_963_3722
+      +voicemail_checker
+    else
+      +ivr
+  end
+}
+
+voicemail_checker {
+  3.times do
+    user_extension = input :play => "engineyard/pls-enter-extension"
+    employee = Employee.find_by_extension user_extension
+    unless employee
+      play 'pbx-invalid'	# I am sorry, that's not a valid extension. Please try again.
+      next
+    end
+    user_password  = input :play => "engineyard/pls-enter-password" 
+    if user_password.to_s != employee.voicemail_pin.to_s
+      next
+    end
+  end
+}
+
 ivr {
   sleep 1
   menu 'engineyard/prompt', :tries => 3, :timeout => 7 do |link|
@@ -18,7 +44,7 @@ ivr {
 
 login {
   
-  variable 'DYNAMIC_FEATURES' => 'atxfer'
+  enable_feature :attended_transfer, :context => "employee"
   
   @group_id    = get_variable 'group_id'
   @employee_id = get_variable 'employee_id'
@@ -68,7 +94,7 @@ employee_tree {
 
 employee {
   
-  variable "DYNAMIC_FEATURES" => 'atxfer'
+  enable_feature :attended_transfer, :context => "employee"
   
   employee = Employee.find_by_extension extension
   mobile_number = employee.mobile_number if employee
@@ -105,6 +131,7 @@ group_dialer {
       this_group.generate_calls(this_machine, :exclude => agents_who_are_busy_handling_calls)
       this_queue.join! :timeout => this_group.settings.queue_timeout, :allow_transfer => :agent
     end
+    # pls-lv-msg-will-contact # TODO!
     voicemail :groups => this_group.id
   else
     ahn_log.dialplan.error "GROUP AND MACHINE NOT FOUND!!!"
@@ -120,6 +147,7 @@ conferences {
   
     valid_pin = Setting.find_by_name('secondary_conference_pin').global_setting_override.value
     if !valid_pin.blank? && pin == valid_pin
+      play 'engineyard/deprecated_password'
       +enter_conference
     else
       play 'conf-invalidpin'

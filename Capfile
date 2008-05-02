@@ -10,6 +10,8 @@ set :repository, "git@github.com:jicksta/engineyard-pbx.git"
 # Project-related variables
 set :project_deploy_to_root, "/usr/local/engineyard"
 
+set :deploy_via, :remote_cache
+
 # Rails-related variables
 set :rails_deploy_to, project_deploy_to_root + "/pbx-gui"
 

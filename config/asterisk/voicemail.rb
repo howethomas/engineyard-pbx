@@ -1,6 +1,6 @@
 context :employees do |context|
   Employee.find(:all).each do |employee|
-    context.mailbox employee.id do |mailbox|
+    context.mailbox employee.extension do |mailbox|
       mailbox.pin_number 1337
       mailbox.name employee.name
       mailbox.email employee.email
@@ -21,7 +21,7 @@ end
 ############################################################################
 ############################################################################
 
-signature = "Your Friendly Phone System"
+signature = "EngineYard Phone System"
 
 # execute_after_email "netcat 192.168.1.2 12345"
 # greeting_maximum 1.minute
@@ -38,13 +38,15 @@ recordings do |config|
 end
 
 emails do |config|
-  config.from :name => signature, :email => "noreply@adhearsion.com"
+  config.command "/usr/sbin/sendmail -f pbx@engineyard.com.com -t"
+  config.from :name => signature, :email => "pbx@engineyard.com"
   config.attach_recordings true
+  config.subject "New voicemail for #{config[:email]} from #{config[:caller_id]}"
   config.body <<-BODY
-Dear #{config[:name]}:
+#{config[:name]}:
 
 The caller #{config[:caller_id]} left you a #{config[:duration]} long voicemail
-(number #{config[:message_number]}) on #{config[:date]} in mailbox #{config[:mailbox]}.
+on #{config[:date]}.
 
 #{ "The recording is attached to this email.\n" if config.attach_recordings? }
     - #{signature}
