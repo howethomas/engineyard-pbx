@@ -12,17 +12,16 @@ from_trunk {
 voicemail_checker {
   ahn_log.dialplan "Entering voicemail checking system"
   3.times do
-    user_extension = input :play => "engineyard/pls-enter-extension"
+    user_extension = input 3, :play => "engineyard/pls-enter-extension"
     ahn_log.dialplan "Received extension #{user_extension}"
     employee = Employee.find_by_extension user_extension
     unless employee
       play 'pbx-invalid'	# I am sorry, that's not a valid extension. Please try again.
       next
     end
-    user_password  = input :play => "engineyard/pls-enter-password" 
-    if user_password.to_s != employee.voicemail_pin.to_s
-      next
-    end
+    user_password = input :play => "engineyard/pls-enter-password"
+    next if user_password.to_s != employee.voicemail_pin.to_s
+    voicemail_main :context => "employees", :mailbox => user_extension, :authenticate => false
   end
 }
 
