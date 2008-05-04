@@ -118,6 +118,9 @@ group_dialer {
   this_group   = Group.find_by_ivr_option extension
   this_machine = Server.find_by_name THIS_SERVER
   
+  ahn_log "This group   : #{this_group}"
+  ahn_log "This machine : #{this_machine}"
+  
   if this_group && this_group.empty?
     voicemail :groups => this_group.id
   elsif this_group && this_machine
