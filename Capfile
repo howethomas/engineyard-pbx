@@ -103,14 +103,25 @@ namespace :ahn do
     run "svn update #{ahn_install_dir}"
   end
   
+  Restarter = lambda do |operation|
+    action, monitor_state = case operation
+      when :start : %w[ start   monitor ]
+      when :stop  : %w[ stop  unmonitor ]
+    end
+    run "monit #{monitor_state} ahn"
+    run "monit #{monitor_state} queue_fetcher"
+    run "/etc/init.d/ahn_queue_fetcher #{action} || true"
+    run "#{ahn_install_dir}/bin/ahnctl #{action} #{ahn_deploy_to}/current || true"
+  end
+  
   task :start do
-    run "#{ahn_install_dir}/bin/ahnctl start #{ahn_deploy_to}/current"
-    run '/etc/init.d/ahn_queue_fetcher start'
+    on_rollback { Restarter[:stop] }
+    Restarter[:start]
   end
   
   task :stop do
-    run '/etc/init.d/ahn_queue_fetcher stop || true'
-    run "#{ahn_install_dir}/bin/ahnctl stop #{ahn_deploy_to}/current || true"
+    on_rollback { Restarter[:start] }
+    Restarter[:stop]
   end
   
   task :restart do
