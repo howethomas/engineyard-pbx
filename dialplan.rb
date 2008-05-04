@@ -133,6 +133,7 @@ group_dialer {
     else
       play 'privacy-please-stay-on-line-to-be-connected'
       this_group.generate_calls(this_machine, :exclude => agents_who_are_busy_handling_calls)
+      ahn_log "I supposedly generated the calls!"
       this_queue.join! :timeout => this_group.settings.queue_timeout, :allow_transfer => :agent
     end
     # pls-lv-msg-will-contact # TODO!
