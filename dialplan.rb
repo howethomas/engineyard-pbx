@@ -20,7 +20,10 @@ voicemail_checker {
       next
     end
     user_password = input :play => "engineyard/pls-enter-password"
-    next if user_password.to_s != employee.voicemail_pin.to_s
+    if user_password.to_s != employee.voicemail_pin.to_s
+      play 'vm-incorrect'
+      next
+    end
     voicemail_main :context => "employees", :mailbox => user_extension, :authenticate => false
   end
 }
