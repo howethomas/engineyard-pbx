@@ -67,6 +67,7 @@ class QueueMessageHandler
       config_file_code = File.read dynamic_config_file
       
       config_class_name = config_name.camelize
+      ahn_log "Regenerating #{config_class_name}"
       config_generator = Adhearsion::VoIP::Asterisk::ConfigFileGenerators.const_get(config_class_name).new
       config_generator.instance_eval(config_file_code)
       
