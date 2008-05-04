@@ -12,7 +12,7 @@ from_trunk {
 voicemail_checker {
   ahn_log.dialplan "Entering voicemail checking system"
   3.times do
-    user_extension = input 3, :play => "engineyard/pls-enter-extension"
+    user_extension = input :play => "engineyard/pls-enter-extension"
     ahn_log.dialplan "Received extension #{user_extension}"
     employee = Employee.find_by_extension user_extension
     unless employee

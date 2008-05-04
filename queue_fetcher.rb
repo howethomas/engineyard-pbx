@@ -6,6 +6,7 @@ else
   File.expand_path(File.dirname(__FILE__) + '/../ey-gui')
 end
 
+ENV["RAILS_ENV"] = 'production'
 require PATH_TO_RAILS + "/config/environment.rb"
 
 ahn_path = File.dirname(`which ahn`) + "/../lib/adhearsion"
