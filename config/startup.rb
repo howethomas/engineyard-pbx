@@ -20,7 +20,7 @@ Adhearsion::Configuration.configure do |config|
   config.logging :level => :debug
   
   config.enable_asterisk
-  config.enable_rails :path => PATH_TO_RAILS, :env => :development
+  config.enable_rails :path => PATH_TO_RAILS, :env => :production
   
   ### Should be able to write multiple files!
   ### Should be able to write locally!
