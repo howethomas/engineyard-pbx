@@ -41,7 +41,7 @@ emails do |config|
   config.command "/usr/sbin/sendmail -f pbx@engineyard.com.com -t"
   config.from :name => signature, :email => "pbx@engineyard.com"
   config.attach_recordings true
-  config.subject "New voicemail for #{config[:email]} from #{config[:caller_id]}"
+  config.subject "New voicemail for #{config[:name]} from #{config[:caller_id]}"
   config.body <<-BODY
 #{config[:name]}:
 
