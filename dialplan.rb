@@ -107,7 +107,7 @@ employee {
     # This must eventually be abstracted in the call routing DSL!
     trunk = `hostname`.starts_with?('pbx') ? "SIP/#{mobile_number}@vitel-outbound" : "IAX2/voipms/#{mobile_number}"
     dial trunk, :caller_id => "18665189273", :for => dial_timeout, :confirm => true
-    voicemail :employees => employee.id if last_dial_unsuccessful?
+    voicemail :employees => employee.extension if last_dial_unsuccessful?
   else
     play %w'sorry number-not-in-db'
     +employee_tree
@@ -118,17 +118,17 @@ group_dialer {
   this_group   = Group.find_by_ivr_option extension
   this_machine = Server.find_by_name THIS_SERVER
   
-  if this_group && this_group.employees.count.zero?
-    voicemail :groups => this_group.id # TEST THIS
+  if this_group && this_group.empty?
+    voicemail :groups => this_group.id
   elsif this_group && this_machine
     this_queue = queue this_group.name
     
     agents_who_are_busy_handling_calls = this_queue.agents.select(&:logged_in?).map(&:id)
-    
+    ahn_log "These guys are busy handling calls: #{agents_who_are_busy_handling_calls * ', '}"
     if agents_who_are_busy_handling_calls.size >= this_queue.agents.count
       play 'all-reps-busy'
     else
-      play 'privacy-please-stay-on-line-to-be-connected'      
+      play 'privacy-please-stay-on-line-to-be-connected'
       this_group.generate_calls(this_machine, :exclude => agents_who_are_busy_handling_calls)
       this_queue.join! :timeout => this_group.settings.queue_timeout, :allow_transfer => :agent
     end
