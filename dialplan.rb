@@ -19,9 +19,9 @@ voicemail_checker {
       play 'pbx-invalid'	# I am sorry, that's not a valid extension. Please try again.
       next
     end
-    user_password = input :play => "engineyard/pls-enter-password"
+    user_password = input :play => "agent-pass"
     if user_password.to_s != employee.voicemail_pin.to_s
-      play 'vm-incorrect'
+      play 'engineyard/invalid-pin'
       next
     end
     voicemail_main :context => "employees", :mailbox => user_extension, :authenticate => false
@@ -30,18 +30,30 @@ voicemail_checker {
 
 ivr {
   sleep 1
-  menu 'engineyard/prompt', :tries => 3, :timeout => 7 do |link|
+  
+  all_groups = Group.find :all, :order => "ivr_option"
+  all_groups.push all_groups.shift if all_groups.first.ivr_option.zero?
+  
+  all_group_ivr_options = all_groups.map(&:ivr_option)
+  on_failure_group_ivr_option = all_groups.detect { |group| group.name.downcase == 'sales' }.ivr_option rescue 0
+  
+  prompt_sequence = all_groups.inject([]) do |files, group|
+    group_sound_file_name = group.name.gsub(/\s+/, '_').underscore.dasherize
+    files + %W[for #{group_sound_file_name} press #{group.ivr_option}]
+  end
+  
+  menu 'welcome', prompt_sequence, :tries => 3, :timeout => 7 do |link|
     
     link.employee_tree 9
     link.conferences 800..899
     
-    link.group_dialer(*Group.find(:all).map(&:ivr_option))
+    link.group_dialer(*all_group_ivr_options)
     
     link.on_premature_timeout { play 'are-you-still-there' }
     link.on_invalid { play 'invalid' }
     link.on_failure do
       play %w'vm-sorry one-moment-please'
-      +other
+      jump_to(group_dialer, :extension => on_failure_group_ivr_option)
     end
   end
 }
@@ -65,15 +77,15 @@ login {
     @queue = @other_groups.find { |group| !queue(group.name).empty? }
     if @queue
       # If the queue is now empty but we found another queue the person can join...
-      menu 'engineyard/press-pound-to-accept-a-call-for-the', :timeout => 30.seconds do |link|
+      menu 'engineyard/to-accept-a-call-for', 'press-pound' :timeout => 30.seconds do |link|
         link.confirmed '#'
       end
     else
       +call_already_answered
     end
   else
-    group_sound_file_name = "engineyard/" << @queue_group.name.gsub(/\s+/, '_').underscore.dasherize
-    menu 'engineyard/press-pound-to-accept-a-call-for-the', group_sound_file_name, :timeout => 10.seconds do |link|
+    group_sound_file_name = @queue_group.name.gsub(/\s+/, '_').underscore.dasherize
+    menu 'engineyard/to-accept-a-call-for', group_sound_file_name, 'press-pound', :timeout => 10.seconds do |link|
       link.confirmed '#'
     end
   end
@@ -87,7 +99,7 @@ confirmed {
 
 call_already_answered {
   ahn_log "#{@agent.name} answered after the queue had become empty."
-  play 'sorry-no-more-calls-waiting'
+  play 'engineyard/call-already-answered'
 }
 
 employee_tree {
@@ -139,8 +151,8 @@ group_dialer {
       ahn_log "I supposedly generated the calls!"
       this_queue.join! :timeout => this_group.settings.queue_timeout, :allow_transfer => :agent
     end
-    # pls-lv-msg-will-contact # TODO!
-    voicemail :groups => this_group.id
+    play 'group-voicemail-message'
+    voicemail :groups => this_group.id, :skip => true
   else
     ahn_log.dialplan.error "GROUP AND MACHINE NOT FOUND!!!"
   end
@@ -155,7 +167,7 @@ conferences {
   
     valid_pin = Setting.find_by_name('secondary_conference_pin').global_setting_override.value
     if !valid_pin.blank? && pin == valid_pin
-      play 'engineyard/deprecated_password'
+      play 'engineyard/conference-pin-deprecated'
       +enter_conference
     else
       play 'conf-invalidpin'

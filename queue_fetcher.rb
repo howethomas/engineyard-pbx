@@ -1,5 +1,5 @@
 require 'tempfile'
-
+require 'fileutils'
 path_to_gui_file = File.expand_path(File.dirname(__FILE__) + '/.path_to_gui')
 PATH_TO_RAILS = if File.exists? path_to_gui_file
   File.read(path_to_gui_file).strip
@@ -86,6 +86,7 @@ class QueueMessageHandler
     
     def regenerate_email_aliases(unused_message)
       # Generate the file contents
+      ahn_log 'Generating the Exim aliases file'
       aliases_file_contents = Group.find(:all).map do |group|
         member_emails = group.members.map(&:email).join(", ")
         "#{group.name.downcase}: #{member_emails}"
