@@ -1,3 +1,4 @@
+require 'tempfile'
 
 path_to_gui_file = File.expand_path(File.dirname(__FILE__) + '/.path_to_gui')
 PATH_TO_RAILS = if File.exists? path_to_gui_file
@@ -57,8 +58,9 @@ class QueueMessageHandler
     end
     
     CONFIG_FILE_MODULE_NAMES = {
-      "queues" => "app_queue",
-      "agents" => "chan_agent"
+      "queues"    => "app_queue",
+      "agents"    => "chan_agent",
+      "voicemail" => "app_voicemail"
     }
     CONFIG_FILE_MODULE_NAMES.default = ''
     
@@ -80,6 +82,21 @@ class QueueMessageHandler
       else
         ahn_log.messages.error asterisk_config_file + " does not exist! Is Asterisk installed???"
       end
+    end
+    
+    def regenerate_email_aliases(unused_message)
+      # Generate the file contents
+      aliases_file_contents = Group.find(:all).map do |group|
+        member_emails = group.members.map(&:email).join(", ")
+        "#{group.name.downcase}: #{member_emails}"
+      end.join "\n"
+      
+      # Write (relink) the file to disk safely
+      temp_file = Tempfile.new 'new_aliases_file'
+      File.open(temp_file.path, 'w') do |file|
+        file.puts aliases_file_contents
+      end
+      FileUtils.mv(temp_file.path, '/usr/local/engineyard/aliases')
     end
     
     def introduce(message)
