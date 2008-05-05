@@ -77,7 +77,8 @@ login {
     @queue = @other_groups.find { |group| !queue(group.name).empty? }
     if @queue
       # If the queue is now empty but we found another queue the person can join...
-      menu 'engineyard/to-accept-a-call-for', 'press-pound' :timeout => 30.seconds do |link|
+      group_sound_file_name = @queue.name.gsub(/\s+/, '_').underscore.dasherize
+      menu 'engineyard/to-accept-a-call-for', group_sound_file_name, 'press-pound', :timeout => 30.seconds do |link|
         link.confirmed '#'
       end
     else
