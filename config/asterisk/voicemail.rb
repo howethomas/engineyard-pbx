@@ -1,7 +1,7 @@
 context :employees do |context|
   Employee.find(:all).each do |employee|
     context.mailbox employee.extension do |mailbox|
-      mailbox.pin_number 1337
+      mailbox.pin_number employee.voicemail_pin
       mailbox.name employee.name
       mailbox.email employee.email
     end
