@@ -39,10 +39,10 @@ ivr {
   
   prompt_sequence = all_groups.inject([]) do |files, group|
     group_sound_file_name = group.name.gsub(/\s+/, '_').underscore.dasherize
-    files + %W[for #{group_sound_file_name} press #{group.ivr_option}]
+    files + %W[for #{group_sound_file_name} press digits/#{group.ivr_option}]
   end
   
-  menu 'welcome', prompt_sequence, :tries => 3, :timeout => 7 do |link|
+  menu 'engineyard/welcome', prompt_sequence, :tries => 3, :timeout => 7 do |link|
     
     link.employee_tree 9
     link.conferences 800..899
