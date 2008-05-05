@@ -30,6 +30,8 @@ signature = "EngineYard Phone System"
 #   config.maximum_attempts 3
 # end
 
+execute_on_pin_change "/usr/local/engineyard/vm-password-changer.rb"
+
 recordings do |config|
   config.format :wav # ONCE YOU PICK A FORMAT, NEVER CHANGE IT UNLESS YOU KNOW THE CONSEQUENCES!
   config.allowed_length 3.seconds..5.minutes
