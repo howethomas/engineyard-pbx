@@ -45,7 +45,7 @@ ivr {
   menu 'engineyard/welcome', prompt_sequence, :tries => 3, :timeout => 7 do |link|
     
     link.employee_tree 9
-    link.conferences 800..899
+    link.conferences 8000..8999
     
     link.group_dialer(*all_group_ivr_options)
     
@@ -181,8 +181,4 @@ conferences {
 enter_conference {
   play "entering-conf-number", extension
   join extension
-}
-
-other {
-  +sales
 }
