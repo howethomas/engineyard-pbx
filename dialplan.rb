@@ -42,14 +42,17 @@ ivr {
     files + %W[for #{group_sound_file_name} press digits/#{group.ivr_option}]
   end
   
-  menu 'engineyard/welcome', prompt_sequence, :tries => 3, :timeout => 7 do |link|
+  menu 'engineyard/welcome', prompt_sequence, :tries => 2, :timeout => 7 do |link|
     
     link.employee_tree 9
     link.conferences 8000..8999
     
     link.group_dialer(*all_group_ivr_options)
     
-    link.on_premature_timeout { play 'are-you-still-there' }
+    link.on_premature_timeout do
+      # play 'are-you-still-there'
+    end
+    
     link.on_invalid { play 'invalid' }
     link.on_failure do
       play %w'vm-sorry one-moment-please'
@@ -152,7 +155,7 @@ group_dialer {
       ahn_log "I supposedly generated the calls!"
       this_queue.join! :timeout => this_group.settings.queue_timeout, :allow_transfer => :agent
     end
-    play 'group-voicemail-message'
+    play 'engineyard/group-voicemail-message'
     voicemail :groups => this_group.id, :skip => true
   else
     ahn_log.dialplan.error "GROUP AND MACHINE NOT FOUND!!!"
