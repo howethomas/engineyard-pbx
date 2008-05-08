@@ -122,7 +122,7 @@ employee {
     # This must eventually be abstracted in the call routing DSL!
     trunk = `hostname`.starts_with?('pbx') ? "SIP/#{mobile_number}@vitel-outbound" : "IAX2/voipms/#{mobile_number}"
     dial_start_time = Time.now
-    dial trunk, :caller_id => "18665189273", :for => dial_timeout, :confirm => {:play => %w"press-pound" * 10}, :options => "m"
+    dial trunk, :caller_id => "8665189273", :for => dial_timeout, :confirm => {:play => %w"press-pound" * 10}, :options => "mt"
     
     # This makes my cry inside. I don't see any other way with the M() Dial option though.  :(
     if Time.now - dial_start_time < (dial_timeout.to_i + 10)
@@ -136,8 +136,7 @@ employee {
 }
 
 transfer_context {
-  number = input :timeout => 5, :accept_key => '#', :play => "transfer-prompt"
-  employee = Employee.find_by_extension number
+  employee = Employee.find_by_extension extension
   number = employee.mobile_number if employee
     
   number = "1#{number}" if number.length == 10
@@ -145,7 +144,7 @@ transfer_context {
   if number.length < 11
     play 'sorry-transfer-failed'
   else
-    dial "SIP/#{number}@vitel-outbound"
+    dial "SIP/#{number}@vitel-outbound", :options => "t"
   end
 }
 
