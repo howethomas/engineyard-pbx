@@ -137,7 +137,7 @@ employee {
 
 transfer_context {
   employee = Employee.find_by_extension extension
-  number = employee ? employee.mobile_number : extension
+  number = (employee ? employee.mobile_number : extension).to_s
     
   number = "1#{number}" if number.length == 10
   
