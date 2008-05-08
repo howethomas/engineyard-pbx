@@ -100,6 +100,7 @@ call_already_answered {
 }
 
 employee_tree {
+  sleep 0.5 # The enter-ext-of-person sound file starts very abruptly. This fixes it.
   menu 'enter-ext-of-person', :timeout => 45.seconds do |link|
     link.employee(*Employee.find(:all).map(&:extension))
   end
