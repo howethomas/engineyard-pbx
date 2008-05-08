@@ -1,5 +1,8 @@
 require 'tempfile'
 require 'fileutils'
+
+HOSTNAME = `hostname`.chomp
+
 path_to_gui_file = File.expand_path(File.dirname(__FILE__) + '/.path_to_gui')
 PATH_TO_RAILS = if File.exists? path_to_gui_file
   File.read(path_to_gui_file).strip
@@ -252,7 +255,7 @@ end
 
 #### BELOW IS THE IMPLEMENTATION!!!
 
-if `hostname`.starts_with? 'pbx'
+if HOSTNAME.starts_with? 'pbx'
   # Trunk.new("VoIP.ms Debug Account") { |number| "IAX2/#{number}@jay-trunk-out" }
   Trunk.new("Vitelity") { |number| "SIP/#{number}@vitel-outbound" }
 else
@@ -260,9 +263,9 @@ else
   Trunk.new("VoIP.ms")  { |number| "IAX2/voipms/#{number}"   }
 end
 
-pbx1 = Server.find(:first)
+this_server = Server.find_by_name HOSTNAME
 
-Scheduler.for pbx1 do |event|
+Scheduler.for this_server do |event|
   puts "I got an event with ID #{event.id}"
   begin
     QueueMessageHandler.send(event.name, event.message)
