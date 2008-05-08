@@ -121,9 +121,14 @@ employee {
     
     # This must eventually be abstracted in the call routing DSL!
     trunk = `hostname`.starts_with?('pbx') ? "SIP/#{mobile_number}@vitel-outbound" : "IAX2/voipms/#{mobile_number}"
+    dial_start_time = Time.now
     dial trunk, :caller_id => "18665189273", :for => dial_timeout, :confirm => {:play => %w"press-pound" * 10}, :options => "m"
-    variable "CALLERID(num)" => real_cid
-    voicemail :employees => employee.extension, :greeting => :unavailable if last_dial_unsuccessful?
+    
+    # This makes my cry inside. I don't see any other way with the M() Dial option though.  :(
+    if Time.now - dial_start_time < (dial_timeout + 10)
+      variable "CALLERID(num)" => real_cid
+      voicemail :employees => employee.extension, :greeting => :unavailable
+    end
   else
     play %w'sorry number-not-in-db'
     +employee_tree
