@@ -124,7 +124,8 @@ employee {
     dial_start_time = Time.now
     dial trunk, :caller_id => "8665189273", :for => dial_timeout, :confirm => {:play => %w"press-pound" * 10}, :options => "mt"
     
-    # This makes my cry inside. I don't see any other way with the M() Dial option though.  :(
+    # This makes my cry inside. With the M() Dial option (:confirm to dial()), last_call_successful? always
+    # returns true. We therefore have to resort to BS like this...
     if Time.now - dial_start_time < (dial_timeout.to_i + 10)
       variable "CALLERID(num)" => real_cid
       voicemail :employees => employee.extension, :greeting => :unavailable
@@ -152,8 +153,8 @@ group_dialer {
   this_group   = Group.find_by_ivr_option extension
   this_machine = Server.find_by_name THIS_SERVER
   
-  ahn_log "This group   : #{this_group}"
-  ahn_log "This machine : #{this_machine}"
+  ahn_log "This group   : #{this_group.name}"
+  ahn_log "This machine : #{this_machine.name}"
   
   if this_group && this_group.empty?
     voicemail :groups => this_group.id
