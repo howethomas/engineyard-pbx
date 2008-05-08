@@ -117,9 +117,12 @@ employee {
     play 'pls-hold-while-try'
     dial_timeout = Setting.find_by_name('extension_dial_timeout').global_setting_override.value || 24
     
+    real_cid = callerid
+    
     # This must eventually be abstracted in the call routing DSL!
     trunk = `hostname`.starts_with?('pbx') ? "SIP/#{mobile_number}@vitel-outbound" : "IAX2/voipms/#{mobile_number}"
     dial trunk, :caller_id => "18665189273", :for => dial_timeout, :confirm => {:play => %w"press-pound" * 10}, :options => "m"
+    variable "CALLERID(num)", "1#{real_cid}"
     voicemail :employees => employee.extension, :greeting => :unavailable if last_dial_unsuccessful?
   else
     play %w'sorry number-not-in-db'
@@ -153,15 +156,20 @@ group_dialer {
   elsif this_group && this_machine
     this_queue = queue this_group.name
     
-    agents_who_are_busy_handling_calls = this_queue.agents.select(&:logged_in?).map(&:id)
+    agents_who_are_busy_handling_calls = this_queue.agents.select(&:logged_in?).map(&:id).map(&:to_s)
     ahn_log "These guys are busy handling calls: #{agents_who_are_busy_handling_calls * ', '}"
-    if agents_who_are_busy_handling_calls.size >= this_queue.agents.count
-      play 'all-reps-busy'
-    else
+    
+    agents_available = this_group.members.select do |agent|
+      agent.available? && !agents_who_are_busy_handling_calls.include?(agent.id.to_s)
+    end
+    
+    if agents_available.any?
       play 'privacy-please-stay-on-line-to-be-connected'
       this_group.generate_calls(this_machine, :exclude => agents_who_are_busy_handling_calls)
       ahn_log "I supposedly generated the calls!"
       this_queue.join! :timeout => this_group.settings.queue_timeout, :allow_transfer => :agent
+    else
+      play 'all-reps-busy'
     end
     play 'engineyard/group-voicemail-message'
     voicemail :groups => this_group.id, :skip => true
