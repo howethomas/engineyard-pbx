@@ -119,7 +119,7 @@ employee {
     
     # This must eventually be abstracted in the call routing DSL!
     trunk = `hostname`.starts_with?('pbx') ? "SIP/#{mobile_number}@vitel-outbound" : "IAX2/voipms/#{mobile_number}"
-    dial trunk, :caller_id => "18665189273", :for => dial_timeout, :confirm => {:play => %w"press-pound" * 10}
+    dial trunk, :caller_id => "18665189273", :for => dial_timeout, :confirm => {:play => %w"press-pound" * 10}, :options => "m"
     voicemail :employees => employee.extension, :greeting => :unavailable if last_dial_unsuccessful?
   else
     play %w'sorry number-not-in-db'
