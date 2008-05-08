@@ -63,7 +63,7 @@ ivr {
 
 login {
   
-  enable_feature :attended_transfer, :context => "employee"
+  enable_feature :attended_transfer, :context => "transfer_context"
   
   @group_id    = get_variable 'group_id'
   @employee_id = get_variable 'employee_id'
@@ -114,7 +114,7 @@ employee_tree {
 
 employee {
   
-  enable_feature :attended_transfer, :context => "employee"
+  enable_feature :attended_transfer, :context => "transfer_context"
   
   employee = Employee.find_by_extension extension
   mobile_number = employee.mobile_number if employee
@@ -130,6 +130,20 @@ employee {
   else
     play %w'sorry number-not-in-db'
     +employee_tree
+  end
+}
+
+transfer_context {
+  number = input :timeout => 5, :accept_key => '#', :play => "transfer-prompt"
+  employee = Employee.find_by_extension number
+  number = employee.mobile_number if employee
+    
+  number = "1#{number}" if number.length == 10
+    
+  if number.length < 11
+    play 'sorry-transfer-failed'
+  else
+    
   end
 }
 
