@@ -125,7 +125,7 @@ employee {
     dial trunk, :caller_id => "18665189273", :for => dial_timeout, :confirm => {:play => %w"press-pound" * 10}, :options => "m"
     
     # This makes my cry inside. I don't see any other way with the M() Dial option though.  :(
-    if Time.now - dial_start_time < (dial_timeout + 10)
+    if Time.now - dial_start_time < (dial_timeout.to_i + 10)
       variable "CALLERID(num)" => real_cid
       voicemail :employees => employee.extension, :greeting => :unavailable
     end
