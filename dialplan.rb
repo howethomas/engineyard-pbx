@@ -32,22 +32,15 @@ ivr {
   sleep 1
   
   all_groups = Group.find :all, :order => "ivr_option"
-  all_groups.push all_groups.shift if all_groups.first.ivr_option.zero?
   
-  all_group_ivr_options = all_groups.map(&:ivr_option)
   on_failure_group_ivr_option = all_groups.detect { |group| group.name.downcase == 'sales' }.ivr_option rescue 0
   
-  prompt_sequence = all_groups.inject([]) do |files, group|
-    group_sound_file_name = group.name.gsub(/\s+/, '_').underscore.dasherize
-    files + %W[for #{group_sound_file_name} press digits/#{group.ivr_option}]
-  end
-  
-  menu 'engineyard/welcome', prompt_sequence, :tries => 2, :timeout => 7 do |link|
+  menu 'engineyard/welcome', 'engineyard/prompt', :tries => 2, :timeout => 7 do |link|
     
     link.employee_tree 9
     link.conferences 8000..8999
     
-    link.group_dialer(*all_group_ivr_options)
+    link.group_dialer(*all_groups.map(&:ivr_option))
     
     link.on_premature_timeout do
       # play 'are-you-still-there'
@@ -143,7 +136,7 @@ transfer_context {
   if number.length < 11
     play 'sorry-transfer-failed'
   else
-    
+    dial "SIP/#{number}@vitel-outbound"
   end
 }
 
