@@ -100,7 +100,7 @@ call_already_answered {
 }
 
 employee_tree {
-  sleep 0.4 # The enter-ext-of-person sound file starts very abruptly. This fixes it.
+  sleep 0.4 # The enter-ext-of-person sound file starts very abruptly. This delays it.
   menu 'enter-ext-of-person', :timeout => 45.seconds do |link|
     link.employee(*Employee.find(:all).map(&:extension))
   end
@@ -137,10 +137,10 @@ employee {
 
 transfer_context {
   employee = Employee.find_by_extension extension
-  number = employee.mobile_number if employee
+  number = employee ? employee.mobile_number : extension
     
   number = "1#{number}" if number.length == 10
-    
+  
   if number.length < 11
     play 'sorry-transfer-failed'
   else
