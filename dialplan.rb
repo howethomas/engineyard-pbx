@@ -12,7 +12,7 @@ from_trunk {
 voicemail_checker {
   ahn_log.dialplan "Entering voicemail checking system"
   3.times do
-    user_extension = input :play => "engineyard/pls-enter-extension"
+    user_extension = input :play => "engineyard/pls-enter-extension", :timeout => 7
     ahn_log.dialplan "Received extension #{user_extension}"
     employee = Employee.find_by_extension user_extension
     unless employee
@@ -122,7 +122,7 @@ employee {
     # This must eventually be abstracted in the call routing DSL!
     trunk = `hostname`.starts_with?('pbx') ? "SIP/#{mobile_number}@vitel-outbound" : "IAX2/voipms/#{mobile_number}"
     dial trunk, :caller_id => "18665189273", :for => dial_timeout, :confirm => {:play => %w"press-pound" * 10}, :options => "m"
-    variable "CALLERID(num)", "1#{real_cid}"
+    variable "CALLERID(num)" => real_cid
     voicemail :employees => employee.extension, :greeting => :unavailable if last_dial_unsuccessful?
   else
     play %w'sorry number-not-in-db'
