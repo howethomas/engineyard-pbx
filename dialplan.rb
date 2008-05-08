@@ -100,7 +100,7 @@ call_already_answered {
 }
 
 employee_tree {
-  menu 'engineyard/please-enter-employee-extension', :timeout => 45.seconds do |link|
+  menu 'enter-ext-of-person', :timeout => 45.seconds do |link|
     link.employee(*Employee.find(:all).map(&:extension))
   end
 }
