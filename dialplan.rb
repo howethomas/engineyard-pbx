@@ -128,7 +128,9 @@ employee {
     # This must eventually be abstracted in the call routing DSL!
     trunk = `hostname`.starts_with?('pbx') ? "SIP/#{mobile_number}@vitel-outbound" : "IAX2/voipms/#{mobile_number}"
     dial_start_time = Time.now
-    dial trunk, :caller_id => "8665189273", :for => dial_timeout, :confirm => {:play => %w"press-pound" * 10}, :options => "mt"
+    
+    confirm_prompt = %w[engineyard/to-accept-a-call-for extension] + extension.to_s.split('') + %w"press-pound"
+    dial trunk, :caller_id => "8665189273", :for => dial_timeout, :confirm => {:play => confirm_prompt}, :options => "mt"
     
     # This makes my cry inside. With the M() Dial option (:confirm to dial()), last_call_successful? always
     # returns true. We therefore have to resort to BS like this...
