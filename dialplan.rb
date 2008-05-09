@@ -129,7 +129,7 @@ employee {
     trunk = `hostname`.starts_with?('pbx') ? "SIP/#{mobile_number}@vitel-outbound" : "IAX2/voipms/#{mobile_number}"
     dial_start_time = Time.now
     
-    confirm_prompt = %w[engineyard/to-accept-a-call-for extension] + extension.to_s.split('') + %w"press-pound"
+    confirm_prompt = %w[engineyard/to-accept-a-call-for extension] + extension.to_s.split('').map { |x| "digits/#{x}" } + %w"press-pound"
     dial trunk, :caller_id => "8665189273", :for => dial_timeout, :confirm => {:play => confirm_prompt}, :options => "mt"
     
     # This makes my cry inside. With the M() Dial option (:confirm to dial()), last_call_successful? always
