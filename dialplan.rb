@@ -101,8 +101,14 @@ call_already_answered {
 
 employee_tree {
   sleep 0.4 # The enter-ext-of-person sound file starts very abruptly. This delays it.
-  menu 'enter-ext-of-person', :timeout => 45.seconds do |link|
+  menu 'enter-ext-of-person', :timeout => 10.seconds, :tries => 3 do |link|
     link.employee(*Employee.find(:all).map(&:extension))
+    
+    link.on_invalid do
+      play 'invalid'
+    end
+    
+    link.on_failure { +ivr }
   end
 }
 
