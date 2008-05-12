@@ -173,7 +173,7 @@ group_dialer {
     ahn_log "These guys are busy handling calls: #{agents_who_are_busy_handling_calls * ', '}"
     
     agents_available = this_group.members.select do |agent|
-      agent.available?(this_group) && !agents_who_are_busy_handling_calls.include?(agent.id.to_s)
+      agent.available? && !agents_who_are_busy_handling_calls.include?(agent.id.to_s)
     end
     
     if agents_available.any?
