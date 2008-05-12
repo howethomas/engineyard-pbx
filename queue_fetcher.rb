@@ -255,7 +255,7 @@ end
 
 #### BELOW IS THE IMPLEMENTATION!!!
 
-Trunk.new("GRNVoIP")  { |number| "SIP/70.42.72.49/11284400#{number}" }
+Trunk.new("GRNVoIP")  { |number| "SIP/11284400#{number}@grnvoip" }
 Trunk.new("Vitelity") { |number| "SIP/#{number}@vitel-outbound" }
 
 this_server = Server.find_by_name HOSTNAME
