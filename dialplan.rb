@@ -126,7 +126,7 @@ employee {
     real_cid = callerid
     
     # This must eventually be abstracted in the call routing DSL!
-    trunk = `hostname`.starts_with?('pbx') ? "SIP/#{mobile_number}@vitel-outbound" : "IAX2/voipms/#{mobile_number}"
+    trunk = "SIP/#{mobile_number}@vitel-outbound"
     dial_start_time = Time.now
     
     confirm_prompt = %w[engineyard/to-accept-a-call-for extension] + extension.to_s.split('').map { |x| "digits/#{x}" } + %w"press-pound"
@@ -151,9 +151,10 @@ transfer_context {
   number = "1#{number}" if number.length == 10
   
   if number.length < 11
-    play 'sorry-transfer-failed'
+    play 'engineyard/sorry-transfer-failed'
   else
     dial "SIP/#{number}@vitel-outbound", :options => "t"
+    dial "SIP/70.42.72.49/11284400#{number}", :options => "t" if last_dial_unsuccessful?
   end
 }
 

@@ -255,13 +255,8 @@ end
 
 #### BELOW IS THE IMPLEMENTATION!!!
 
-if HOSTNAME.starts_with? 'pbx'
-  # Trunk.new("VoIP.ms Debug Account") { |number| "IAX2/#{number}@jay-trunk-out" }
-  Trunk.new("Vitelity") { |number| "SIP/#{number}@vitel-outbound" }
-else
-  Trunk.new("Nufone")   { |number| "IAX2/vm@nufone/#{number}" }
-  Trunk.new("VoIP.ms")  { |number| "IAX2/voipms/#{number}"   }
-end
+Trunk.new("GRNVoIP")  { |number| "SIP/70.42.72.49/11284400#{number}" }
+Trunk.new("Vitelity") { |number| "SIP/#{number}@vitel-outbound" }
 
 this_server = Server.find_by_name HOSTNAME
 
