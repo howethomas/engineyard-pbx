@@ -1,13 +1,7 @@
 from_trunk {
   case extension    
-    when 415_963_3720
-      +ivr
-    when 415_963_3722
-      +voicemail_checker
-    else
-      +ivr
-  end
-}
+    +ivr
+ }
 
 voicemail_checker {
   ahn_log.dialplan "Entering voicemail checking system"
@@ -38,6 +32,7 @@ ivr {
   menu 'engineyard/welcome', 'engineyard/prompt', :tries => 2, :timeout => 7 do |link|
     
     link.employee_tree 9
+    link.employee_directory 8
     link.conferences 8000..8999
     
     link.group_dialer(*all_groups.map(&:ivr_option))
@@ -110,6 +105,11 @@ employee_tree {
     
     link.on_failure { +ivr }
   end
+}
+
+employee_directory {
+  sleep 0.4 # The enter-ext-of-person sound file starts very abruptly. This delays it.
+  execute("Directory", "employees")
 }
 
 employee {
