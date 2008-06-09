@@ -5,7 +5,7 @@ VM_AHN_SERVERS = '10.0.1.194'
 
 # Git/Github setup
 set :scm, :git
-set :repository, "git@github.com:jicksta/engineyard-pbx.git"
+set :repository, "git@github.com:howethomas/engineyard-pbx.git"
 
 # Project-related variables
 set :project_deploy_to_root, "/usr/local/engineyard"
