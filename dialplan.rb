@@ -1,7 +1,6 @@
 
 from_trunk {
-  case extension    
-    +ivr
+     +ivr
  }
 
 voicemail_checker {
