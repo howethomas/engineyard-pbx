@@ -29,7 +29,7 @@ ivr {
   
   on_failure_group_ivr_option = all_groups.detect { |group| group.name.downcase == 'sales' }.ivr_option rescue 0
   
-  menu 'engineyard/welcome', 'engineyard/prompt', :tries => 2, :timeout => 7 do |link|
+  menu 'engineyard/welcome', 'engineyard/prompt', :tries => 4, :timeout => 7 do |link|
     
     link.employee_tree 9
     link.employee_directory 8
