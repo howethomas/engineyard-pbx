@@ -255,12 +255,12 @@ end
 
 #### BELOW IS THE IMPLEMENTATION!!!
 
-Trunk.new("GRNVoIP")  { |number| "SIP/11284400#{number}@grnvoip" }
-Trunk.new("Vitelity") { |number| "SIP/#{number}@vitel-outbound" }
-Trunk.new("GRNVoIP")  { |number| "SIP/11284400#{number}@grnvoip" }
-Trunk.new("Vitelity") { |number| "SIP/#{number}@vitel-outbound" }
-Trunk.new("GRNVoIP")  { |number| "SIP/11284400#{number}@grnvoip" }
-Trunk.new("Vitelity") { |number| "SIP/#{number}@vitel-outbound" }
+Trunk.new("Zap")  { |number| "Zap/G1/#{number}" }
+Trunk.new("Zap")  { |number| "Zap/G1/#{number}" }
+Trunk.new("Zap")  { |number| "Zap/G1/#{number}" }
+Trunk.new("Zap")  { |number| "Zap/G1/#{number}" }
+Trunk.new("Zap")  { |number| "Zap/G1/#{number}" }
+Trunk.new("Zap")  { |number| "Zap/G1/#{number}" }
 
 this_server = Server.find_by_name HOSTNAME
 
