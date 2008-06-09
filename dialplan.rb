@@ -127,7 +127,7 @@ employee {
     real_cid = callerid
     
     # This must eventually be abstracted in the call routing DSL!
-    trunk = "SIP/#{mobile_number}@vitel-outbound"
+    trunk = "ZAP/G1/#{mobile_number}"
     dial_start_time = Time.now
     
     confirm_prompt = %w[engineyard/to-accept-a-call-for extension] + extension.to_s.split('').map { |x| "digits/#{x}" } + %w"press-pound"
@@ -154,7 +154,8 @@ transfer_context {
   if number.length < 11
     play 'engineyard/sorry-transfer-failed'
   else
-    dial "SIP/#{number}@vitel-outbound", :options => "t"
+    dial "ZAP/G1/#{number}"
+    dial "SIP/#{number}@vitel-outbound", :options => "t" if last_dial_unsuccessful?
     dial "SIP/70.42.72.49/11284400#{number}", :options => "t" if last_dial_unsuccessful?
   end
 }
