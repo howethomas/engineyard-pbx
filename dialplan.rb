@@ -1,7 +1,50 @@
 
 from_trunk {
-     +ivr
+  case extension
+    when 6903:
+      +billing
+   else
+      +ivr
+   end
+}
+
+
+billing {
+   sleep 1
+   this_group   = Group.find_by_ivr_option "3"
+   this_machine = Server.find_by_name THIS_SERVER
+
+   ahn_log "This group   : #{this_group.name}"
+   ahn_log "This machine : #{this_machine.name}"
+
+   if this_group && this_group.empty?
+     voicemail :groups => this_group.id
+   elsif this_group && this_machine
+     this_queue = queue this_group.name
+
+     agents_who_are_busy_handling_calls = this_queue.agents.select(&:logged_in?).map(&:id).map(&:to_s)
+     ahn_log "These guys are busy handling calls: #{agents_who_are_busy_handling_calls * ', '}"
+
+     agents_available = this_group.members.select do |agent|
+       agent.available? && !agents_who_are_busy_handling_calls.include?(agent.id.to_s)
+     end
+
+     if agents_available.any?
+       play 'privacy-please-stay-on-line-to-be-connected'
+       this_group.generate_calls(this_machine, :exclude => agents_who_are_busy_handling_calls)
+       ahn_log "I supposedly generated the calls!"
+       this_queue.join! :timeout => this_group.settings.queue_timeout, :allow_transfer => :agent
+     else
+       play 'all-reps-busy'
+     end
+     play 'engineyard/group-voicemail-message'
+     voicemail :groups => this_group.id, :skip => true
+   else
+     ahn_log.dialplan.error "GROUP AND MACHINE NOT FOUND!!!"
+   end
+
  }
+
 
 voicemail_checker {
   ahn_log.dialplan "Entering voicemail checking system"
@@ -21,6 +64,8 @@ voicemail_checker {
     voicemail_main :context => "employees", :mailbox => user_extension, :authenticate => false
   end
 }
+
+
 
 ivr {
   sleep 1
