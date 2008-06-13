@@ -171,7 +171,7 @@ employee {
     real_cid = callerid
     
     # This must eventually be abstracted in the call routing DSL!
-    trunk = "ZAP/G1/#{mobile_number}"
+    trunk = "ZAP/G1/#{mobile_number}&SIP/#{extension}"
     dial_start_time = Time.now
     
     confirm_prompt = %w[engineyard/to-accept-a-call-for extension] + extension.to_s.split('').map { |x| "digits/#{x}" } + %w"press-pound"
