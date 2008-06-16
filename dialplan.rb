@@ -205,6 +205,8 @@ transfer_context {
 }
 
 group_dialer {
+ enable_feature :attended_transfer, :context => "transfer_context"
+
   this_group   = Group.find_by_ivr_option extension
   this_machine = Server.find_by_name THIS_SERVER
   
@@ -227,12 +229,15 @@ group_dialer {
       play 'privacy-please-stay-on-line-to-be-connected'
       this_group.generate_calls(this_machine, :exclude => agents_who_are_busy_handling_calls)
       ahn_log "I supposedly generated the calls!"
-      this_queue.join! :timeout => this_group.settings.queue_timeout, :allow_transfer => :agent
+      loop do 
+        this_queue.join! :timeout => this_group.settings.queue_timeout, :allow_transfer => :agent
+      end
     else
       play 'all-reps-busy'
+      play 'engineyard/group-voicemail-message'
+      voicemail :groups => this_group.id, :skip => true
     end
-    play 'engineyard/group-voicemail-message'
-    voicemail :groups => this_group.id, :skip => true
+      
   else
     ahn_log.dialplan.error "GROUP AND MACHINE NOT FOUND!!!"
   end
