@@ -234,9 +234,9 @@ group_dialer {
       end
     else
       play 'all-reps-busy'
-      play 'engineyard/group-voicemail-message'
-      voicemail :groups => this_group.id, :skip => true
     end
+    play 'engineyard/group-voicemail-message'
+    voicemail :groups => this_group.id, :skip => true
       
   else
     ahn_log.dialplan.error "GROUP AND MACHINE NOT FOUND!!!"
