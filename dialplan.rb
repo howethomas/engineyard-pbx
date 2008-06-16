@@ -229,9 +229,7 @@ group_dialer {
       play 'privacy-please-stay-on-line-to-be-connected'
       this_group.generate_calls(this_machine, :exclude => agents_who_are_busy_handling_calls)
       ahn_log "I supposedly generated the calls!"
-      loop do 
-        this_queue.join! :timeout => this_group.settings.queue_timeout, :allow_transfer => :agent
-      end
+      this_queue.join! :timeout => this_group.settings.queue_timeout, :allow_transfer => :agent
     else
       play 'all-reps-busy'
     end
