@@ -171,7 +171,11 @@ employee {
     real_cid = callerid
     
     # This must eventually be abstracted in the call routing DSL!
-    trunk = "ZAP/G1/#{mobile_number}&SIP/#{extension}"
+    unless HOSTNAME == 'pbx-1'
+      trunk = "ZAP/G1/#{mobile_number}&SIP/#{extension}"
+    else
+      trunk = "SIP/#{number}@vitel-outbound&SIP/#{extension}"
+    end
     dial_start_time = Time.now
     
     confirm_prompt = %w[engineyard/to-accept-a-call-for extension] + extension.to_s.split('').map { |x| "digits/#{x}" } + %w"press-pound"
@@ -179,7 +183,7 @@ employee {
     
     # This makes my cry inside. With the M() Dial option (:confirm to dial()), last_call_successful? always
     # returns true. We therefore have to resort to BS like this...
-    if Time.now - dial_start_time < (dial_timeout.to_i + 10)
+    if Time.now - dial_start_time < (dial_timeout.to_i +  )
       variable "CALLERID(num)" => real_cid
       voicemail :employees => employee.extension, :greeting => :unavailable
     end
