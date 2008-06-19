@@ -183,7 +183,7 @@ employee {
     
     # This makes my cry inside. With the M() Dial option (:confirm to dial()), last_call_successful? always
     # returns true. We therefore have to resort to BS like this...
-    if Time.now - dial_start_time < (dial_timeout.to_i +  )
+    if Time.now - dial_start_time < (dial_timeout.to_i +  10)
       variable "CALLERID(num)" => real_cid
       voicemail :employees => employee.extension, :greeting => :unavailable
     end
