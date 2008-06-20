@@ -178,7 +178,7 @@ employee {
     if HOSTNAME.chomp == 'pbx-1'
       trunk = "ZAP/G1/#{mobile_number}&SIP/#{extension}"
     else
-      trunk = "SIP/#{number}@vitel-outbound&SIP/#{extension}"
+      trunk = "SIP/#{mobile_number}@vitel-outbound&SIP/#{extension}"
     end
     dial_start_time = Time.now
     
