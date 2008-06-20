@@ -77,7 +77,7 @@ ivr {
   menu 'engineyard/welcome', 'engineyard/prompt', :tries => 4, :timeout => 7 do |link|
     
     link.employee_tree 9
-    link.voicemail_main 10
+    link.voicemail_login 10
     link.conferences 8000..8999
     
     link.group_dialer(*all_groups.map(&:ivr_option))
@@ -92,6 +92,10 @@ ivr {
       jump_to(group_dialer, :extension => on_failure_group_ivr_option)
     end
   end
+}
+
+voicemail_login {
+  voicemail_main({:context=>"employees"})
 }
 
 login {
