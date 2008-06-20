@@ -1,6 +1,8 @@
 load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 
-PRODUCTION_SERVERS = %w[65.74.175.133 65.74.175.134]
+#PRODUCTION_SERVERS = %w[65.74.175.133 65.74.175.134]
+PRODUCTION_SERVERS = %w[65.74.175.133]
+TEST_SERVERS =%w[65.74.175.134]
 VM_AHN_SERVERS = '10.0.1.194'
 
 # Git/Github setup
@@ -55,14 +57,14 @@ after 'deploy:setup', 'ahn:init'
 after 'deploy:setup', :chmod_adhearsion_folder
 
 task :chmod_adhearsion_folder do
-  sudo "chown -R #{user} /usr/local/adhearsion"
-  sudo "chgrp -R #{group} /usr/local/adhearsion"
+  run "chown -R #{user} /usr/local/adhearsion"
+  run "chgrp -R #{group} /usr/local/adhearsion"
 end
 
 task :create_engineyard_folder do
-  sudo 'mkdir /usr/local/engineyard'
-  sudo "chown -R #{user} /usr/local/engineyard"
-  sudo "chgrp -R #{group} /usr/local/engineyard"
+  run 'mkdir /usr/local/engineyard'
+  run "chown -R #{user} /usr/local/engineyard"
+  run "chgrp -R #{group} /usr/local/engineyard"
 end
 
 task :vm do
@@ -74,6 +76,12 @@ task :production do
   set :user, "root"
   set :use_sudo, "false"
   role :app, *PRODUCTION_SERVERS
+end
+
+task :testing do
+	set :user, "root"
+	set :use_sudo, "false"
+	role :app, *TEST_SERVERS
 end
 
 before 'deploy:update', 'ahn:stop'

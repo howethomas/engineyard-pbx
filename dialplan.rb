@@ -77,7 +77,7 @@ ivr {
   menu 'engineyard/welcome', 'engineyard/prompt', :tries => 4, :timeout => 7 do |link|
     
     link.employee_tree 9
-    link.employee_directory 8
+    link.voicemail_main 10
     link.conferences 8000..8999
     
     link.group_dialer(*all_groups.map(&:ivr_option))
