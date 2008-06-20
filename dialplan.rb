@@ -175,7 +175,7 @@ employee {
     real_cid = callerid
     
     # This must eventually be abstracted in the call routing DSL!
-    unless HOSTNAME == 'pbx-1 '
+    if HOSTNAME.chomp == 'pbx-1'
       trunk = "ZAP/G1/#{mobile_number}&SIP/#{extension}"
     else
       trunk = "SIP/#{number}@vitel-outbound&SIP/#{extension}"
