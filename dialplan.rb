@@ -148,6 +148,7 @@ employee_tree {
   menu 'enter-ext-of-person', :timeout => 10.seconds, :tries => 3 do |link|
     link.employee(*Employee.find(:all).map(&:extension))
     
+    link.employee_directory 1
     link.on_invalid do
       play 'invalid'
     end
