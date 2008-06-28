@@ -167,7 +167,7 @@ employee {
   enable_feature :attended_transfer, :context => "transfer_context"
   
   employee = Employee.find_by_extension extension
-  mobile_number = employee.mobile_number if employee
+  mobile_number = employee.mobile_number.strip if employee
   
   if mobile_number
     play 'pls-hold-while-try'
@@ -200,7 +200,7 @@ employee {
 
 transfer_context {
   employee = Employee.find_by_extension extension
-  number = (employee ? employee.mobile_number : extension).to_s
+  number = (employee ? employee.mobile_number.strip : extension).to_s
     
   number = "1#{number}" if number.length == 10
   
