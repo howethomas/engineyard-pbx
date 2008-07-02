@@ -13,7 +13,7 @@ context :groups do |context|
     context.mailbox group.id do |mailbox|
       mailbox.pin_number 1337
       mailbox.name group.name
-      mailbox.email "#{group.name.downcase}@localhost"
+      mailbox.email "#{group.name.downcase}@engineyard.com"
     end
   end
 end
