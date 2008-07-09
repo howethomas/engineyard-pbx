@@ -186,12 +186,14 @@ employee {
     confirm_prompt = %w[engineyard/to-accept-a-call-for extension] + extension.to_s.split('').map { |x| "digits/#{x}" } + %w"press-pound"
     dial trunk, :caller_id => "8665189273", :for => dial_timeout, :confirm => {:play => confirm_prompt}, :options => "mt"
     
+    # Trying a different approach here.  If we've gotten this far, it's because the 
+    # dial timed out, or people are about to hang up. Let's just a few seconds to see if
+    # they hangup by themselves. We need to do this because.... from Jay    
     # This makes my cry inside. With the M() Dial option (:confirm to dial()), last_call_successful? always
     # returns true. We therefore have to resort to BS like this...
-    if Time.now - dial_start_time < (dial_timeout.to_i +  10)
-      variable "CALLERID(num)" => real_cid
-      voicemail :employees => employee.extension, :greeting => :unavailable
-    end
+    sleep 3     # Wait three seconds
+    variable "CALLERID(num)" => real_cid
+    voicemail :employees => employee.extension, :greeting => :unavailable
   else
     play %w'sorry number-not-in-db'
     +employee_tree
