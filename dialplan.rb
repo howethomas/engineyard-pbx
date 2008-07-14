@@ -72,7 +72,7 @@ ivr {
   
   all_groups = Group.find :all, :order => "ivr_option"
   
-  on_failure_group_ivr_option = all_groups.detect { |group| group.name.downcase == 'sales' }.ivr_option rescue 0
+  on_failure_group_ivr_option = all_groups.detect { |group| group.name.downcase == 'salescalls' }.ivr_option rescue 0
   
   menu 'engineyard/welcome', 'engineyard/prompt', :tries => 4, :timeout => 7 do |link|
     
