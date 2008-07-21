@@ -142,6 +142,38 @@ namespace :asterisk do
   task :reload do
     run "asterisk -rx reload"
   end
+  desc "checks the current status of the PRIs"
+  task :check_pri do
+    run "asterisk -rx 'pri show spans'" do |ch, stream, data|
+      puts data
+    end
+  end
+  desc "checks the current calls"
+  task :check_calls do
+    run "asterisk -rx 'core show channels'" do |ch, stream, data|
+      puts data
+    end
+  end
+  desc "monitors asterisk"
+  task :monitor_activity do
+    loop do
+      sleep 30
+      check_pri
+      check_calls
+    end
+  end
+  desc "monitors span"
+  task :monitor_span do
+    loop do
+      check_pri
+      sleep 30
+    end
+  end
+  
+  desc "Watch continuous asterisk output" 
+  task :view do
+    stream "tail -f /var/log/asterisk/messages"
+  end
 end
 
 namespace :debian do

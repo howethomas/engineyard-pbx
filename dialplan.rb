@@ -167,24 +167,31 @@ employee {
   enable_feature :attended_transfer, :context => "transfer_context"
   
   employee = Employee.find_by_extension extension
-  mobile_number = employee.mobile_number.strip if employee
-  
-  if mobile_number
+  if employee.nil?
+    play %w'sorry number-not-in-db'
+    +employee_tree
+  end
+  if employee.available?
+    # We found an employee, and he's available.  Call him if there's a mobile number, 
+    # or just forward to extension if not.
+    mobile_number = employee.mobile_number.strip if employee
+    if mobile_number and HOSTNAME.chomp == 'pbx-1'
+      trunk = "ZAP/G1/#{mobile_number}&SIP/#{extension}"
+      use_macro = true        # Need to use macros when callinng PSTN phones, otherwise not.
+    else
+      trunk = "SIP/#{extension}"
+      use_macro = false       # No need to use a macro when calling a SIP phone
+    end
     play 'pls-hold-while-try'
     dial_timeout = Setting.find_by_name('extension_dial_timeout').global_setting_override.value || 24
-    
     real_cid = callerid
-    
-    # This must eventually be abstracted in the call routing DSL!
-    if HOSTNAME.chomp == 'pbx-1'
-      trunk = "ZAP/G1/#{mobile_number}&SIP/#{extension}"
-    else
-      trunk = "SIP/#{mobile_number}@vitel-outbound&SIP/#{extension}"
-    end
     dial_start_time = Time.now
-    
-    confirm_prompt = %w[engineyard/to-accept-a-call-for extension] + extension.to_s.split('').map { |x| "digits/#{x}" } + %w"press-pound"
-    dial trunk, :caller_id => "8665189273", :for => dial_timeout, :confirm => {:play => confirm_prompt}, :options => "mt"
+    if use_macro
+      confirm_prompt = %w[engineyard/to-accept-a-call-for extension] + extension.to_s.split('').map { |x| "digits/#{x}" } + %w"press-pound"
+      dial trunk, :caller_id => "8665189273", :for => dial_timeout, :confirm => {:play => confirm_prompt}, :options => "mt"
+    else
+      dial trunk, :caller_id => "8665189273", :for => dial_timeout, :options => "t"
+    end
     
     # Trying a different approach here.  If we've gotten this far, it's because the 
     # dial timed out, or people are about to hang up. Let's just a few seconds to see if
@@ -195,8 +202,8 @@ employee {
     variable "CALLERID(num)" => real_cid
     voicemail :employees => employee.extension, :greeting => :unavailable
   else
-    play %w'sorry number-not-in-db'
-    +employee_tree
+    variable "CALLERID(num)" => real_cid
+    voicemail :employees => employee.extension, :greeting => :unavailable
   end
 }
 
@@ -275,3 +282,4 @@ enter_conference {
   play "entering-conf-number", extension
   join extension
 }
+
