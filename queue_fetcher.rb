@@ -256,11 +256,6 @@ end
 #### BELOW IS THE IMPLEMENTATION!!!
 
 Trunk.new("Zap")  { |number| "Zap/G1/#{number}" }
-Trunk.new("Zap")  { |number| "Zap/G1/#{number}" }
-Trunk.new("Zap")  { |number| "Zap/G1/#{number}" }
-Trunk.new("Zap")  { |number| "Zap/G1/#{number}" }
-Trunk.new("Zap")  { |number| "Zap/G1/#{number}" }
-Trunk.new("Zap")  { |number| "Zap/G1/#{number}" }
 
 this_server = Server.find_by_name HOSTNAME
 
